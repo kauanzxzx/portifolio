@@ -1,0 +1,834 @@
+/*=========================================================
+=
+= 00 - RESPONSIVO / NAV MOBILE (BOTÃO HAMBURGUER)
+=
+=========================================================*/
+
+.nav-toggle{
+
+    display:none;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:5px;
+
+    width:36px;
+
+    height:36px;
+
+    background:none;
+
+    cursor:pointer;
+
+    position:relative;
+
+    z-index:1100;
+
+}
+
+.nav-toggle span{
+
+    display:block;
+
+    width:100%;
+
+    height:2px;
+
+    border-radius:999px;
+
+    background:var(--white);
+
+    transition:var(--transition);
+
+}
+
+.nav-toggle.active span:nth-child(1){
+
+    transform:translateY(7px) rotate(45deg);
+
+}
+
+.nav-toggle.active span:nth-child(2){
+
+    opacity:0;
+
+}
+
+.nav-toggle.active span:nth-child(3){
+
+    transform:translateY(-7px) rotate(-45deg);
+
+}
+
+
+/*=========================================================
+=
+= 01 - BREAKPOINT 1100px (GRID DE SEGMENTOS)
+=
+=========================================================*/
+
+@media (max-width:1100px){
+
+    .segments-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+    .services-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+
+/*=========================================================
+=
+= 02 - BREAKPOINT 992px (TABLET)
+=
+=========================================================*/
+
+@media (max-width:992px){
+
+    /*=========================================
+    = ESPAÇAMENTOS GERAIS
+    =========================================*/
+
+    section{
+
+        padding:80px 0;
+
+    }
+
+    .segments{
+
+        padding:90px 0;
+
+    }
+
+    .services{
+
+        padding:100px 0;
+
+    }
+
+    .process{
+
+        padding:100px 0;
+
+    }
+
+    .about{
+
+        padding:100px 0;
+
+    }
+
+    .about .section-header{
+
+        margin-bottom:60px;
+
+    }
+
+    .about-content{
+
+        grid-template-columns:1fr;
+
+        gap:60px;
+
+    }
+
+    .about-pillars{
+
+        grid-template-columns:1fr;
+
+        gap:24px;
+
+    }
+
+    .faq{
+
+        padding:100px 0;
+
+    }
+
+    .faq-item summary{
+
+        padding:22px 24px;
+
+        font-size:.98rem;
+
+    }
+
+    .faq-item p{
+
+        padding:0 24px 24px;
+
+    }
+
+    .contact{
+
+        padding:100px 0;
+
+    }
+
+    .contact-panel{
+
+        padding:60px 30px;
+
+        border-radius:30px;
+
+    }
+
+    footer{
+
+        padding:70px 0 28px;
+
+    }
+
+    .footer-top{
+
+        grid-template-columns:1fr 1fr;
+
+        gap:44px;
+
+    }
+
+    .footer-brand{
+
+        grid-column:1 / -1;
+
+    }
+
+    .process-steps{
+
+        grid-template-columns:1fr;
+
+        gap:44px;
+
+    }
+
+    .process-steps::before{
+
+        top:0;
+
+        bottom:0;
+
+        left:34px;
+
+        right:auto;
+
+        width:2px;
+
+        height:auto;
+
+        background:linear-gradient(
+            180deg,
+            transparent,
+            rgba(112,164,189,.35),
+            rgba(112,164,189,.35),
+            transparent
+        );
+
+    }
+
+    .process-step{
+
+        flex-direction:row;
+
+        align-items:flex-start;
+
+        text-align:left;
+
+        gap:24px;
+
+    }
+
+    .process-number{
+
+        margin-bottom:0;
+
+    }
+
+    .projects{
+
+        padding:110px 0;
+
+    }
+
+    .projects .container{
+
+        gap:110px;
+
+    }
+
+    .section-header{
+
+        margin-bottom:50px;
+
+    }
+
+    /*=========================================
+    = NAVBAR
+    =========================================*/
+
+    .navbar{
+
+        height:76px;
+
+    }
+
+    .logo{
+
+        font-size:1.45rem;
+
+    }
+
+    .nav-toggle{
+
+        display:flex;
+
+    }
+
+    .nav-cta{
+
+        display:none;
+
+    }
+
+    /*=========================================
+    = MENU MOBILE (OVERLAY)
+    =========================================*/
+
+    .nav-menu{
+
+        position:fixed;
+
+        inset:0;
+
+        flex-direction:column;
+
+        justify-content:center;
+
+        align-items:center;
+
+        gap:36px;
+
+        background:rgba(15,23,32,.97);
+
+        backdrop-filter:blur(22px);
+
+        transform:translateX(100%);
+
+        transition:.45s ease;
+
+        z-index:1050;
+
+    }
+
+    .nav-menu.active{
+
+        transform:translateX(0);
+
+    }
+
+    .nav-menu a{
+
+        font-size:1.35rem;
+
+    }
+
+    body.menu-open{
+
+        overflow:hidden;
+
+    }
+
+    body.menu-open .nav-cta{
+
+        display:inline-flex;
+
+        position:fixed;
+
+        left:50%;
+
+        bottom:64px;
+
+        transform:translateX(-50%);
+
+        z-index:1060;
+
+    }
+
+    /*=========================================
+    = HERO
+    =========================================*/
+
+    .hero{
+
+        min-height:auto;
+
+        padding-top:110px;
+
+        padding-bottom:70px;
+
+    }
+
+    .hero-content{
+
+        grid-template-columns:1fr;
+
+        gap:60px;
+
+        text-align:center;
+
+    }
+
+    .hero-left{
+
+        max-width:100%;
+
+        margin:0 auto;
+
+    }
+
+    .hero-buttons{
+
+        justify-content:center;
+
+    }
+
+    .hero-features{
+
+        justify-content:center;
+
+    }
+
+    /*=========================================
+    = MOCKUPS DO HERO (SIMPLIFICADOS)
+    =========================================*/
+
+    .hero-right{
+
+        position:relative;
+
+        height:auto;
+
+        width:100%;
+
+        max-width:460px;
+
+        margin:0 auto;
+
+    }
+
+    .mockup-main{
+
+        position:relative;
+
+        top:auto;
+
+        left:auto;
+
+        width:100%;
+
+        height:auto;
+
+        aspect-ratio:16/10;
+
+        animation:none;
+
+    }
+
+    .mockup-small{
+
+        display:none;
+
+    }
+
+    .hero-scroll{
+
+        display:none;
+
+    }
+
+    /*=========================================
+    = PROJETOS (EMPILHADOS)
+    =========================================*/
+
+    .project,
+    .project.reverse{
+
+        grid-template-columns:1fr;
+
+        gap:50px;
+
+    }
+
+    .project-info,
+    .project.reverse .project-info{
+
+        order:1;
+
+        align-items:center;
+
+        text-align:center;
+
+    }
+
+    .project-preview,
+    .project.reverse .project-preview{
+
+        order:2;
+
+    }
+
+    .project-story{
+
+        text-align:left;
+
+    }
+
+    /*=========================================
+    = FICHA TÉCNICA (SEM SOBREPOSIÇÃO)
+    =========================================*/
+
+    .project-details,
+    .project.reverse .project-details{
+
+        position:static;
+
+        width:100%;
+
+        margin-top:26px;
+
+        left:auto;
+
+        right:auto;
+
+    }
+
+}
+
+
+/*=========================================================
+=
+= 03 - BREAKPOINT 768px (MOBILE GRANDE)
+=
+=========================================================*/
+
+@media (max-width:768px){
+
+    section{
+
+        padding:64px 0;
+
+    }
+
+    .segments{
+
+        padding:70px 0;
+
+    }
+
+    .projects{
+
+        padding:80px 0;
+
+    }
+
+    .projects .container{
+
+        gap:80px;
+
+    }
+
+    /*=========================================
+    = GRID: 1 COLUNA
+    =========================================*/
+
+    .segments-grid{
+
+        grid-template-columns:1fr;
+
+        gap:16px;
+
+    }
+
+    .services-grid{
+
+        grid-template-columns:1fr;
+
+        gap:16px;
+
+    }
+
+    .segments-cta,
+    .services-cta{
+
+        margin-top:50px;
+
+        padding:40px 24px;
+
+    }
+
+    .segments-cta h3,
+    .services-cta h3{
+
+        font-size:1.5rem;
+
+    }
+
+    /*=========================================
+    = CARD: LAYOUT HORIZONTAL COMPACTO
+    =========================================*/
+
+    .segment-card,
+    .service-card{
+
+        display:flex;
+
+        flex-direction:row;
+
+        align-items:flex-start;
+
+        gap:18px;
+
+        padding:22px;
+
+        border-radius:22px;
+
+    }
+
+    .segment-line,
+    .service-line{
+
+        display:none;
+
+    }
+
+    .segment-icon,
+    .service-icon{
+
+        width:52px;
+
+        height:52px;
+
+        margin-bottom:0;
+
+        flex-shrink:0;
+
+    }
+
+    .segment-icon svg,
+    .service-icon svg{
+
+        width:24px;
+
+        height:24px;
+
+    }
+
+    .segment-card h3,
+    .service-card h3{
+
+        font-size:1.02rem;
+
+        margin-bottom:6px;
+
+    }
+
+    .segment-card p,
+    .service-card p{
+
+        font-size:.88rem;
+
+        line-height:1.6;
+
+        margin-bottom:0;
+
+    }
+
+    /* lista de recursos vira uma versão enxuta, sem marcadores empilhados */
+
+    .segment-card ul,
+    .service-card ul{
+
+        display:none;
+
+    }
+
+    .footer-top{
+
+        grid-template-columns:1fr;
+
+        gap:40px;
+
+    }
+
+    .footer-bottom{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:10px;
+
+    }
+
+}
+
+
+/*=========================================================
+=
+= 04 - BREAKPOINT 576px (MOBILE)
+=
+=========================================================*/
+
+@media (max-width:576px){
+
+    .container{
+
+        width:90%;
+
+    }
+
+    /*=========================================
+    = BOTÕES EMPILHADOS
+    =========================================*/
+
+    .hero-buttons{
+
+        flex-direction:column;
+
+        width:100%;
+
+    }
+
+    .btn{
+
+        width:100%;
+
+    }
+
+    .hero-features{
+
+        flex-direction:column;
+
+        align-items:center;
+
+        gap:12px;
+
+    }
+
+    /*=========================================
+    = ENDEREÇO DO NAVEGADOR (TRUNCADO)
+    =========================================*/
+
+    .browser-address{
+
+        max-width:140px;
+
+        overflow:hidden;
+
+        white-space:nowrap;
+
+        text-overflow:ellipsis;
+
+        font-size:.7rem;
+
+    }
+
+    /*=========================================
+    = TÍTULOS E TEXTOS
+    =========================================*/
+
+    .section-tag{
+
+        font-size:.78rem;
+
+        padding:8px 16px;
+    }
+
+    .project-info h3{
+
+        margin-bottom:14px;
+
+    }
+
+    .project-details{
+
+        padding:20px;
+
+    }
+
+    .process-number{
+
+        width:52px;
+
+        height:52px;
+
+        font-size:1rem;
+
+    }
+
+    .process-step h3{
+
+        font-size:1rem;
+
+    }
+
+    .process-step p{
+
+        font-size:.88rem;
+
+    }
+
+    .code-body{
+
+        padding:22px 18px;
+
+    }
+
+    .code-body pre{
+
+        font-size:.8rem;
+
+    }
+
+    .faq-item summary{
+
+        padding:20px;
+
+        font-size:.92rem;
+
+        gap:12px;
+
+    }
+
+    .faq-item p{
+
+        padding:0 20px 22px;
+
+        font-size:.92rem;
+
+    }
+
+    .contact-panel{
+
+        padding:46px 22px;
+
+    }
+
+    .contact-info{
+
+        flex-wrap:wrap;
+
+    }
+}

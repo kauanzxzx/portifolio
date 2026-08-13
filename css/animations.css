@@ -1,0 +1,166 @@
+/*=========================================================
+=
+= 01 - STATUS DO PROJETO (PULSO)
+=
+=========================================================*/
+
+.status-dot{
+
+    animation:statusPulse 2.4s ease-in-out infinite;
+
+}
+
+@keyframes statusPulse{
+
+    0%,100%{
+
+        box-shadow:0 0 15px rgba(71,209,108,.7);
+
+        transform:scale(1);
+
+    }
+
+    50%{
+
+        box-shadow:0 0 22px rgba(71,209,108,1);
+
+        transform:scale(1.15);
+
+    }
+
+}
+
+
+/*=========================================================
+=
+= 02 - BADGE DO PROJETO (BRILHO SUTIL)
+=
+=========================================================*/
+
+.project-badge{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.project-badge::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-150%;
+
+    width:60%;
+
+    height:100%;
+
+    background:linear-gradient(
+
+        115deg,
+
+        transparent,
+
+        rgba(255,255,255,.22),
+
+        transparent
+
+    );
+
+    animation:badgeShine 5s ease-in-out infinite;
+
+}
+
+@keyframes badgeShine{
+
+    0%{
+
+        left:-150%;
+
+    }
+
+    35%,100%{
+
+        left:150%;
+
+    }
+
+}
+
+
+/*=========================================================
+=
+= 03 - GLOW DE FUNDO DO MOCKUP (RESPIRAÇÃO)
+=
+=========================================================*/
+
+.project-preview::before{
+
+    animation:glowBreathe 6s ease-in-out infinite;
+
+}
+
+@keyframes glowBreathe{
+
+    0%,100%{
+
+        opacity:.85;
+
+        transform:translate(-50%,-50%) scale(1);
+
+    }
+
+    50%{
+
+        opacity:1;
+
+        transform:translate(-50%,-50%) scale(1.06);
+
+    }
+
+}
+
+
+/*=========================================================
+=
+= 04 - FICHA TÉCNICA (ENTRADA COM LEVE FLUTUAÇÃO)
+=
+=========================================================*/
+
+.project-details{
+
+    animation:detailsFloat 5s ease-in-out infinite;
+
+}
+
+@keyframes detailsFloat{
+
+    0%,100%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-6px);
+
+    }
+
+}
+
+/* No mobile a ficha técnica é estática (empilhada) — sem flutuação */
+
+@media (max-width:992px){
+
+    .project-details{
+
+        animation:none;
+
+    }
+
+}

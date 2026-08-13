@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Toca do Vale — Criação de Coelhos de Raça</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.3.0/remixicon.min.css" rel="stylesheet">
+<style>
+
+  :root{
+    --cream:#F6F2E7;
+    --cream-2:#EEE6D0;
+    --forest:#212F26;
+    --forest-soft:#5C6C5D;
+    --sage:#7C9772;
+    --sage-2:#9DB48F;
+    --sage-deep:#42603F;
+    --clay:#B9834E;
+    --clay-deep:#8C5E33;
+    --white:#FFFFFF;
+    --line:rgba(33,47,38,0.10);
+    --line-strong:rgba(33,47,38,0.22);
+    --radius-xl:28px;
+    --radius-lg:20px;
+    --radius-md:13px;
+    --ease:cubic-bezier(.16,1,.3,1);
+    --ease-soft:cubic-bezier(.22,.61,.36,1);
+    --shadow-1:0 1px 2px rgba(33,47,38,0.05), 0 8px 20px -12px rgba(33,47,38,0.18);
+    --shadow-2:0 4px 8px rgba(33,47,38,0.06), 0 30px 60px -24px rgba(33,47,38,0.30);
+    --shadow-glow:0 30px 70px -30px rgba(66,96,63,0.45);
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+
+  body{
+    font-family:'Manrope', sans-serif;
+    background:var(--cream);
+    color:var(--forest);
+    line-height:1.65;
+    overflow-x:hidden;
+    position:relative;
+  }
+
+  body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:2;
+    pointer-events:none;
+    opacity:.035;
+    mix-blend-mode:multiply;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  h1,h2,h3,.font-display{
+    font-family:'Newsreader', serif;
+    font-weight:500;
+    letter-spacing:-0.015em;
+    color:var(--forest);
+  }
+
+  a{text-decoration:none;color:inherit;}
+  ul{list-style:none;}
+  img{max-width:100%;display:block;}
+  button{font-family:inherit;border:none;cursor:pointer;background:none;}
+
+  .container{max-width:1180px;margin:0 auto;padding:0 32px;position:relative;z-index:3;}
+
+  .eyebrow{
+    font-size:12.5px;
+    font-weight:700;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--clay-deep);
+    display:inline-flex;
+    align-items:center;
+    gap:9px;
+  }
+  .eyebrow::before{content:"";width:24px;height:1px;background:currentColor;display:inline-block;}
+
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .8s var(--ease-soft), transform .8s var(--ease-soft);}
+  .reveal.in{opacity:1;transform:translateY(0);}
+
+  .hill{width:100%;height:40px;display:block;line-height:0;position:relative;z-index:3;}
+  .hill svg{width:100%;height:100%;display:block;}
+
+  /* ================= SCROLL PROGRESS ================= */
+  .scroll-progress{
+    position:fixed;top:0;left:0;height:3px;
+    background:linear-gradient(90deg, var(--sage-deep), var(--clay));
+    z-index:200;width:0%;
+    transition:width .1s linear;
+  }
+
+  /* ================= HEADER ================= */
+  header{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    padding:14px 0;
+  }
+  .nav-inner{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:12px 22px;
+    background:rgba(246,242,231,0.72);
+    backdrop-filter:blur(16px) saturate(160%);
+    -webkit-backdrop-filter:blur(16px) saturate(160%);
+    border:1px solid rgba(255,255,255,0.5);
+    border-radius:100px;
+    box-shadow:0 1px 1px rgba(255,255,255,0.6) inset, 0 10px 30px -18px rgba(33,47,38,0.25);
+    transition:box-shadow .4s var(--ease);
+  }
+  .nav-inner.scrolled{box-shadow:0 1px 1px rgba(255,255,255,0.6) inset, 0 16px 40px -18px rgba(33,47,38,0.35);}
+  .logo{font-family:'Newsreader',serif;font-size:20px;font-weight:600;display:flex;align-items:center;gap:9px;}
+  .logo i{color:var(--sage-deep);font-size:19px;transition:transform .5s var(--ease);}
+  .logo:hover i{transform:rotate(-18deg) scale(1.1);}
+  nav ul{display:flex;gap:8px;font-size:14px;font-weight:600;}
+  nav ul a{position:relative;padding:8px 14px;border-radius:100px;transition:color .25s ease, background .25s ease;display:block;}
+  nav ul a:hover{background:rgba(33,47,38,0.06);}
+  nav ul a.active{color:var(--sage-deep);background:rgba(124,151,114,0.15);}
+
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:13px 26px;border-radius:100px;
+    font-size:14.5px;font-weight:700;
+    position:relative;
+    transition:transform .35s var(--ease), box-shadow .35s var(--ease), background .35s ease;
+  }
+  .btn-primary{
+    background:linear-gradient(155deg, var(--sage-deep), #35502F);
+    color:var(--white);
+    box-shadow:var(--shadow-1);
+  }
+  .btn-primary:hover{box-shadow:0 14px 30px -12px rgba(66,96,63,0.55);}
+  .btn-ghost{
+    border:1.5px solid var(--line-strong);
+    color:var(--forest);
+    background:rgba(255,255,255,0.4);
+  }
+  .btn-ghost:hover{border-color:var(--forest);background:var(--white);}
+  .menu-toggle{display:none;font-size:24px;color:var(--forest);}
+
+  /* ================= HERO ================= */
+  .hero{padding:186px 0 120px;position:relative;overflow:hidden;}
+
+  .blob{position:absolute;border-radius:50%;filter:blur(2px);pointer-events:none;z-index:1;transition:transform .2s var(--ease-soft);}
+  .blob-a{width:70px;height:70px;background:linear-gradient(135deg,var(--clay),var(--clay-deep));top:14%;left:6%;opacity:.85;animation:float1 7s ease-in-out infinite;}
+  .blob-b{width:44px;height:44px;background:var(--sage-2);top:66%;left:2%;opacity:.7;animation:float2 8.5s ease-in-out infinite;}
+  .blob-c{width:90px;height:90px;border-radius:26px;background:linear-gradient(135deg,var(--sage),var(--sage-deep));top:6%;right:6%;opacity:.16;animation:float1 9s ease-in-out infinite reverse;}
+
+  @keyframes float1{0%,100%{transform:translateY(0) rotate(0deg);}50%{transform:translateY(-18px) rotate(8deg);}}
+  @keyframes float2{0%,100%{transform:translateY(0);}50%{transform:translateY(16px);}}
+
+  .hero-grid{display:grid;grid-template-columns:1.05fr 0.95fr;gap:70px;align-items:center;position:relative;z-index:3;}
+
+  .hero h1{font-size:clamp(42px,5.2vw,62px);line-height:1.06;margin:20px 0 24px;font-weight:500;}
+  .hero h1 .grad{
+    background:linear-gradient(100deg, var(--sage-deep) 10%, var(--clay-deep) 90%);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+    font-style:italic;font-weight:500;
+  }
+  .word{display:inline-block;opacity:0;transform:translateY(115%);transition:opacity .7s var(--ease-soft), transform .7s var(--ease-soft);}
+  .word.in{opacity:1;transform:translateY(0);}
+
+  .hero p.lead{font-size:18px;color:var(--forest-soft);max-width:460px;margin-bottom:32px;}
+  .hero-actions{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:40px;}
+  .hero-badges{display:flex;gap:10px;flex-wrap:wrap;}
+  .hero-badges div{
+    display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:var(--forest-soft);
+    padding:9px 15px;border-radius:100px;background:rgba(255,255,255,0.55);border:1px solid var(--line);
+  }
+  .hero-badges i{color:var(--sage-deep);font-size:15px;}
+
+  .hero-visual{position:relative;display:flex;align-items:center;justify-content:center;height:460px;}
+  .hero-frame{
+    width:100%;max-width:390px;aspect-ratio:1/1;border-radius:36px;
+    background:
+      radial-gradient(circle at 28% 24%, rgba(255,255,255,0.35), transparent 45%),
+      linear-gradient(155deg, var(--sage) 0%, var(--sage-deep) 100%);
+    position:relative;box-shadow:var(--shadow-glow);
+    display:flex;align-items:center;justify-content:center;
+    transform-style:preserve-3d;
+    transition:transform .25s var(--ease-soft);
+  }
+  .hero-frame i{font-size:118px;color:rgba(255,255,255,0.94);filter:drop-shadow(0 12px 20px rgba(0,0,0,0.15));}
+  .hero-frame::after{content:"";position:absolute;inset:16px;border-radius:26px;border:1.5px dashed rgba(255,255,255,0.35);}
+
+  .glass-card{
+    position:absolute;
+    background:rgba(255,255,255,0.62);
+    backdrop-filter:blur(14px);
+    -webkit-backdrop-filter:blur(14px);
+    border:1px solid rgba(255,255,255,0.7);
+    border-radius:18px;
+    box-shadow:var(--shadow-2);
+    padding:14px 18px;
+    display:flex;align-items:center;gap:12px;
+    animation:float2 6s ease-in-out infinite;
+  }
+  .glass-card i{font-size:22px;color:var(--sage-deep);}
+  .glass-card strong{display:block;font-size:15px;font-family:'Newsreader',serif;}
+  .glass-card span{font-size:11.5px;color:var(--forest-soft);}
+  .gc-1{top:6%;right:-4%;animation-delay:.4s;}
+  .gc-2{bottom:8%;left:-8%;animation-delay:1.4s;}
+
+  /* ================= SOBRE ================= */
+  .sobre{padding:110px 0;background:var(--white);position:relative;z-index:3;}
+  .sobre-grid{display:grid;grid-template-columns:0.9fr 1.1fr;gap:76px;align-items:center;}
+  .sobre-visual{
+    position:relative;border-radius:var(--radius-xl);
+    background:linear-gradient(155deg, var(--cream-2), var(--cream));
+    aspect-ratio:4/5;display:flex;align-items:center;justify-content:center;
+    box-shadow:var(--shadow-1);
+    overflow:hidden;
+  }
+  .sobre-visual::before{
+    content:"";position:absolute;width:220px;height:220px;border-radius:50%;
+    background:radial-gradient(circle, rgba(124,151,114,0.25), transparent 70%);
+    top:-60px;left:-60px;
+  }
+  .sobre-visual i{font-size:100px;color:var(--sage-deep);opacity:.9;position:relative;}
+  .sobre-badge{
+    position:absolute;bottom:22px;left:22px;background:var(--white);
+    border-radius:16px;padding:14px 18px;box-shadow:var(--shadow-2);
+    display:flex;align-items:center;gap:12px;
+  }
+  .sobre-badge i{font-size:22px !important;color:var(--clay-deep) !important;opacity:1 !important;position:static !important;}
+  .sobre-badge div strong{display:block;font-family:'Newsreader',serif;font-size:16px;}
+  .sobre-badge div span{font-size:11.5px;color:var(--forest-soft);}
+
+  .sobre h2{font-size:clamp(30px,3.4vw,42px);margin:14px 0 20px;}
+  .sobre p{color:var(--forest-soft);font-size:16.5px;max-width:520px;margin-bottom:16px;}
+  .sobre-stats{display:flex;gap:44px;margin-top:32px;flex-wrap:wrap;}
+  .sobre-stats div strong{display:block;font-family:'Newsreader',serif;font-size:29px;color:var(--sage-deep);}
+  .sobre-stats div span{font-size:12.5px;color:var(--forest-soft);font-weight:600;}
+
+  /* ================= RACAS (bento) ================= */
+  .racas{padding:110px 0;position:relative;z-index:3;}
+  .section-head{text-align:center;max-width:580px;margin:0 auto 60px;}
+  .section-head h2{font-size:clamp(30px,3.4vw,42px);margin-top:14px;}
+  .section-head p{color:var(--forest-soft);margin-top:14px;font-size:16.5px;}
+
+  .racas-bento{display:grid;grid-template-columns:1.15fr 1fr;grid-template-rows:repeat(2,1fr);gap:22px;}
+  .raca-card{
+    position:relative;background:var(--white);border-radius:var(--radius-lg);
+    padding:34px 30px;border:1px solid var(--line);overflow:hidden;
+    transition:transform .5s var(--ease), box-shadow .5s var(--ease), border-color .5s ease;
+  }
+  .raca-card::before{
+    content:"";position:absolute;inset:0;border-radius:inherit;opacity:0;
+    background:radial-gradient(320px circle at var(--mx,50%) var(--my,50%), rgba(124,151,114,0.14), transparent 60%);
+    transition:opacity .4s ease;pointer-events:none;
+  }
+  .raca-card:hover::before{opacity:1;}
+  .raca-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-2);border-color:transparent;}
+  .raca-card.large{grid-row:span 2;display:flex;flex-direction:column;justify-content:flex-end;padding:38px 34px;min-height:340px;}
+  .raca-card.large .raca-icon{width:64px;height:64px;font-size:28px;margin-bottom:26px;}
+  .raca-card.large h3{font-size:26px;margin-bottom:12px;}
+  .raca-card.large p{font-size:15.5px;max-width:340px;}
+
+  .raca-icon{width:52px;height:52px;border-radius:15px;display:flex;align-items:center;justify-content:center;font-size:23px;color:var(--white);margin-bottom:18px;position:relative;}
+  .raca-card:nth-child(1) .raca-icon{background:linear-gradient(135deg,var(--sage),var(--sage-deep));}
+  .raca-card:nth-child(2) .raca-icon{background:linear-gradient(135deg,var(--clay),var(--clay-deep));}
+  .raca-card:nth-child(3) .raca-icon{background:linear-gradient(135deg,#8E9E7C,#4C5E40);}
+  .raca-card h3{font-size:19px;margin-bottom:8px;position:relative;}
+  .raca-card p{color:var(--forest-soft);font-size:14px;position:relative;}
+
+  /* ================= FILHOTES ================= */
+  .filhotes{padding:110px 0;background:var(--white);position:relative;z-index:3;}
+  .filhotes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;perspective:1400px;}
+  .filhote-card{
+    border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--line);
+    background:var(--white);transform-style:preserve-3d;
+    transition:transform .18s var(--ease-soft), box-shadow .4s ease;
+  }
+  .filhote-card:hover{box-shadow:var(--shadow-2);}
+  .filhote-visual{aspect-ratio:4/3;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;}
+  .filhote-visual i{font-size:62px;color:rgba(255,255,255,0.92);transition:transform .5s var(--ease);}
+  .filhote-card:hover .filhote-visual i{transform:scale(1.1) rotate(-4deg);}
+  .filhote-visual::after{content:"";position:absolute;inset:0;background:linear-gradient(to top, rgba(0,0,0,0.32), transparent 55%);}
+  .fv1{background:linear-gradient(150deg,var(--sage),var(--sage-deep));}
+  .fv2{background:linear-gradient(150deg,var(--clay),var(--clay-deep));}
+  .fv3{background:linear-gradient(150deg,#93A681,#4C5E40);}
+  .status-badge{
+    position:absolute;top:14px;left:14px;z-index:2;font-size:11px;font-weight:800;letter-spacing:0.03em;
+    padding:7px 13px;border-radius:100px;background:rgba(255,255,255,0.9);color:var(--sage-deep);
+    backdrop-filter:blur(6px);
+  }
+  .status-badge.reservado{color:var(--clay-deep);}
+  .filhote-body{padding:22px 22px 24px;position:relative;}
+  .filhote-body h3{font-size:19px;margin-bottom:6px;}
+  .filhote-body p{font-size:14px;color:var(--forest-soft);margin-bottom:18px;}
+  .filhote-foot{display:flex;align-items:center;justify-content:space-between;}
+  .filhote-preco{font-family:'Newsreader',serif;font-size:19px;font-weight:600;}
+  .filhote-cta{font-size:13.5px;font-weight:700;color:var(--sage-deep);display:inline-flex;align-items:center;gap:6px;transition:gap .3s ease;}
+  .filhote-cta:hover{gap:10px;}
+  .filhote-cta i{font-size:15px;}
+
+  /* ================= DEPOIMENTOS (marquee) ================= */
+  .depoimentos{padding:110px 0 100px;overflow:hidden;position:relative;z-index:3;}
+  .marquee-track{display:flex;gap:22px;width:max-content;animation:scroll-marquee 34s linear infinite;}
+  .marquee-track:hover{animation-play-state:paused;}
+  @keyframes scroll-marquee{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+  .depo-card{
+    flex:0 0 auto;width:360px;background:var(--white);border-radius:var(--radius-lg);
+    padding:30px 28px;border:1px solid var(--line);box-shadow:var(--shadow-1);
+  }
+  .depo-card i.quote{font-size:24px;color:var(--sage);opacity:.5;margin-bottom:14px;display:block;}
+  .depo-card p{font-size:14.5px;color:var(--forest-soft);margin-bottom:20px;}
+  .depo-autor{display:flex;align-items:center;gap:12px;}
+  .depo-avatar{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--sage),var(--sage-deep));display:flex;align-items:center;justify-content:center;color:var(--white);font-size:13.5px;font-weight:700;}
+  .depo-autor strong{font-size:14px;display:block;}
+  .depo-autor span{font-size:12px;color:var(--forest-soft);}
+  .marquee-fade{position:relative;}
+  .marquee-fade::before,.marquee-fade::after{
+    content:"";position:absolute;top:0;bottom:0;width:90px;z-index:4;pointer-events:none;
+  }
+  .marquee-fade::before{left:0;background:linear-gradient(90deg,var(--cream),transparent);}
+  .marquee-fade::after{right:0;background:linear-gradient(-90deg,var(--cream),transparent);}
+
+  /* ================= FAQ ================= */
+  .faq{padding:110px 0;background:var(--white);position:relative;z-index:3;}
+  .faq-list{max-width:760px;margin:0 auto;}
+  .faq-item{border-bottom:1px solid var(--line);border-left:2px solid transparent;transition:border-color .3s ease, background .3s ease;border-radius:0 10px 10px 0;}
+  .faq-item.open{border-left-color:var(--sage-deep);background:rgba(124,151,114,0.05);}
+  .faq-q{width:100%;display:flex;align-items:center;justify-content:space-between;padding:22px 18px;font-family:'Newsreader',serif;font-size:17px;font-weight:500;text-align:left;}
+  .faq-q i{font-size:19px;color:var(--sage-deep);transition:transform .4s var(--ease);flex-shrink:0;margin-left:14px;}
+  .faq-item.open .faq-q i{transform:rotate(135deg);}
+  .faq-a{max-height:0;overflow:hidden;transition:max-height .4s var(--ease);}
+  .faq-a p{padding:0 18px 22px;font-size:14.5px;color:var(--forest-soft);max-width:620px;}
+
+  /* ================= CONTATO ================= */
+  .contato{padding:110px 0 60px;position:relative;z-index:3;}
+  .contato-grid{display:grid;grid-template-columns:0.95fr 1.05fr;gap:26px;}
+  .contato-info-card{
+    background:
+      radial-gradient(circle at 85% 0%, rgba(255,255,255,0.14), transparent 55%),
+      linear-gradient(155deg, var(--sage-deep), #1D2B1C);
+    border-radius:var(--radius-xl);padding:46px 40px;color:var(--white);position:relative;overflow:hidden;
+    box-shadow:var(--shadow-glow);
+  }
+  .contato-info-card::before{content:"";position:absolute;width:300px;height:300px;border-radius:50%;border:1.5px dashed rgba(255,255,255,0.18);top:-130px;right:-100px;}
+  .contato-info-card h2{color:var(--white);font-size:clamp(26px,3vw,32px);margin-bottom:14px;position:relative;}
+  .contato-info-card p{color:rgba(255,255,255,0.82);font-size:15px;margin-bottom:32px;position:relative;max-width:400px;}
+  .contato-info-list{display:flex;flex-direction:column;gap:10px;position:relative;margin-bottom:32px;}
+  .contato-info-list div{display:flex;align-items:center;gap:12px;font-size:14.5px;padding:12px 14px;border-radius:12px;background:rgba(255,255,255,0.08);}
+  .contato-info-list i{font-size:17px;}
+  .contato-info-card .btn-primary{background:var(--white);color:var(--sage-deep);position:relative;background:linear-gradient(155deg,#fff,#F1EEE3);}
+
+  .contato-form{background:var(--white);border-radius:var(--radius-xl);padding:42px 40px;border:1px solid var(--line);box-shadow:var(--shadow-1);}
+  .field{position:relative;margin-bottom:22px;}
+  .field input,.field textarea{
+    width:100%;padding:20px 16px 8px;border-radius:12px;border:1.5px solid var(--line-strong);
+    font-family:inherit;font-size:14.5px;background:var(--cream);color:var(--forest);
+    transition:border-color .25s ease, box-shadow .25s ease;
+  }
+  .field textarea{resize:vertical;min-height:104px;padding-top:22px;}
+  .field label{
+    position:absolute;left:17px;top:19px;font-size:14.5px;color:var(--forest-soft);
+    pointer-events:none;transition:transform .2s var(--ease), font-size .2s var(--ease), color .2s ease;
+    transform-origin:left top;
+  }
+  .field input:focus,.field textarea:focus{outline:none;border-color:var(--sage-deep);box-shadow:0 0 0 4px rgba(124,151,114,0.18);}
+  .field input:focus + label,.field input.filled + label,
+  .field textarea:focus + label,.field textarea.filled + label{
+    transform:translateY(-9px) scale(0.78);color:var(--sage-deep);font-weight:700;
+  }
+  .form-error{font-size:12px;color:#B23A3A;margin-top:6px;display:none;padding-left:2px;}
+  .field.invalid input,.field.invalid textarea{border-color:#B23A3A;}
+  .field.invalid .form-error{display:block;}
+  .form-submit{width:100%;justify-content:center;margin-top:4px;}
+  .form-success{display:none;text-align:center;padding:24px 0;}
+  .form-success.show{display:block;}
+  .form-success i{font-size:42px;color:var(--sage-deep);margin-bottom:14px;display:block;}
+  .form-success p{font-size:15px;color:var(--forest-soft);}
+
+  /* ================= FOOTER ================= */
+  footer{padding:40px 0;text-align:center;font-size:13.5px;color:var(--forest-soft);position:relative;z-index:3;}
+  footer .logo{justify-content:center;margin-bottom:8px;font-size:18px;}
+
+  .wa-float{
+    position:fixed;bottom:26px;right:26px;width:58px;height:58px;border-radius:50%;
+    background:linear-gradient(155deg,var(--forest),#152018);color:var(--white);display:flex;align-items:center;justify-content:center;
+    font-size:26px;z-index:90;box-shadow:0 16px 32px -10px rgba(33,47,38,0.55);transition:transform .35s var(--ease);
+  }
+  .wa-float:hover{transform:scale(1.1) rotate(6deg);}
+
+  /* ================= RESPONSIVE ================= */
+  @media (max-width:960px){
+    .hero-grid{grid-template-columns:1fr;gap:52px;}
+    .hero{padding-top:150px;}
+    .hero-visual{order:-1;height:380px;}
+    .glass-card{display:none;}
+    .sobre-grid{grid-template-columns:1fr;gap:40px;}
+    .sobre-visual{aspect-ratio:16/9;}
+    .racas-bento{grid-template-columns:1fr;grid-template-rows:auto;}
+    .raca-card.large{grid-row:auto;min-height:auto;}
+    .filhotes-grid{grid-template-columns:1fr 1fr;}
+    .depo-card{width:300px;}
+    .contato-grid{grid-template-columns:1fr;}
+  }
+
+  @media (max-width:700px){
+    .nav-inner{border-radius:22px;}
+    nav{position:fixed;top:78px;left:20px;right:20px;}
+    nav ul{
+      flex-direction:column;align-items:stretch;gap:2px;
+      background:var(--white);border-radius:18px;box-shadow:var(--shadow-2);
+      padding:10px;border:1px solid var(--line);
+      transform:translateY(-12px);opacity:0;pointer-events:none;
+      transition:transform .3s ease, opacity .3s ease;
+    }
+    nav ul.open{transform:translateY(0);opacity:1;pointer-events:auto;}
+    nav ul a{padding:13px 14px;}
+    .nav-inner .btn-primary{display:none;}
+    .menu-toggle{display:block;}
+    .hero{padding:130px 0 70px;}
+    .hero-actions{flex-direction:column;align-items:stretch;}
+    .filhotes-grid{grid-template-columns:1fr;}
+    .contato-info-card,.contato-form{padding:32px 26px;}
+  }
+
+</style>
+</head>
+<body>
+
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<div class="blob blob-a" id="blobA"></div>
+<div class="blob blob-b" id="blobB"></div>
+<div class="blob blob-c"></div>
+
+<header>
+  <div class="container">
+    <div class="nav-inner" id="navInner">
+      <a href="#home" class="logo"><i class="ri-leaf-fill"></i>Toca do Vale</a>
+      <nav>
+        <ul id="navList">
+          <li><a href="#home" class="nav-link active">Início</a></li>
+          <li><a href="#sobre" class="nav-link">Sobre</a></li>
+          <li><a href="#racas" class="nav-link">Raças</a></li>
+          <li><a href="#filhotes" class="nav-link">Filhotes</a></li>
+          <li><a href="#faq" class="nav-link">Dúvidas</a></li>
+          <li><a href="#contato" class="nav-link">Contato</a></li>
+        </ul>
+      </nav>
+      <a href="#contato" class="btn btn-primary"><i class="ri-whatsapp-fill"></i> Falar conosco</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu"><i class="ri-menu-3-line"></i></button>
+    </div>
+  </div>
+</header>
+
+<section class="hero" id="home">
+  <div class="container hero-grid">
+    <div>
+      <span class="eyebrow reveal">Criação especializada</span>
+      <h1 id="heroTitle">Coelhos de raça, criados com <span class="grad">cuidado</span> de verdade</h1>
+      <p class="lead reveal">Criação familiar de coelhos dóceis, com manejo responsável, acompanhamento das ninhadas e orientação completa para receber seu novo filhote.</p>
+      <div class="hero-actions reveal">
+        <a href="#filhotes" class="btn btn-primary"><i class="ri-heart-3-fill"></i> Ver filhotes disponíveis</a>
+        <a href="#sobre" class="btn btn-ghost">Conhecer a criação</a>
+      </div>
+      <div class="hero-badges reveal">
+        <div><i class="ri-shield-check-fill"></i> Manejo responsável</div>
+        <div><i class="ri-stethoscope-fill"></i> Suporte pós-entrega</div>
+        <div><i class="ri-award-fill"></i> Genética selecionada</div>
+      </div>
+    </div>
+    <div class="hero-visual reveal">
+      <div class="hero-frame" id="heroFrame">
+        <i class="ri-bear-smile-fill"></i>
+      </div>
+      <div class="glass-card gc-1"><i class="ri-heart-pulse-fill"></i><div><strong>+180</strong><span>filhotes entregues</span></div></div>
+      <div class="glass-card gc-2"><i class="ri-star-fill"></i><div><strong>5.0</strong><span>avaliação das famílias</span></div></div>
+    </div>
+  </div>
+</section>
+
+<div class="hill" aria-hidden="true">
+  <svg viewBox="0 0 1200 40" preserveAspectRatio="none"><path d="M0,40 C150,4 300,4 450,22 C600,40 750,10 900,16 C1050,22 1150,34 1200,22 L1200,0 L0,0 Z" fill="#FFFFFF"/></svg>
+</div>
+
+<section class="sobre" id="sobre">
+  <div class="container sobre-grid">
+    <div class="sobre-visual reveal">
+      <i class="ri-plant-fill"></i>
+      <div class="sobre-badge"><i class="ri-heart-3-fill"></i><div><strong>Desde 2022</strong><span>criação familiar</span></div></div>
+    </div>
+    <div>
+      <span class="eyebrow reveal">Nossa história</span>
+      <h2 class="reveal">Uma criação pensada para o bem-estar de cada filhote</h2>
+      <p class="reveal">A Toca do Vale nasceu do amor por coelhos e da vontade de fazer diferente: uma criação de pequena escala, acompanhamento diário e atenção individual para cada ninhada.</p>
+      <p class="reveal">Cuidamos da genética, do ambiente e da saúde de cada animal, e orientamos cada novo tutor antes, durante e depois da adaptação do filhote em casa.</p>
+      <div class="sobre-stats reveal">
+        <div><strong>+180</strong><span>filhotes entregues</span></div>
+        <div><strong>3</strong><span>raças selecionadas</span></div>
+        <div><strong>100%</strong><span>acompanhamento veterinário</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="racas" id="racas">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow reveal">Nossas raças</span>
+      <h2 class="reveal">Linhagens escolhidas com cuidado</h2>
+      <p class="reveal">Cada raça tem seu próprio temperamento, porte e personalidade.</p>
+    </div>
+    <div class="racas-bento">
+      <div class="raca-card large tilt reveal">
+        <div class="raca-icon"><i class="ri-emotion-fill"></i></div>
+        <h3>Mini Lop</h3>
+        <p>Orelhas caídas, temperamento dócil e muito afetuoso. Ideal para quem busca um pet de colo, adora carinho e interage bem com toda a família.</p>
+      </div>
+      <div class="raca-card tilt reveal">
+        <div class="raca-icon"><i class="ri-sparkling-fill"></i></div>
+        <h3>Lion Head</h3>
+        <p>Juba de pelos longos, sociável e brincalhão.</p>
+      </div>
+      <div class="raca-card tilt reveal">
+        <div class="raca-icon"><i class="ri-flashlight-fill"></i></div>
+        <h3>Netherland Dwarf</h3>
+        <p>A menor raça do mundo, esperta e independente.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="hill" aria-hidden="true">
+  <svg viewBox="0 0 1200 34" preserveAspectRatio="none"><path d="M0,20 C150,32 300,10 450,14 C600,18 750,32 900,20 C1050,8 1150,20 1200,14 L1200,0 L0,0 Z" fill="#FFFFFF"/></svg>
+</div>
+
+<section class="filhotes" id="filhotes">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow reveal">Disponibilidade</span>
+      <h2 class="reveal">Filhotes disponíveis</h2>
+      <p class="reveal">Selecionados e acompanhados desde a gestação, prontos para uma nova família.</p>
+    </div>
+    <div class="filhotes-grid">
+      <div class="filhote-card tilt reveal">
+        <div class="filhote-visual fv1"><span class="status-badge">Disponível</span><i class="ri-bear-smile-fill"></i></div>
+        <div class="filhote-body">
+          <h3>Filhote Mini Lop</h3>
+          <p>Fêmea, orelhas caídas, cor mesclada.</p>
+          <div class="filhote-foot">
+            <span class="filhote-preco">R$ 280</span>
+            <a href="#contato" class="filhote-cta">Tenho interesse <i class="ri-arrow-right-line"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="filhote-card tilt reveal">
+        <div class="filhote-visual fv2"><span class="status-badge">Disponível</span><i class="ri-bear-smile-fill"></i></div>
+        <div class="filhote-body">
+          <h3>Filhote Lion Head</h3>
+          <p>Macho, pelagem clara, muito sociável.</p>
+          <div class="filhote-foot">
+            <span class="filhote-preco">R$ 280</span>
+            <a href="#contato" class="filhote-cta">Tenho interesse <i class="ri-arrow-right-line"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="filhote-card tilt reveal">
+        <div class="filhote-visual fv3"><span class="status-badge reservado">Reservado</span><i class="ri-bear-smile-fill"></i></div>
+        <div class="filhote-body">
+          <h3>Filhote Netherland</h3>
+          <p>Fêmea, padrão show, dourado.</p>
+          <div class="filhote-foot">
+            <span class="filhote-preco">Consultar</span>
+            <a href="#contato" class="filhote-cta">Lista de espera <i class="ri-arrow-right-line"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="depoimentos" id="depoimentos">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow reveal">Famílias Toca do Vale</span>
+      <h2 class="reveal">Quem já levou um filhote para casa</h2>
+    </div>
+  </div>
+  <div class="marquee-fade">
+    <div class="marquee-track" id="marqueeTrack">
+      <div class="depo-card"><i class="ri-double-quotes-l quote"></i><p>O acompanhamento foi impecável, desde a escolha até a adaptação do filhote em casa. Recomendo muito.</p><div class="depo-autor"><div class="depo-avatar">C</div><div><strong>Camila Ferraz</strong><span>Tutora da Nina</span></div></div></div>
+      <div class="depo-card"><i class="ri-double-quotes-l quote"></i><p>Dá para sentir o cuidado com os animais. O suporte sobre alimentação fez toda a diferença.</p><div class="depo-autor"><div class="depo-avatar">L</div><div><strong>Lucas Prado</strong><span>Tutor do Bento</span></div></div></div>
+      <div class="depo-card"><i class="ri-double-quotes-l quote"></i><p>Processo transparente do início ao fim. O filhote chegou saudável e muito bem cuidado.</p><div class="depo-autor"><div class="depo-avatar">J</div><div><strong>Juliana Reis</strong><span>Tutora da Mel</span></div></div></div>
+      <div class="depo-card"><i class="ri-double-quotes-l quote"></i><p>O acompanhamento foi impecável, desde a escolha até a adaptação do filhote em casa. Recomendo muito.</p><div class="depo-autor"><div class="depo-avatar">C</div><div><strong>Camila Ferraz</strong><span>Tutora da Nina</span></div></div></div>
+      <div class="depo-card"><i class="ri-double-quotes-l quote"></i><p>Dá para sentir o cuidado com os animais. O suporte sobre alimentação fez toda a diferença.</p><div class="depo-autor"><div class="depo-avatar">L</div><div><strong>Lucas Prado</strong><span>Tutor do Bento</span></div></div></div>
+      <div class="depo-card"><i class="ri-double-quotes-l quote"></i><p>Processo transparente do início ao fim. O filhote chegou saudável e muito bem cuidado.</p><div class="depo-autor"><div class="depo-avatar">J</div><div><strong>Juliana Reis</strong><span>Tutora da Mel</span></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="faq" id="faq">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow reveal">Dúvidas frequentes</span>
+      <h2 class="reveal">Perguntas que recebemos com frequência</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item open reveal">
+        <button class="faq-q"><span>Como funciona a reserva de um filhote?</span><i class="ri-add-line"></i></button>
+        <div class="faq-a"><p>Após o contato pelo WhatsApp, explicamos a disponibilidade, enviamos fotos atualizadas e formalizamos a reserva mediante um sinal.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q"><span>Os filhotes vêm com acompanhamento veterinário?</span><i class="ri-add-line"></i></button>
+        <div class="faq-a"><p>Sim, todos os filhotes passam por avaliação antes da entrega e recebem orientação de cuidados pós-entrega.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q"><span>Vocês entregam para outras cidades?</span><i class="ri-add-line"></i></button>
+        <div class="faq-a"><p>Sim, combinamos entrega ou transporte especializado conforme a distância. Fale com a gente para verificar disponibilidade.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q"><span>Qual a idade ideal para levar o filhote?</span><i class="ri-add-line"></i></button>
+        <div class="faq-a"><p>Os filhotes só são liberados após completarem o período mínimo de desmame, garantindo saúde e desenvolvimento adequado.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contato" id="contato">
+  <div class="container contato-grid">
+    <div class="contato-info-card reveal">
+      <h2>Vamos conversar sobre o seu novo filhote?</h2>
+      <p>Fale com a gente pelo WhatsApp para saber disponibilidade, raças e valores, ou preencha o formulário ao lado.</p>
+      <div class="contato-info-list">
+        <div><i class="ri-whatsapp-fill"></i> (00) 00000-0000</div>
+        <div><i class="ri-instagram-fill"></i> @tocadovale</div>
+        <div><i class="ri-map-pin-fill"></i> Vale do Itajaí - SC</div>
+      </div>
+      <a href="https://wa.me/5500000000000?text=Ol%C3%A1!%20Conheci%20o%20site%20da%20Toca%20do%20Vale%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20filhotes." target="_blank" class="btn btn-primary"><i class="ri-whatsapp-fill"></i> Chamar no WhatsApp</a>
+    </div>
+
+    <div class="contato-form reveal">
+      <form id="contatoForm" novalidate>
+        <div class="form-success" id="formSuccess">
+          <i class="ri-checkbox-circle-fill"></i>
+          <p>Mensagem pronta para envio! Em breve nossa equipe responde pelo WhatsApp.</p>
+        </div>
+        <div id="formFields">
+          <div class="field" id="rowNome">
+            <input type="text" id="nome" placeholder=" ">
+            <label for="nome">Nome</label>
+            <span class="form-error">Digite seu nome.</span>
+          </div>
+          <div class="field" id="rowContato">
+            <input type="text" id="contatoInput" placeholder=" ">
+            <label for="contatoInput">E-mail ou telefone</label>
+            <span class="form-error">Informe um e-mail ou telefone.</span>
+          </div>
+          <div class="field" id="rowMensagem">
+            <textarea id="mensagem" placeholder=" "></textarea>
+            <label for="mensagem">Mensagem</label>
+            <span class="form-error">Escreva uma mensagem.</span>
+          </div>
+          <button type="submit" class="btn btn-primary form-submit"><i class="ri-send-plane-fill"></i> Enviar mensagem</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="logo"><i class="ri-leaf-fill"></i>Toca do Vale</div>
+    <p>© 2026 Desenvolvido por Kauan Claudino — Toca do Vale, criação responsável de coelhos.</p>
+  </div>
+</footer>
+
+<a href="https://wa.me/5500000000000?text=Ol%C3%A1!%20Conheci%20o%20site%20da%20Toca%20do%20Vale%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20filhotes." target="_blank" class="wa-float" aria-label="WhatsApp"><i class="ri-whatsapp-fill"></i></a>
+
+<script>
+
+  const scrollProgress = document.getElementById('scrollProgress');
+  const navInner = document.getElementById('navInner');
+  window.addEventListener('scroll', () => {
+    const h = document.documentElement;
+    const pct = (h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
+    scrollProgress.style.width = pct + '%';
+    navInner.classList.toggle('scrolled', h.scrollTop > 40);
+  });
+
+  const toggle = document.getElementById('menuToggle');
+  const navList = document.getElementById('navList');
+  toggle.addEventListener('click', () => navList.classList.toggle('open'));
+  navList.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navList.classList.remove('open')));
+
+  const revealEls = document.querySelectorAll('.reveal');
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  revealEls.forEach((el, i) => {
+    el.style.transitionDelay = (i % 4) * 0.08 + 's';
+    revealObserver.observe(el);
+  });
+
+  const heroTitle = document.getElementById('heroTitle');
+  const originalHTML = heroTitle.innerHTML;
+  const wrapWords = (node) => {
+    node.childNodes.forEach(child => {
+      if (child.nodeType === 3) {
+        const frag = document.createDocumentFragment();
+        child.textContent.split(/(\s+)/).forEach(part => {
+          if (part.trim() === '') { frag.appendChild(document.createTextNode(part)); return; }
+          const span = document.createElement('span');
+          span.className = 'word';
+          span.textContent = part;
+          frag.appendChild(span);
+        });
+        child.replaceWith(frag);
+      } else if (child.nodeType === 1) {
+        wrapWords(child);
+      }
+    });
+  };
+  wrapWords(heroTitle);
+  const words = heroTitle.querySelectorAll('.word');
+  words.forEach((w, i) => { w.style.transitionDelay = (i * 0.045) + 's'; });
+  requestAnimationFrame(() => requestAnimationFrame(() => {
+    words.forEach(w => w.classList.add('in'));
+  }));
+
+  const navLinks = document.querySelectorAll('.nav-link');
+  const sections = Array.from(navLinks).map(l => document.querySelector(l.getAttribute('href')));
+  const navObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = '#' + entry.target.id;
+        navLinks.forEach(l => l.classList.toggle('active', l.getAttribute('href') === id));
+      }
+    });
+  }, { threshold: 0.4, rootMargin: '-80px 0px -60% 0px' });
+  sections.forEach(s => s && navObserver.observe(s));
+
+  document.querySelectorAll('.faq-q').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const answer = item.querySelector('.faq-a');
+      const wasOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(open => {
+        open.classList.remove('open');
+        open.querySelector('.faq-a').style.maxHeight = null;
+      });
+      if (!wasOpen) {
+        item.classList.add('open');
+        answer.style.maxHeight = answer.scrollHeight + 'px';
+      }
+    });
+  });
+  document.querySelectorAll('.faq-item.open .faq-a').forEach(a => { a.style.maxHeight = a.scrollHeight + 'px'; });
+
+  const form = document.getElementById('contatoForm');
+  const fields = document.getElementById('formFields');
+  const success = document.getElementById('formSuccess');
+  const nomeInput = document.getElementById('nome');
+  const contatoInputEl = document.getElementById('contatoInput');
+  const mensagemInput = document.getElementById('mensagem');
+  [nomeInput, contatoInputEl, mensagemInput].forEach(input => {
+    input.addEventListener('input', () => {
+      input.classList.toggle('filled', input.value.trim() !== '');
+      input.closest('.field').classList.remove('invalid');
+    });
+  });
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    document.getElementById('rowNome').classList.toggle('invalid', nomeInput.value.trim() === '');
+    document.getElementById('rowContato').classList.toggle('invalid', contatoInputEl.value.trim() === '');
+    document.getElementById('rowMensagem').classList.toggle('invalid', mensagemInput.value.trim() === '');
+    if (nomeInput.value.trim() && contatoInputEl.value.trim() && mensagemInput.value.trim()) {
+      fields.style.display = 'none';
+      success.classList.add('show');
+    }
+  });
+
+  document.addEventListener('mousemove', (e) => {
+    const cx = window.innerWidth / 2, cy = window.innerHeight / 2;
+    const dx = (e.clientX - cx) / cx, dy = (e.clientY - cy) / cy;
+    const blobA = document.getElementById('blobA'), blobB = document.getElementById('blobB');
+    if (blobA) blobA.style.transform = `translate(${dx * 16}px, ${dy * 16}px)`;
+    if (blobB) blobB.style.transform = `translate(${dx * -12}px, ${dy * -12}px)`;
+    const frame = document.getElementById('heroFrame');
+    if (frame) {
+      const rect = frame.getBoundingClientRect();
+      if (e.clientX > rect.left - 200 && e.clientX < rect.right + 200 && e.clientY > rect.top - 200 && e.clientY < rect.bottom + 200) {
+        const fx = (e.clientX - (rect.left + rect.width / 2)) / rect.width;
+        const fy = (e.clientY - (rect.top + rect.height / 2)) / rect.height;
+        frame.style.transform = `rotateY(${fx * 8}deg) rotateX(${fy * -8}deg)`;
+      }
+    }
+  });
+
+  document.querySelectorAll('.tilt').forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const px = (e.clientX - rect.left) / rect.width;
+      const py = (e.clientY - rect.top) / rect.height;
+      card.style.setProperty('--mx', (px * 100) + '%');
+      card.style.setProperty('--my', (py * 100) + '%');
+      if (card.classList.contains('filhote-card')) {
+        const rx = (py - 0.5) * -10, ry = (px - 0.5) * 10;
+        card.style.transform = `perspective(900px) rotateX(${rx}deg) rotateY(${ry}deg) translateY(-4px)`;
+      }
+    });
+    card.addEventListener('mouseleave', () => {
+      if (card.classList.contains('filhote-card')) card.style.transform = 'perspective(900px) rotateX(0) rotateY(0)';
+    });
+  });
+
+</script>
+
+</body>
+</html>
