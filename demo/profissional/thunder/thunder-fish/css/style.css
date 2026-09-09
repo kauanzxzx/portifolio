@@ -5257,3 +5257,78 @@ body.tema-escuro .logo-subtitle{
     }
 
 }
+
+/* =========================
+   BADGE MAIS VENDIDO
+========================= */
+
+.barco-card-mais-vendido{
+    position:relative;
+}
+
+
+.badge-mais-vendido{
+    position:absolute;
+
+    top:22px;
+    left:22px;
+
+    z-index:20;
+
+    display:flex;
+    align-items:center;
+    gap:8px;
+
+    padding:9px 16px;
+
+    border-radius:999px;
+
+    font-size:12px;
+    font-weight:700;
+
+    letter-spacing:.4px;
+
+    color:#fff;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--primary-dark),
+            var(--primary)
+        );
+
+    border:1px solid rgba(255,255,255,.25);
+
+    box-shadow:
+        0 10px 25px rgba(51,51,149,.25),
+        inset 0 1px 0 rgba(255,255,255,.25);
+
+    backdrop-filter:blur(10px);
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+}
+
+
+.badge-mais-vendido i{
+    font-size:13px;
+
+    color:#ffd84d;
+
+    filter:
+        drop-shadow(
+            0 2px 5px rgba(0,0,0,.25)
+        );
+}
+
+
+.badge-mais-vendido:hover{
+    transform:
+        translateY(-2px)
+        scale(1.03);
+
+    box-shadow:
+        0 15px 30px rgba(51,51,149,.32),
+        inset 0 1px 0 rgba(255,255,255,.3);
+}
