@@ -5332,3 +5332,553 @@ body.tema-escuro .logo-subtitle{
         0 15px 30px rgba(51,51,149,.32),
         inset 0 1px 0 rgba(255,255,255,.3);
 }
+
+/* =====================================================
+   TÍTULO + NÍVEL DA EMBARCAÇÃO
+===================================================== */
+
+.barco-titulo-linha{
+    display:grid;
+    grid-template-columns:minmax(0, 1fr) auto;
+
+    align-items:center;
+
+    gap:24px;
+
+    width:100%;
+
+    margin-bottom:18px;
+}
+
+
+.barco-titulo-linha h2{
+    margin:0;
+}
+
+
+/* =====================================================
+   CONTAINER DOS BARCOS
+===================================================== */
+
+.nivel-barco{
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    gap:8px;
+
+    min-width:310px;
+
+    padding:12px 18px;
+
+    border-radius:18px;
+
+    position:relative;
+
+    overflow:hidden;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(51,51,149,.09),
+            rgba(112,164,189,.035)
+        );
+
+    border:
+        1px solid
+        rgba(51,51,149,.15);
+
+    box-shadow:
+        0 10px 28px rgba(51,51,149,.08),
+        inset 0 1px 0 rgba(255,255,255,.75);
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease,
+        border-color .35s ease;
+}
+
+
+/* brilho decorativo */
+
+.nivel-barco::before{
+    content:"";
+
+    position:absolute;
+
+    width:180px;
+    height:120px;
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(112,164,189,.18),
+            transparent 70%
+        );
+
+    top:-70px;
+    right:-55px;
+
+    pointer-events:none;
+}
+
+
+/* linha decorativa */
+
+.nivel-barco::after{
+    content:"";
+
+    position:absolute;
+
+    left:22px;
+    right:22px;
+
+    bottom:8px;
+
+    height:1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(51,51,149,.18),
+            transparent
+        );
+
+    pointer-events:none;
+}
+
+
+/* =====================================================
+   BARCO INDIVIDUAL
+===================================================== */
+
+.nivel-boat{
+    width:64px;
+    height:45px;
+
+    position:relative;
+
+    z-index:2;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    color:
+        rgba(51,51,149,.22);
+
+    opacity:.6;
+
+    transform-origin:center bottom;
+
+    transition:
+        transform .35s ease,
+        filter .35s ease,
+        opacity .35s ease,
+        color .35s ease;
+}
+
+
+.boat-icon{
+    width:100%;
+    height:100%;
+
+    display:block;
+
+    overflow:visible;
+}
+
+
+/* =====================================================
+   BARCO INATIVO — SOMENTE CONTORNO
+===================================================== */
+
+.nivel-boat:not(.ativo) .boat-cabin,
+.nivel-boat:not(.ativo) .boat-roof,
+.nivel-boat:not(.ativo) .boat-console,
+.nivel-boat:not(.ativo) .boat-hull{
+
+    fill:none;
+
+    stroke:currentColor;
+
+    stroke-width:3;
+
+    stroke-linejoin:round;
+
+    stroke-linecap:round;
+}
+
+
+.nivel-boat:not(.ativo) .boat-window{
+
+    fill:none;
+
+    stroke:currentColor;
+
+    stroke-width:2.5;
+
+    stroke-linejoin:round;
+}
+
+
+.nivel-boat:not(.ativo) .boat-motor{
+
+    fill:none;
+
+    stroke:currentColor;
+
+    stroke-width:3;
+
+    stroke-linecap:round;
+
+    stroke-linejoin:round;
+}
+
+
+.nivel-boat:not(.ativo) .boat-detail,
+.nivel-boat:not(.ativo) .boat-wave{
+
+    fill:none;
+
+    stroke:currentColor;
+
+    stroke-width:3;
+
+    stroke-linecap:round;
+}
+
+
+.nivel-boat:not(.ativo) .second-wave{
+    opacity:.6;
+}
+
+
+/* =====================================================
+   BARCO ATIVO
+===================================================== */
+
+.nivel-boat.ativo{
+
+    color:var(--primary);
+
+    opacity:1;
+
+    filter:
+        drop-shadow(
+            0 6px 8px
+            rgba(51,51,149,.18)
+        );
+
+    animation:
+        barcoFlutuar
+        3.8s
+        ease-in-out
+        infinite;
+}
+
+
+/* CASCO */
+
+.nivel-boat.ativo .boat-hull{
+
+    fill:currentColor;
+
+    stroke:currentColor;
+
+    stroke-width:2;
+
+    stroke-linejoin:round;
+}
+
+
+/* CABINE */
+
+.nivel-boat.ativo .boat-cabin{
+
+    fill:currentColor;
+
+    stroke:currentColor;
+
+    stroke-width:2;
+
+    stroke-linejoin:round;
+}
+
+
+/* TETO */
+
+.nivel-boat.ativo .boat-roof{
+
+    fill:currentColor;
+
+    stroke:currentColor;
+
+    stroke-width:1.5;
+}
+
+
+/* CONSOLE */
+
+.nivel-boat.ativo .boat-console{
+
+    fill:currentColor;
+
+    stroke:currentColor;
+
+    stroke-width:2;
+
+    stroke-linejoin:round;
+}
+
+
+/* MOTOR */
+
+.nivel-boat.ativo .boat-motor{
+
+    fill:none;
+
+    stroke:currentColor;
+
+    stroke-width:4;
+
+    stroke-linecap:round;
+
+    stroke-linejoin:round;
+}
+
+
+/* JANELAS */
+
+.nivel-boat.ativo .boat-window{
+
+    fill:
+        rgba(255,255,255,.65);
+
+    stroke:
+        rgba(255,255,255,.35);
+
+    stroke-width:1.5;
+
+    stroke-linejoin:round;
+}
+
+
+/* DETALHE DO CASCO */
+
+.nivel-boat.ativo .boat-detail{
+
+    fill:none;
+
+    stroke:
+        rgba(255,255,255,.42);
+
+    stroke-width:2.5;
+
+    stroke-linecap:round;
+}
+
+
+/* ONDAS */
+
+.nivel-boat.ativo .boat-wave{
+
+    fill:none;
+
+    stroke:currentColor;
+
+    stroke-width:4;
+
+    stroke-linecap:round;
+
+    opacity:.9;
+}
+
+
+.nivel-boat.ativo .second-wave{
+    opacity:.55;
+}
+
+
+/* =====================================================
+   EFEITO DE FLUTUAÇÃO
+===================================================== */
+
+.nivel-boat:nth-child(1){
+    animation-delay:0s;
+}
+
+
+.nivel-boat:nth-child(2){
+    animation-delay:.35s;
+}
+
+
+.nivel-boat:nth-child(3){
+    animation-delay:.7s;
+}
+
+
+.nivel-boat:nth-child(4){
+    animation-delay:1.05s;
+}
+
+
+@keyframes barcoFlutuar{
+
+    0%,
+    100%{
+        transform:
+            translateY(0)
+            rotate(0deg);
+    }
+
+    50%{
+        transform:
+            translateY(-5px)
+            rotate(-1deg);
+    }
+
+}
+
+
+/* =====================================================
+   HOVER
+===================================================== */
+
+.nivel-barco:hover{
+
+    transform:
+        translateY(-2px);
+
+    border-color:
+        rgba(51,51,149,.28);
+
+    box-shadow:
+        0 16px 36px rgba(51,51,149,.13),
+        inset 0 1px 0 rgba(255,255,255,.85);
+}
+
+
+.nivel-barco:hover .nivel-boat.ativo{
+
+    filter:
+        drop-shadow(
+            0 10px 13px
+            rgba(51,51,149,.28)
+        );
+}
+
+
+/* =====================================================
+   TEMA ESCURO
+===================================================== */
+
+body.tema-escuro .nivel-barco{
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(244,196,3,.10),
+            rgba(255,255,255,.025)
+        );
+
+    border-color:
+        rgba(255,255,255,.10);
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.28),
+        inset 0 1px 0 rgba(255,255,255,.04);
+}
+
+
+body.tema-escuro .nivel-barco::after{
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(244,196,3,.22),
+            transparent
+        );
+}
+
+
+body.tema-escuro .nivel-boat{
+
+    color:
+        rgba(255,255,255,.24);
+}
+
+
+body.tema-escuro .nivel-boat.ativo{
+
+    color:var(--primary);
+
+    filter:
+        drop-shadow(
+            0 7px 10px
+            rgba(244,196,3,.20)
+        );
+}
+
+
+@media(max-width:700px){
+
+    .barco-titulo-linha{
+        display:flex;
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:10px;
+
+        margin-bottom:12px;
+    }
+
+
+    .barco-titulo-linha h2{
+        width:100%;
+
+        margin:0;
+    }
+
+
+    .nivel-barco{
+
+        align-self:center;
+
+        justify-content:center;
+
+        min-width:210px;
+
+        gap:8px;
+
+        padding:11px 16px;
+
+        border-radius:16px;
+    }
+
+
+    .nivel-boat{
+
+        width:43px;
+        height:33px;
+    }
+
+
+    .nivel-barco::after{
+
+        left:14px;
+        right:14px;
+
+        bottom:6px;
+    }
+
+}
