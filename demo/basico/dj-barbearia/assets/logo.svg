@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-labelledby="logoTitle">
+  <title id="logoTitle">Emblema DJ Barbearia</title>
+  <defs>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#efd88f"/>
+      <stop offset="45%" stop-color="#b8892f"/>
+      <stop offset="100%" stop-color="#8a641f"/>
+    </linearGradient>
+  </defs>
+
+  <!-- wings -->
+  <g fill="url(#goldGrad)">
+    <path d="M100 74 C 74 64, 44 66, 14 50 C 24 66, 20 82, 6 90 C 26 90, 40 82, 52 86 C 40 92, 30 100, 16 104 C 34 106, 50 100, 60 92 C 52 100, 46 108, 34 114 C 52 114, 66 106, 76 96 C 84 90, 92 82, 100 78 Z" opacity="0.92"/>
+    <path d="M100 74 C 126 64, 156 66, 186 50 C 176 66, 180 82, 194 90 C 174 90, 160 82, 148 86 C 160 92, 170 100, 184 104 C 166 106, 150 100, 140 92 C 148 100, 154 108, 166 114 C 148 114, 134 106, 124 96 C 116 90, 108 82, 100 78 Z" opacity="0.92"/>
+  </g>
+
+  <!-- shield -->
+  <path d="M100 40 L146 56 C146 96 132 138 100 158 C68 138 54 96 54 56 Z"
+        fill="#141210" stroke="url(#goldGrad)" stroke-width="3"/>
+  <path d="M100 48 L138 61 C138 96 126 132 100 149 C74 132 62 96 62 61 Z"
+        fill="none" stroke="url(#goldGrad)" stroke-width="1" opacity="0.6"/>
+
+  <!-- barber pole -->
+  <g transform="translate(100,100)">
+    <rect x="-8" y="-46" width="16" height="92" rx="8" fill="#efe6d3" stroke="#2a2621" stroke-width="1.5"/>
+    <clipPath id="poleClip"><rect x="-8" y="-46" width="16" height="92" rx="8"/></clipPath>
+    <g clip-path="url(#poleClip)">
+      <g>
+        <rect x="-8" y="-46" width="32" height="10" fill="#8a1c22" transform="skewY(35)"/>
+        <rect x="-8" y="-30" width="32" height="10" fill="#1b2a4a" transform="skewY(35)"/>
+        <rect x="-8" y="-14" width="32" height="10" fill="#efe6d3" transform="skewY(35)"/>
+        <rect x="-8" y="2" width="32" height="10" fill="#8a1c22" transform="skewY(35)"/>
+        <rect x="-8" y="18" width="32" height="10" fill="#1b2a4a" transform="skewY(35)"/>
+        <rect x="-8" y="34" width="32" height="10" fill="#efe6d3" transform="skewY(35)"/>
+      </g>
+    </g>
+    <rect x="-11" y="-52" width="22" height="8" rx="2" fill="url(#goldGrad)"/>
+    <rect x="-11" y="44" width="22" height="8" rx="2" fill="url(#goldGrad)"/>
+  </g>
+
+  <!-- banner -->
+  <g>
+    <path d="M40 150 L100 160 L160 150 L152 168 L100 178 L48 168 Z" fill="#7a1a1f" stroke="url(#goldGrad)" stroke-width="1.5"/>
+    <text x="100" y="167" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="#efe6d3" letter-spacing="1">DESDE 2015</text>
+  </g>
+</svg>

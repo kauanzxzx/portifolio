@@ -728,20 +728,14 @@
     }
 
     /*=========================================
-    = ENDEREÇO DO NAVEGADOR (TRUNCADO)
+    = ENDEREÇO DO NAVEGADOR (FONTE MENOR)
     =========================================*/
 
     .browser-address{
 
-        max-width:140px;
-
-        overflow:hidden;
-
-        white-space:nowrap;
-
-        text-overflow:ellipsis;
-
         font-size:.7rem;
+
+        padding:6px 12px;
 
     }
 

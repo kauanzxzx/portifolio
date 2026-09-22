@@ -1,0 +1,24 @@
+IMAGENS DO SITE — COELHÁRIO MM
+==============================
+Coloque nesta pasta os arquivos abaixo, com exatamente estes nomes.
+Enquanto um arquivo não existir, o site mostra um espaço de foto indicando qual arquivo falta.
+
+Identidade
+  logo.png          logo oficial (de preferência PNG com fundo transparente, quadrado)
+
+Destaques
+  hero.jpg          foto grande do coelho na primeira dobra (vertical funciona melhor)
+  sobre.jpg         foto da seção "Sobre"
+  netherland.jpg    foto da raça Netherland Dwarf (horizontal)
+  mini-lop.jpg      foto da raça Mini Lop (horizontal)
+
+Coelhinhos disponíveis (cartões)
+  coelho-01.jpg ... coelho-04.jpg   (vertical, proporção 4:5)
+
+Galeria "Momentos do nosso criatório"
+  galeria-01.jpg ... galeria-06.jpg
+
+Dicas
+  - Fotos até ~1600 px no lado maior, em JPG, deixam o site rápido.
+  - Para mudar o enquadramento de uma foto, ajuste o "--pos" no style="" da <img> no index.html
+    (ex.: style="--pos: 50% 25%" mostra mais o alto da foto).

@@ -23,11 +23,17 @@ html{
 
     scroll-behavior:smooth;
 
+    overflow-x:hidden;
+
+    max-width:100%;
+
 }
 
 body{
 
     overflow-x:hidden;
+
+    max-width:100%;
 
 }
 
@@ -1341,9 +1347,23 @@ header.scrolled{
 
     gap:8px;
 
+    flex-shrink:0;
+
 }
 
 .browser-address{
+
+    flex:1;
+
+    min-width:0;
+
+    overflow:hidden;
+
+    white-space:nowrap;
+
+    text-overflow:ellipsis;
+
+    text-align:center;
 
     font-size:.78rem;
 
@@ -2354,6 +2374,8 @@ header.scrolled{
 
     gap:10px;
 
+    flex-shrink:0;
+
 }
 
 .browser-left span{
@@ -2392,11 +2414,19 @@ header.scrolled{
 
 .browser-address{
 
-    position:absolute;
+    flex:1;
 
-    left:50%;
+    min-width:0;
 
-    transform:translateX(-50%);
+    margin-left:14px;
+
+    overflow:hidden;
+
+    white-space:nowrap;
+
+    text-overflow:ellipsis;
+
+    text-align:center;
 
     padding:8px 18px;
 
@@ -2423,6 +2453,8 @@ header.scrolled{
 
 .project-image{
 
+    position:relative;
+
     overflow:hidden;
 
     border-left:1px solid rgba(255,255,255,.08);
@@ -2441,6 +2473,87 @@ header.scrolled{
 
         0 0 40px rgba(112,164,189,.08);
 
+}
+
+
+/*=========================================================
+=
+= LINK CLICÁVEL DO MOCKUP (ABRE O SITE REAL)
+=
+=========================================================*/
+
+.project-mockup-link{
+
+    display:block;
+
+    color:inherit;
+
+    text-decoration:none;
+
+    cursor:pointer;
+
+}
+
+.project-mockup-link .project-image img{
+
+    transition:transform .6s cubic-bezier(.2,.8,.2,1), filter .6s;
+
+}
+
+.project-mockup-link:hover .project-image img{
+
+    transform:scale(1.04);
+
+    filter:brightness(.75);
+
+}
+
+.mockup-visit{
+
+    position:absolute;
+
+    inset:0;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:10px;
+
+    background:rgba(10,15,20,.35);
+
+    color:var(--white);
+
+    font-weight:600;
+
+    font-size:1rem;
+
+    letter-spacing:.2px;
+
+    opacity:0;
+
+    transform:translateY(10px);
+
+    transition:opacity .4s, transform .4s;
+
+    pointer-events:none;
+}
+
+.mockup-visit i{
+
+    width:20px;
+
+    height:20px;
+
+}
+
+.project-mockup-link:hover .mockup-visit{
+
+    opacity:1;
+
+    transform:translateY(0);
 }
 
 
