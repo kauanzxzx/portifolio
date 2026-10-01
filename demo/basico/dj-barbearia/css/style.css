@@ -944,3 +944,43 @@ textarea:focus-visible{
   .historia, .servicos, .diferenciais, .galeria, .depoimentos, .localizacao{ padding: 4.5rem 0; }
   .cta-final{ padding: 4.5rem 0; }
 }
+
+.dev-credit {
+  color: inherit;
+  text-decoration: none;
+  font-weight: inherit;
+  cursor: pointer;
+}
+.dev-credit:hover,
+.dev-credit:focus-visible {
+  color: inherit;
+  opacity: .8;
+}
+
+@media (max-width: 900px){
+  .badge-10{
+    position: relative;   /* tira do posicionamento absoluto do desktop */
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+    transform: none;
+    margin: 40px auto 0;  /* centraliza horizontalmente */
+    align-self: center;   /* caso o pai seja flex/grid */
+    justify-self: center;
+    text-align: center;
+  }
+}
+
+/* Hero — ponto de foco da imagem no mobile */
+@media (max-width: 768px) {
+  .hero-media img {
+    object-position: 78% center; /* move o enquadramento para a direita, onde está o barbeiro */
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-media img {
+    object-position: 85% center;
+  }
+}
