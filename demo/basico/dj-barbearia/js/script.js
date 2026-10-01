@@ -116,6 +116,7 @@
     var closeBtn = lightbox.querySelector('.lightbox-close');
     var prevBtn = lightbox.querySelector('.lightbox-prev');
     var nextBtn = lightbox.querySelector('.lightbox-next');
+    var countEl = lightbox.querySelector('.lightbox-count');
     var currentIndex = 0;
     var lastFocused = null;
 
@@ -125,7 +126,8 @@
       var alt = triggers[currentIndex].querySelector('img').alt || '';
       imgEl.src = fullSrc;
       imgEl.alt = alt;
-      lastFocused = document.activeElement;
+      if (countEl) countEl.textContent = String(currentIndex + 1).padStart(2, '0') + ' / ' + String(triggers.length).padStart(2, '0');
+      if (!lightbox.classList.contains('is-open')) lastFocused = document.activeElement;
       lightbox.classList.add('is-open');
       document.body.style.overflow = 'hidden';
       closeBtn.focus();
@@ -145,7 +147,7 @@
     nextBtn.addEventListener('click', next);
     prevBtn.addEventListener('click', prev);
     lightbox.addEventListener('click', function (e) {
-      if (e.target === lightbox) close();
+      if (e.target === lightbox || e.target.classList.contains('lightbox-inner')) close();
     });
     document.addEventListener('keydown', function (e) {
       if (!lightbox.classList.contains('is-open')) return;

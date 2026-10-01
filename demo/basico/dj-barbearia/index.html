@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DJ Barbearia — Tradição desde 2015</title>
-<meta name="description" content="DJ Barbearia: tradição, experiência e cuidado em cada corte desde 2015. Agende seu horário pelo WhatsApp.">
+<title>DJ Barbearia — Tradição desde 2015 | Navegantes-SC</title>
+<meta name="description" content="DJ Barbearia em Navegantes-SC: corte, barba e acabamento com tradição desde 2015. Agende seu horário pelo WhatsApp.">
 
 <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,500;0,600;0,700;0,800;0,900;1,800;1,900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="css/style.css">
 </head>
@@ -18,30 +18,25 @@
 <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
 
 <!-- =========================
-     HEADER / NAVBAR
+     HEADER
 ========================= -->
 <header class="site-header" id="siteHeader">
   <div class="container header-inner">
-    <a href="#inicio" class="brand">
-      <img src="assets/logo.svg" alt="Emblema DJ Barbearia" width="42" height="42">
-      <span>DJ BARBEARIA<small>TRADIÇÃO DESDE 2015</small></span>
+    <a href="#inicio" class="brand" aria-label="DJ Barbearia — início">
+      <img src="assets/logo.svg" alt="" width="44" height="44">
+      <span class="brand-text">DJ BARBEARIA<small>DESDE 2015</small></span>
     </a>
 
     <nav class="nav-links" aria-label="Navegação principal">
-      <a href="#inicio">Início</a>
       <a href="#historia">História</a>
       <a href="#servicos">Serviços</a>
-      <a href="#galeria">Galeria</a>
+      <a href="#galeria">Trabalhos</a>
       <a href="#depoimentos">Depoimentos</a>
       <a href="#localizacao">Localização</a>
     </nav>
 
     <div class="header-actions">
-      <a class="btn btn-primary" data-wa-generic href="#" aria-label="Agendar horário pelo WhatsApp">
-        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.6-.8-1.9-.9-.3-.1-.4-.1-.6.1-.2.3-.7.9-.8 1-.2.2-.3.2-.5.1-.3-.1-1.2-.4-2.2-1.4-.8-.7-1.4-1.6-1.5-1.9-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.1.2-.3.3-.4.1-.2 0-.4 0-.5C11 9.3 10.5 8 10.3 7.6c-.2-.4-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.3.3-1 1-1 2.3 0 1.4 1 2.7 1.1 2.9.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.6-.7 1.9-1.3.2-.6.2-1.1.2-1.3-.1-.1-.3-.2-.5-.3Z"/><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Z"/></svg>
-        AGENDAR HORÁRIO
-      </a>
-
+      <a class="btn btn-primary btn-sm" data-wa-generic href="#">Agendar horário</a>
       <button class="nav-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobileDrawer">
         <span></span><span></span><span></span>
       </button>
@@ -52,14 +47,13 @@
 <div class="drawer-backdrop" id="drawerBackdrop"></div>
 <aside class="mobile-drawer" id="mobileDrawer">
   <nav aria-label="Navegação mobile">
-    <a href="#inicio">Início</a>
-    <a href="#historia">História</a>
-    <a href="#servicos">Serviços</a>
-    <a href="#galeria">Galeria</a>
-    <a href="#depoimentos">Depoimentos</a>
-    <a href="#localizacao">Localização</a>
+    <a href="#historia"><span>01</span>História</a>
+    <a href="#servicos"><span>02</span>Serviços</a>
+    <a href="#galeria"><span>03</span>Trabalhos</a>
+    <a href="#depoimentos"><span>04</span>Depoimentos</a>
+    <a href="#localizacao"><span>05</span>Localização</a>
   </nav>
-  <a class="btn btn-primary btn-block" data-wa-generic href="#">AGENDAR HORÁRIO</a>
+  <a class="btn btn-primary btn-block" data-wa-generic href="#">Agendar horário</a>
 </aside>
 
 <main id="conteudo">
@@ -68,66 +62,77 @@
        HERO
   ========================= -->
   <section class="hero" id="inicio">
-    <div class="hero-media">
-      <!-- Placeholder: substituir por foto real da barbearia/barbeiro em ação -->
-      <img src="assets/hero.png" alt="Barbeiro realizando um corte de cabelo na DJ Barbearia" loading="eager">
+    <div class="hero-media" aria-hidden="true">
+      <img src="assets/hero.png" alt="" loading="eager">
     </div>
 
     <div class="container hero-inner">
       <div class="hero-text">
-        <span class="eyebrow">DESDE 2015</span>
-        <h1>Tradição no corte.<br><em>Experiência</em> em cada detalhe.</h1>
-        <p>Há anos cuidando do estilo, da confiança e da experiência de nossos clientes.</p>
+        <span class="eyebrow">Barbearia em Navegantes · SC</span>
+        <h1>Tradição no corte.<br><em>Experiência</em> em<br>cada detalhe.</h1>
+        <span class="hero-slash" aria-hidden="true"></span>
+        <p>Corte masculino, barba e acabamento feitos com calma e precisão. Há mais de 10 anos cuidando do estilo e da confiança de quem senta na nossa cadeira.</p>
         <div class="hero-actions">
           <a class="btn btn-primary" data-wa-generic href="#">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.6-.8-1.9-.9-.3-.1-.4-.1-.6.1-.2.3-.7.9-.8 1-.2.2-.3.2-.5.1-.3-.1-1.2-.4-2.2-1.4-.8-.7-1.4-1.6-1.5-1.9-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.1.2-.3.3-.4.1-.2 0-.4 0-.5C11 9.3 10.5 8 10.3 7.6c-.2-.4-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.3.3-1 1-1 2.3 0 1.4 1 2.7 1.1 2.9.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.6-.7 1.9-1.3.2-.6.2-1.1.2-1.3-.1-.1-.3-.2-.5-.3Z"/><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Z"/></svg>
-            AGENDAR PELO WHATSAPP
+            Agendar pelo WhatsApp
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
           </a>
-          <a class="btn btn-outline" href="#historia">CONHEÇA NOSSA HISTÓRIA</a>
+          <a class="btn btn-ghost" href="#servicos">Conhecer os serviços</a>
         </div>
       </div>
 
-      <div class="badge-10" aria-hidden="true">
-        <span class="num">+10</span>
-        <span class="label">ANOS DE TRADIÇÃO</span>
-        <span class="years">2015 — 2026</span>
+      <div class="hero-stamp" aria-hidden="true">
+        <span class="stamp-label">Desde</span>
+        <span class="stamp-year">2015</span>
       </div>
     </div>
 
-    <div class="scroll-cue" aria-hidden="true"><span></span></div>
+    <a href="#historia" class="scroll-cue">
+      <span>Role para conhecer</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg>
+    </a>
   </section>
+
+  <!-- faixa animada -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>Corte</span><i>/</i><span>Barba</span><i>/</i><span>Corte + Barba</span><i>/</i><span>Sobrancelha</span><i>/</i><span>Acabamento</span><i>/</i><span>+10 anos de tradição</span><i>/</i>
+      <span>Corte</span><i>/</i><span>Barba</span><i>/</i><span>Corte + Barba</span><i>/</i><span>Sobrancelha</span><i>/</i><span>Acabamento</span><i>/</i><span>+10 anos de tradição</span><i>/</i>
+    </div>
+  </div>
 
   <!-- =========================
        HISTÓRIA
   ========================= -->
-  <section class="historia" id="historia">
+  <section class="historia section" id="historia">
     <div class="container historia-grid">
       <div class="historia-media reveal">
-        <!-- Placeholder: substituir por foto real da fachada/barbearia -->
-        <img src="assets/historia.jpg" alt="Fachada da DJ Barbearia" loading="lazy">
+        <img src="assets/historia.jpg" alt="Barbeiros atendendo clientes na DJ Barbearia" loading="lazy">
+        <div class="historia-badge">
+          <strong>+10</strong>
+          <span>anos de<br>tradição</span>
+        </div>
       </div>
 
       <div class="historia-text reveal reveal-delay-1">
-        <span class="eyebrow">NOSSA HISTÓRIA</span>
-        <h2>Uma história feita de cortes, estilo e confiança.</h2>
-        <p>A DJ Barbearia nasceu em 2015 com o propósito de oferecer muito mais que um corte de cabelo. Desde então, temos construído uma história baseada na confiança, no respeito e no cuidado com cada cliente que passa por aqui.</p>
+        <span class="eyebrow">Nossa história</span>
+        <h2>Uma história feita de cortes, estilo e <em>confiança.</em></h2>
+        <p>A DJ Barbearia nasceu em 2015 com o propósito de oferecer muito mais que um corte de cabelo. Desde então, construímos uma história baseada na confiança, no respeito e no cuidado com cada cliente que passa por aqui.</p>
 
-        <div class="timeline">
-          <div class="timeline-item">
+        <ol class="timeline">
+          <li>
             <span class="year">2015</span>
-            <p>Início da DJ Barbearia.</p>
-          </div>
-          <div class="timeline-item">
+            <p>Abrimos as portas da DJ Barbearia.</p>
+          </li>
+          <li>
             <span class="year">Ao longo dos anos</span>
-            <p>Construção da relação com os clientes e evolução dos serviços.</p>
-          </div>
-          <div class="timeline-item">
+            <p>Clientes que viraram amigos e serviços que evoluíram junto.</p>
+          </li>
+          <li>
             <span class="year">2026</span>
-            <p>+10 anos de história.</p>
-          </div>
-        </div>
-
-        <a class="btn btn-outline" href="#servicos">CONHEÇA OS SERVIÇOS</a>
+            <p>Mais de 10 anos de história — e contando.</p>
+          </li>
+        </ol>
       </div>
     </div>
   </section>
@@ -135,64 +140,76 @@
   <!-- =========================
        SERVIÇOS
   ========================= -->
-  <section class="servicos" id="servicos">
+  <section class="servicos section" id="servicos">
     <div class="container">
-      <div class="section-head center reveal">
-        <span class="eyebrow" style="justify-content:center">NOSSOS SERVIÇOS</span>
-        <h2>Cuidado, precisão e estilo em cada atendimento.</h2>
+      <div class="section-head reveal">
+        <span class="eyebrow">Nossos serviços</span>
+        <h2>Cuidado, precisão e <em>estilo.</em></h2>
+        <p>Escolha o serviço e agende direto pelo WhatsApp — a mensagem já vai pronta.</p>
       </div>
 
-      <div class="servicos-grid">
-        <article class="service-card reveal">
-          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="6" cy="6" r="2.4"/><circle cx="6" cy="18" r="2.4"/><path d="M20 4 8.5 12 20 20M8.7 12H4"/></svg></div>
-          <h3>Corte</h3>
-          <p>O estilo certo para cada personalidade.</p>
-          <div class="service-foot">
-            <span class="service-price">R$ XX,XX</span>
-            <a class="service-book" data-wa-service="Corte" href="#">AGENDAR</a>
+      <ul class="servicos-list">
+        <li class="service-row reveal">
+          <span class="service-num">01</span>
+          <div class="service-info">
+            <h3>Corte</h3>
+            <p>O estilo certo para cada personalidade.</p>
           </div>
-        </article>
-
-        <article class="service-card reveal reveal-delay-1">
-          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M6 10c0-4 2.5-7 6-7s6 3 6 7c0 5-2 9-6 10-4-1-6-5-6-10Z"/><path d="M9 11c1 1 5 1 6 0"/></svg></div>
-          <h3>Barba</h3>
-          <p>Aparência e confiança em todos os detalhes.</p>
-          <div class="service-foot">
-            <span class="service-price">R$ XX,XX</span>
-            <a class="service-book" data-wa-service="Barba" href="#">AGENDAR</a>
+          <span class="service-price">R$ XX</span>
+          <a class="service-book" data-wa-service="Corte" href="#" aria-label="Agendar corte">
+            Agendar
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+          </a>
+        </li>
+        <li class="service-row reveal">
+          <span class="service-num">02</span>
+          <div class="service-info">
+            <h3>Barba</h3>
+            <p>Alinhamento, toalha quente e acabamento na navalha.</p>
           </div>
-        </article>
-
-        <article class="service-card reveal reveal-delay-2">
-          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="8" cy="8" r="2.2"/><circle cx="16" cy="16" r="2.2"/><path d="M20 4 4 20"/></svg></div>
-          <h3>Corte + Barba</h3>
-          <p>O combo ideal para um visual completo.</p>
-          <div class="service-foot">
-            <span class="service-price">R$ XX,XX</span>
-            <a class="service-book" data-wa-service="Corte + Barba" href="#">AGENDAR</a>
+          <span class="service-price">R$ XX</span>
+          <a class="service-book" data-wa-service="Barba" href="#" aria-label="Agendar barba">
+            Agendar
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+          </a>
+        </li>
+        <li class="service-row service-row--featured reveal">
+          <span class="service-num">03</span>
+          <div class="service-info">
+            <h3>Corte + Barba <span class="tag">Mais pedido</span></h3>
+            <p>O combo ideal para um visual completo.</p>
           </div>
-        </article>
-
-        <article class="service-card reveal">
-          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 15c2.5-5 6-7 9-7s6.5 2 9 7c-2.5 3-6 4.5-9 4.5S5.5 18 3 15Z"/><circle cx="12" cy="15" r="2.2"/></svg></div>
-          <h3>Sobrancelha</h3>
-          <p>Mais definição para o seu olhar.</p>
-          <div class="service-foot">
-            <span class="service-price">R$ XX,XX</span>
-            <a class="service-book" data-wa-service="Sobrancelha" href="#">AGENDAR</a>
+          <span class="service-price">R$ XX</span>
+          <a class="service-book" data-wa-service="Corte + Barba" href="#" aria-label="Agendar corte e barba">
+            Agendar
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+          </a>
+        </li>
+        <li class="service-row reveal">
+          <span class="service-num">04</span>
+          <div class="service-info">
+            <h3>Sobrancelha</h3>
+            <p>Mais definição para o seu olhar.</p>
           </div>
-        </article>
-
-        <article class="service-card reveal reveal-delay-1">
-          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="m12 3 2.2 5.6L20 10l-4.6 3.6L16.8 20 12 16.6 7.2 20l1.4-6.4L4 10l5.8-1.4Z"/></svg></div>
-          <h3>Acabamento</h3>
-          <p>Detalhes que fazem toda a diferença.</p>
-          <div class="service-foot">
-            <span class="service-price">R$ XX,XX</span>
-            <a class="service-book" data-wa-service="Acabamento" href="#">AGENDAR</a>
+          <span class="service-price">R$ XX</span>
+          <a class="service-book" data-wa-service="Sobrancelha" href="#" aria-label="Agendar sobrancelha">
+            Agendar
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+          </a>
+        </li>
+        <li class="service-row reveal">
+          <span class="service-num">05</span>
+          <div class="service-info">
+            <h3>Acabamento</h3>
+            <p>Pezinho e contornos — os detalhes que fazem a diferença.</p>
           </div>
-        </article>
-      </div>
+          <span class="service-price">R$ XX</span>
+          <a class="service-book" data-wa-service="Acabamento" href="#" aria-label="Agendar acabamento">
+            Agendar
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+          </a>
+        </li>
+      </ul>
 
       <p class="servicos-note">*Valores exemplificativos — atualize com os preços reais dos serviços.</p>
     </div>
@@ -201,33 +218,33 @@
   <!-- =========================
        DIFERENCIAIS
   ========================= -->
-  <section class="diferenciais" id="diferenciais">
+  <section class="diferenciais section" id="diferenciais">
     <div class="container">
-      <div class="diferenciais-head reveal">
-        <span class="eyebrow">POR QUE A DJ BARBEARIA</span>
-        <h2>Mais que um corte. Uma experiência.</h2>
+      <div class="section-head reveal">
+        <span class="eyebrow">Por que a DJ Barbearia</span>
+        <h2>Mais que um corte. <em>Uma experiência.</em></h2>
       </div>
 
       <div class="diferenciais-grid">
-        <div class="diferencial-item reveal">
-          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 3 4 6v5c0 5 3.4 8.7 8 10 4.6-1.3 8-5 8-10V6Z"/></svg></div>
-          <h3>EXPERIÊNCIA</h3>
-          <p>Anos de atuação e conhecimento no segmento.</p>
+        <div class="diferencial reveal">
+          <span class="dif-num">10+</span>
+          <h3>Experiência</h3>
+          <p>Mais de uma década de atuação e conhecimento no segmento.</p>
         </div>
-        <div class="diferencial-item reveal reveal-delay-1">
-          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 18v-1a5 5 0 0 1 5-5h1a5 5 0 0 1 5 5v1M13 5.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM17 8.2a2.6 2.6 0 1 0 0-5.2M20 14.3a4.2 4.2 0 0 1 2.6 3.9v.8"/></svg></div>
-          <h3>ATENDIMENTO</h3>
-          <p>Focado na experiência do cliente.</p>
+        <div class="diferencial reveal reveal-delay-1">
+          <span class="dif-num">1:1</span>
+          <h3>Atendimento</h3>
+          <p>Cada cliente com atenção total, do começo ao fim do corte.</p>
         </div>
-        <div class="diferencial-item reveal reveal-delay-2">
-          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="m12 3 2.2 5.6L20 10l-4.6 3.6L16.8 20 12 16.6 7.2 20l1.4-6.4L4 10l5.8-1.4Z"/></svg></div>
-          <h3>QUALIDADE</h3>
-          <p>Atenção aos detalhes em cada serviço.</p>
+        <div class="diferencial reveal reveal-delay-2">
+          <span class="dif-num">100%</span>
+          <h3>Qualidade</h3>
+          <p>Atenção aos detalhes e acabamento caprichado em cada serviço.</p>
         </div>
-        <div class="diferencial-item reveal reveal-delay-3">
-          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 21s-7-4.4-9.5-9C1 8.5 2.7 5 6.2 5c1.9 0 3.3 1 3.8 2 .5-1 1.9-2 3.8-2 3.5 0 5.2 3.5 3.7 7-2.5 4.6-9.5 9-9.5 9Z"/></svg></div>
-          <h3>TRADIÇÃO</h3>
-          <p>Uma marca construída ao longo dos anos.</p>
+        <div class="diferencial reveal reveal-delay-3">
+          <span class="dif-num">2015</span>
+          <h3>Tradição</h3>
+          <p>Uma marca construída cliente por cliente ao longo dos anos.</p>
         </div>
       </div>
     </div>
@@ -236,55 +253,56 @@
   <!-- =========================
        GALERIA
   ========================= -->
-  <section class="galeria" id="galeria">
+  <section class="galeria section" id="galeria">
     <div class="container">
-      <div class="section-head center reveal">
-        <span class="eyebrow" style="justify-content:center">GALERIA</span>
-        <h2>O trabalho fala por si.</h2>
-        <p>Fotos reais do dia a dia da barbearia — substitua pelas imagens do seu acervo.</p>
+      <div class="section-head section-head--split reveal">
+        <div>
+          <span class="eyebrow">Trabalhos</span>
+          <h2>O trabalho <em>fala por si.</em></h2>
+        </div>
+        <a class="btn btn-ghost" href="https://instagram.com/djbarbearia" target="_blank" rel="noopener noreferrer">
+          Ver mais no Instagram
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+        </a>
       </div>
 
       <div class="galeria-grid">
-  <div class="gal-item gal-wide gal-tall">
-    <button type="button" data-lightbox-trigger data-full="assets/galeria-01.jpg" aria-label="Ampliar imagem da galeria 1">
-      <img src="assets/galeria-01.jpg" alt="Corte com franja e degradê" loading="lazy">
-      <span class="gal-overlay" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></span>
-    </button>
-  </div>
-  <div class="gal-item">
-    <button type="button" data-lightbox-trigger data-full="assets/galeria-02.jpg" aria-label="Ampliar imagem da galeria 2">
-      <img src="assets/galeria-02.jpg" alt="Barba alinhada com acabamento" loading="lazy">
-      <span class="gal-overlay" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></span>
-    </button>
-  </div>
-  <div class="gal-item">
-    <button type="button" data-lightbox-trigger data-full="assets/galeria-03.jpg" aria-label="Ampliar imagem da galeria 3">
-      <img src="assets/galeria-03.jpg" alt="Degradê na nuca" loading="lazy">
-      <span class="gal-overlay" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></span>
-    </button>
-  </div>
-  <div class="gal-item gal-wide">
-    <button type="button" data-lightbox-trigger data-full="assets/galeria-04.jpg" aria-label="Ampliar imagem da galeria 4">
-      <img src="assets/galeria-04.jpg" alt="Corte clássico com topete" loading="lazy">
-      <span class="gal-overlay" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></span>
-    </button>
-  </div>
-  <div class="gal-item">
-    <button type="button" data-lightbox-trigger data-full="assets/galeria-05.jpg" aria-label="Ampliar imagem da galeria 5">
-      <img src="assets/galeria-05.jpg" alt="Equipe com a camiseta comemorativa de 10 anos" loading="lazy">
-      <span class="gal-overlay" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></span>
-    </button>
-  </div>
-  <div class="gal-item">
-    <button type="button" data-lightbox-trigger data-full="assets/galeria-06.jpg" aria-label="Ampliar imagem da galeria 6">
-      <img src="assets/galeria-06.jpg" alt="Corte infantil em cabelo cacheado" loading="lazy">
-      <span class="gal-overlay" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></span>
-    </button>
-  </div>
-</div>
-
-      <div class="galeria-more">
-        <a class="btn btn-outline" href="#galeria">VER TODA A GALERIA</a>
+        <div class="gal-item gal-tall">
+          <button type="button" data-lightbox-trigger data-full="assets/galeria-01.jpg" aria-label="Ampliar imagem 1">
+            <img src="assets/galeria-01.jpg" alt="Corte com franja e degradê" loading="lazy">
+            <span class="gal-overlay" aria-hidden="true"><span>Degradê + franja</span></span>
+          </button>
+        </div>
+        <div class="gal-item">
+          <button type="button" data-lightbox-trigger data-full="assets/galeria-02.jpg" aria-label="Ampliar imagem 2">
+            <img src="assets/galeria-02.jpg" alt="Barba alinhada com acabamento" loading="lazy">
+            <span class="gal-overlay" aria-hidden="true"><span>Barba</span></span>
+          </button>
+        </div>
+        <div class="gal-item">
+          <button type="button" data-lightbox-trigger data-full="assets/galeria-03.jpg" aria-label="Ampliar imagem 3">
+            <img src="assets/galeria-03.jpg" alt="Degradê na nuca" loading="lazy">
+            <span class="gal-overlay" aria-hidden="true"><span>Degradê</span></span>
+          </button>
+        </div>
+        <div class="gal-item gal-tall">
+          <button type="button" data-lightbox-trigger data-full="assets/galeria-05.jpg" aria-label="Ampliar imagem 5">
+            <img src="assets/galeria-05.jpg" alt="Equipe com a camiseta comemorativa de 10 anos" loading="lazy">
+            <span class="gal-overlay" aria-hidden="true"><span>10 anos</span></span>
+          </button>
+        </div>
+        <div class="gal-item">
+          <button type="button" data-lightbox-trigger data-full="assets/galeria-04.jpg" aria-label="Ampliar imagem 4">
+            <img src="assets/galeria-04.jpg" alt="Corte clássico com topete" loading="lazy">
+            <span class="gal-overlay" aria-hidden="true"><span>Clássico</span></span>
+          </button>
+        </div>
+        <div class="gal-item">
+          <button type="button" data-lightbox-trigger data-full="assets/galeria-06.jpg" aria-label="Ampliar imagem 6">
+            <img src="assets/galeria-06.jpg" alt="Corte infantil em cabelo cacheado" loading="lazy">
+            <span class="gal-overlay" aria-hidden="true"><span>Infantil</span></span>
+          </button>
+        </div>
       </div>
     </div>
   </section>
@@ -292,54 +310,42 @@
   <!-- =========================
        DEPOIMENTOS
   ========================= -->
-  <section class="depoimentos" id="depoimentos">
+  <section class="depoimentos section" id="depoimentos">
     <div class="container">
-      <div class="section-head center reveal">
-        <span class="eyebrow" style="justify-content:center">DEPOIMENTOS</span>
-        <h2>Quem conhece, recomenda.</h2>
+      <div class="section-head reveal">
+        <span class="eyebrow">Depoimentos</span>
+        <h2>Quem conhece, <em>recomenda.</em></h2>
       </div>
 
       <div class="testi-track-wrap reveal">
         <div class="testi-track">
           <div class="testi-slide">
-            <div class="testi-card">
-              <svg class="testi-quote" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 15c-1.7 0-3-1.3-3-3 0-3.3 2.2-6 5-7l.6 1.4C7.8 7 6.6 8.3 6.2 10c.3-.1.6-.1.8-.1 1.7 0 3 1.3 3 3s-1.3 3-3 3Zm10 0c-1.7 0-3-1.3-3-3 0-3.3 2.2-6 5-7l.6 1.4c-1.8.7-3 2-3.4 3.7.3-.1.6-.1.8-.1 1.7 0 3 1.3 3 3s-1.3 3-3 3Z"/></svg>
+            <blockquote class="testi-card">
               <p>"Depoimento do cliente aqui."</p>
-              <div class="testi-person">
-                <span class="testi-avatar">N</span>
-                <span>Nome do cliente</span>
-              </div>
-            </div>
+              <footer class="testi-person"><span class="testi-avatar">N</span><span>Nome do cliente</span></footer>
+            </blockquote>
           </div>
           <div class="testi-slide">
-            <div class="testi-card">
-              <svg class="testi-quote" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 15c-1.7 0-3-1.3-3-3 0-3.3 2.2-6 5-7l.6 1.4C7.8 7 6.6 8.3 6.2 10c.3-.1.6-.1.8-.1 1.7 0 3 1.3 3 3s-1.3 3-3 3Zm10 0c-1.7 0-3-1.3-3-3 0-3.3 2.2-6 5-7l.6 1.4c-1.8.7-3 2-3.4 3.7.3-.1.6-.1.8-.1 1.7 0 3 1.3 3 3s-1.3 3-3 3Z"/></svg>
+            <blockquote class="testi-card">
               <p>"Depoimento do cliente aqui. Pode ser substituído por avaliações reais posteriormente."</p>
-              <div class="testi-person">
-                <span class="testi-avatar">N</span>
-                <span>Nome do cliente</span>
-              </div>
-            </div>
+              <footer class="testi-person"><span class="testi-avatar">N</span><span>Nome do cliente</span></footer>
+            </blockquote>
           </div>
           <div class="testi-slide">
-            <div class="testi-card">
-              <svg class="testi-quote" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 15c-1.7 0-3-1.3-3-3 0-3.3 2.2-6 5-7l.6 1.4C7.8 7 6.6 8.3 6.2 10c.3-.1.6-.1.8-.1 1.7 0 3 1.3 3 3s-1.3 3-3 3Zm10 0c-1.7 0-3-1.3-3-3 0-3.3 2.2-6 5-7l.6 1.4c-1.8.7-3 2-3.4 3.7.3-.1.6-.1.8-.1 1.7 0 3 1.3 3 3s-1.3 3-3 3Z"/></svg>
+            <blockquote class="testi-card">
               <p>"Depoimento do cliente aqui."</p>
-              <div class="testi-person">
-                <span class="testi-avatar">N</span>
-                <span>Nome do cliente</span>
-              </div>
-            </div>
+              <footer class="testi-person"><span class="testi-avatar">N</span><span>Nome do cliente</span></footer>
+            </blockquote>
           </div>
         </div>
 
         <div class="testi-controls">
           <button class="testi-arrow prev" aria-label="Depoimento anterior">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 6 9 12l6 6"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>
           </button>
           <div class="testi-dots"></div>
           <button class="testi-arrow next" aria-label="Próximo depoimento">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 6 6 6-6 6"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </button>
         </div>
       </div>
@@ -351,16 +357,15 @@
   ========================= -->
   <section class="cta-final">
     <div class="cta-final-bg" aria-hidden="true">
-      <!-- Placeholder: substituir por foto real do interior da barbearia -->
       <img src="assets/cta-bg.png" alt="" loading="lazy">
     </div>
     <div class="container">
       <div class="cta-final-inner reveal">
-        <h2>Seu próximo corte começa aqui.</h2>
-        <p>Agende seu horário e venha viver a experiência da DJ Barbearia.</p>
-        <a class="btn btn-primary" data-wa-generic href="#">
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.6-.8-1.9-.9-.3-.1-.4-.1-.6.1-.2.3-.7.9-.8 1-.2.2-.3.2-.5.1-.3-.1-1.2-.4-2.2-1.4-.8-.7-1.4-1.6-1.5-1.9-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.1.2-.3.3-.4.1-.2 0-.4 0-.5C11 9.3 10.5 8 10.3 7.6c-.2-.4-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.3.3-1 1-1 2.3 0 1.4 1 2.7 1.1 2.9.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.6-.7 1.9-1.3.2-.6.2-1.1.2-1.3-.1-.1-.3-.2-.5-.3Z"/><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Z"/></svg>
-          AGENDAR PELO WHATSAPP
+        <span class="eyebrow">Agende agora</span>
+        <h2>Seu próximo corte<br><em>começa aqui.</em></h2>
+        <a class="btn btn-primary btn-lg" data-wa-generic href="#">
+          Agendar pelo WhatsApp
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
         </a>
       </div>
     </div>
@@ -369,40 +374,35 @@
   <!-- =========================
        LOCALIZAÇÃO
   ========================= -->
-  <section class="localizacao" id="localizacao">
+  <section class="localizacao section" id="localizacao">
     <div class="container local-grid">
       <div class="local-info reveal">
-        <span class="eyebrow">ONDE ESTAMOS</span>
-        <h2>Venha nos visitar.</h2>
+        <span class="eyebrow">Onde estamos</span>
+        <h2>Venha nos <em>visitar.</em></h2>
 
-        <div class="local-card">
-          <div class="brand">
-            <img src="assets/logo.svg" alt="" width="36" height="36" aria-hidden="true">
-            <span>DJ Barbearia</span>
+        <dl class="local-list">
+          <div>
+            <dt>Endereço</dt>
+            <dd>R. Gracilides Coelho Reiser, 745<br>São Domingos, Navegantes – SC</dd>
           </div>
-          <ul class="local-list">
-            <li>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 21s-7-7.5-7-12a7 7 0 1 1 14 0c0 4.5-7 12-7 12Z"/><circle cx="12" cy="9" r="2.4"/></svg>
-              <span>R. Gracilides Coelho Reiser, 745 - São Domingos, Navegantes - SC, 88370-552, Brasil</span>
-            </li>
-            <li>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>
-              <span>SEG a SEX: 09:00 - 20:00.</span>
-              <span>SAB: 08:00 - 18:00.</span>
-            </li>
-            <li>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.6-.8-1.9-.9-.3-.1-.4-.1-.6.1-.2.3-.7.9-.8 1-.2.2-.3.2-.5.1-.3-.1-1.2-.4-2.2-1.4-.8-.7-1.4-1.6-1.5-1.9-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.1.2-.3.3-.4.1-.2 0-.4 0-.5C11 9.3 10.5 8 10.3 7.6c-.2-.4-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.3.3-1 1-1 2.3 0 1.4 1 2.7 1.1 2.9.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.6-.7 1.9-1.3.2-.6.2-1.1.2-1.3-.1-.1-.3-.2-.5-.3Z"/><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Z"/></svg>
-              <span>(47) 99749-5789</span>
-            </li>
-          </ul>
-          <a class="btn btn-outline btn-block" href="https://www.google.com/maps/place/D%26J+Barbearia/@-26.88679,-48.654402,969m/data=!3m1!1e3!4m16!1m9!3m8!1s0x94d8cc39648ffbc9:0xc109c65cde5ea39c!2sR.+Gracilides+Coelho+Reiser,+745+-+S%C3%A3o+Domingos,+Navegantes+-+SC,+88375-000!3b1!8m2!3d-26.8866553!4d-48.6543661!10e5!16s%2Fg%2F11lzd1vn7f!3m5!1s0x94d8cc3be04a8151:0xbe8e257baa812f12!8m2!3d-26.886706!4d-48.6544161!16s%2Fg%2F11f1wf_npl?hl=pt-BR&entry=ttu&g_ep=EgoyMDI2MDkyOC4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">COMO CHEGAR</a>
-        </div>
+          <div>
+            <dt>Horário</dt>
+            <dd>Seg a Sex: 09h – 20h<br>Sábado: 08h – 18h<br>Domingo: fechado</dd>
+          </div>
+          <div>
+            <dt>WhatsApp</dt>
+            <dd><a data-wa-generic href="#">(47) 99749-5789</a></dd>
+          </div>
+        </dl>
+
+        <a class="btn btn-ghost" href="https://www.google.com/maps/dir/?api=1&destination=D%26J+Barbearia,+R.+Gracilides+Coelho+Reiser,+745,+Navegantes+-+SC" target="_blank" rel="noopener noreferrer">
+          Como chegar
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+        </a>
       </div>
 
       <div class="map-frame reveal reveal-delay-1">
-        <span class="map-note">[INSERIR ENDEREÇO / GOOGLE MAPS]</span>
-        <!-- Estrutura preparada para o Google Maps: substituir "q=" pelo endereço real -->
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4221.119520152509!2d-48.65917970321043!3d-26.886706000000007!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94d8cc3be04a8151%3A0xbe8e257baa812f12!2sD%26J%20Barbearia!5e1!3m2!1spt-BR!2sus!4v1790859691914!5m2!1spt-BR!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4221.119520152509!2d-48.65917970321043!3d-26.886706000000007!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94d8cc3be04a8151%3A0xbe8e257baa812f12!2sD%26J%20Barbearia!5e1!3m2!1spt-BR!2sus!4v1790859691914!5m2!1spt-BR!2sus" title="Localização da DJ Barbearia no Google Maps" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
       </div>
     </div>
   </section>
@@ -413,75 +413,78 @@
      FOOTER
 ========================= -->
 <footer class="site-footer">
-  <div class="container footer-grid">
-    <div class="footer-brand">
-      <a href="#inicio" class="brand">
-        <img src="assets/logo.svg" alt="Emblema DJ Barbearia" width="40" height="40">
-        <span>DJ BARBEARIA</span>
-      </a>
-      <p>Tradição desde 2015.</p>
-      <div class="footer-social">
-        <a href="https://instagram.com/djbarbearia" target="_blank" rel="noopener noreferrer" aria-label="DJ Barbearia no Instagram">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1"/></svg>
+  <div class="container">
+    <div class="footer-big" aria-hidden="true">DJ BARBEARIA</div>
+
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#inicio" class="brand">
+          <img src="assets/logo.svg" alt="" width="40" height="40">
+          <span class="brand-text">DJ BARBEARIA<small>DESDE 2015</small></span>
         </a>
-        <a href="#" aria-label="DJ Barbearia no Facebook">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 9h3V6h-3c-2 0-3.5 1.5-3.5 3.5V11H8v3h2.5v6h3v-6H16l.5-3h-3V9.8c0-.5.3-.8.8-.8Z"/></svg>
-        </a>
-        <a href="#" data-wa-generic aria-label="DJ Barbearia no WhatsApp">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M17.5 14.4c-.3-.1-1.6-.8-1.9-.9-.6-.2-.7 0-1.4.9-.2.2-.3.2-.5.1-1.8-.7-3-1.9-3.8-3.3-.2-.3 0-.5.1-.6.4-.5.7-.8.9-1.2.1-.2 0-.4 0-.5C11 9.3 10.5 8 10.3 7.6c-.2-.4-.4-.4-.6-.4h-.5c-.7 0-1.2.6-1.5 1.2-.5 1-.4 2.3.2 3.5.9 1.9 2.9 4.3 5.6 5.3 1.7.6 2.5.5 3.2.3.7-.2 1.5-.9 1.7-1.6.1-.4.1-.8 0-1Z"/><circle cx="12" cy="12" r="9"/></svg>
-        </a>
+        <div class="footer-social">
+          <a href="https://instagram.com/djbarbearia" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1"/></svg>
+          </a>
+          <a href="#" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 9h3V6h-3c-2 0-3.5 1.5-3.5 3.5V11H8v3h2.5v6h3v-6H16l.5-3h-3V9.8c0-.5.3-.8.8-.8Z"/></svg>
+          </a>
+          <a href="#" data-wa-generic aria-label="WhatsApp">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.6-.8-1.9-.9-.3-.1-.4-.1-.6.1-.2.3-.7.9-.8 1-.2.2-.3.2-.5.1-.3-.1-1.2-.4-2.2-1.4-.8-.7-1.4-1.6-1.5-1.9-.2-.3 0-.5.1-.6l.4-.5.3-.4c.1-.2 0-.4 0-.5L10.3 7.6c-.2-.4-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.3.3-1 1-1 2.3 0 1.4 1 2.7 1.1 2.9.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.6-.7 1.9-1.3.2-.6.2-1.1.2-1.3-.1-.1-.3-.2-.5-.3Z"/><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Navegação</h4>
+        <ul>
+          <li><a href="#historia">História</a></li>
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#galeria">Trabalhos</a></li>
+          <li><a href="#localizacao">Localização</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contato</h4>
+        <ul>
+          <li><a data-wa-generic href="#">(47) 99749-5789</a></li>
+          <li><a href="https://instagram.com/djbarbearia" target="_blank" rel="noopener noreferrer">@djbarbearia</a></li>
+          <li>R. Gracilides Coelho Reiser, 745 — Navegantes, SC</li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Horário</h4>
+        <ul>
+          <li>Seg a Sex: 09h – 20h</li>
+          <li>Sábado: 08h – 18h</li>
+          <li>Domingo: fechado</li>
+        </ul>
       </div>
     </div>
 
-    <div class="footer-col">
-      <h4>NAVEGAÇÃO</h4>
-      <ul>
-        <li><a href="#inicio">Início</a></li>
-        <li><a href="#historia">História</a></li>
-        <li><a href="#servicos">Serviços</a></li>
-        <li><a href="#galeria">Galeria</a></li>
-        <li><a href="#localizacao">Localização</a></li>
-      </ul>
+    <div class="footer-bottom">
+      <span>© <span data-current-year>2026</span> DJ Barbearia. Todos os direitos reservados.</span>
+      <span>Desenvolvido por <a href="https://alazodesenvolvimento.vercel.app/" target="_blank" rel="noopener" class="dev-credit">ALAZO</a>.</span>
     </div>
-
-    <div class="footer-col">
-      <h4>CONTATO</h4>
-      <ul>
-        <li>WhatsApp: (47) 99749-5789</li>
-        <li>@djbarbearia</li>
-        <li>R. Gracilides Coelho Reiser, 745 - São Domingos, Navegantes - SC, 88370-552, Brasil</li>
-      </ul>
-    </div>
-
-    <div class="footer-col">
-      <h4>HORÁRIO</h4>
-      <ul>
-        <li>SEG a SEX: 09:00 - 20:00.</li>
-        <li>SÁBADO: 08:00 - 18:00.</li>
-        <li>DOMINGO: FECHADO.</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="container footer-bottom">
-    <span>© <span data-current-year>2026</span> DJ Barbearia. Todos os direitos reservados.</span>
-    <span>Desenvolvido por <a href="https://alazodesenvolvimento.vercel.app/" target="_blank" rel="noopener" class="dev-credit">ALAZO</a>.</span>
   </div>
 </footer>
 
 <!-- WhatsApp flutuante -->
 <a class="wa-float" data-wa-generic href="#" aria-label="Agendar horário pelo WhatsApp">
-  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.6-.8-1.9-.9-.3-.1-.4-.1-.6.1-.2.3-.7.9-.8 1-.2.2-.3.2-.5.1-.3-.1-1.2-.4-2.2-1.4-.8-.7-1.4-1.6-1.5-1.9-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.1.2-.3.3-.4.1-.2 0-.4 0-.5C11 9.3 10.5 8 10.3 7.6c-.2-.4-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.3.3-1 1-1 2.3 0 1.4 1 2.7 1.1 2.9.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.6-.7 1.9-1.3.2-.6.2-1.1.2-1.3-.1-.1-.3-.2-.5-.3Z"/><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Z"/></svg>
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.6-.8-1.9-.9-.3-.1-.4-.1-.6.1-.2.3-.7.9-.8 1-.2.2-.3.2-.5.1-.3-.1-1.2-.4-2.2-1.4-.8-.7-1.4-1.6-1.5-1.9-.2-.3 0-.5.1-.6l.4-.5.3-.4c.1-.2 0-.4 0-.5L10.3 7.6c-.2-.4-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.3.3-1 1-1 2.3 0 1.4 1 2.7 1.1 2.9.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.6-.7 1.9-1.3.2-.6.2-1.1.2-1.3-.1-.1-.3-.2-.5-.3Z"/><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Z"/></svg>
 </a>
 
 <!-- Lightbox -->
-<div class="lightbox" role="dialog" aria-modal="true" aria-label="Visualização de imagem da galeria">
+<div class="lightbox" role="dialog" aria-modal="true" aria-label="Visualização de imagem">
   <div class="lightbox-inner">
     <img src="" alt="">
-    <button class="lightbox-close" aria-label="Fechar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
-    <button class="lightbox-prev" aria-label="Imagem anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 6 9 12l6 6"/></svg></button>
-    <button class="lightbox-next" aria-label="Próxima imagem"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 6 6 6-6 6"/></svg></button>
+    <span class="lightbox-count"></span>
   </div>
+  <button class="lightbox-close" aria-label="Fechar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+  <button class="lightbox-prev" aria-label="Imagem anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button>
+  <button class="lightbox-next" aria-label="Próxima imagem"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
 </div>
 
 <script src="js/script.js"></script>
