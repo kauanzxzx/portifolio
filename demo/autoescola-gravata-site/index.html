@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Autoescola Gravatá | CFC em Navegantes - SC</title>
+  <meta name="description" content="Autoescola Gravatá, CFC no centro de Navegantes/SC. 1ª habilitação, renovação, adição de categoria, PID, alteração de dados e troca de permissão. Categorias A e B.">
+  <meta name="theme-color" content="#07090b">
+  <meta property="og:title" content="Autoescola Gravatá | Sua liberdade começa aqui">
+  <meta property="og:description" content="CFC no centro de Navegantes/SC. Aulas teóricas e práticas, categorias A e B, carro automático.">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@500;600;700;800;900&family=Saira:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header class="hdr" id="hdr">
+  <div class="wrap hdr-in">
+    <a href="#inicio" class="brand" aria-label="Autoescola Gravatá — início">
+      <svg class="brand-mark" viewBox="0 0 48 48" aria-hidden="true">
+        <circle cx="24" cy="24" r="22" fill="#0b0d10"/>
+        <path d="M24 2a22 22 0 0 1 22 22h-5A17 17 0 0 0 24 7z" fill="#e3231b"/>
+        <path d="M2 24A22 22 0 0 1 24 2v5A17 17 0 0 0 7 24z" fill="#e3231b"/>
+        <path d="M46 24A22 22 0 0 1 2 24h5a17 17 0 0 0 34 0z" fill="#14a752"/>
+        <circle cx="24" cy="24" r="11" fill="none" stroke="#f3f5f2" stroke-width="3"/>
+        <path d="M13.5 22h21M24 24v10" stroke="#f3f5f2" stroke-width="3" stroke-linecap="round"/>
+        <circle cx="24" cy="24" r="3" fill="#f6c343"/>
+      </svg>
+      <span class="brand-txt">Autoescola <span>Gravatá</span><small>CFC · Navegantes/SC</small></span>
+    </a>
+    <nav class="nav" aria-label="Principal">
+      <a href="#inicio">Início</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#cnh">CNH</a>
+      <a href="#categorias">Categorias</a>
+      <a href="#estrutura">Estrutura</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <div style="display:flex;gap:10px;align-items:center">
+      <a class="btn btn-red js-wa" href="https://w.app/autoescolagravata" target="_blank" rel="noopener">Comece sua CNH
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false"><span></span></button>
+    </div>
+  </div>
+</header>
+<nav class="mnav" id="mnav" aria-label="Menu móvel">
+  <a href="#inicio">Início</a><a href="#sobre">Sobre</a><a href="#cnh">CNH</a><a href="#categorias">Categorias</a><a href="#estrutura">Estrutura</a><a href="#contato">Contato</a>
+  <a class="btn btn-red js-wa" href="https://w.app/autoescolagravata" target="_blank" rel="noopener">Comece sua CNH</a>
+</nav>
+
+<main>
+<!-- ============ HERO ============ -->
+<section class="hero" id="inicio">
+  <div class="scene" aria-hidden="true">
+    <div class="sky" id="sky"><div class="rays"></div></div>
+    <div class="cloud c1"></div><div class="cloud c2"></div><div class="cloud c3"></div>
+    <svg class="skyline" id="skyline" preserveAspectRatio="none" viewBox="0 0 1600 200"></svg>
+    <div class="sea"></div>
+    <div class="sand"></div>
+    <div class="road"></div>
+    <canvas id="fx"></canvas>
+    <div class="vignette"></div>
+  </div>
+  <div class="giant" id="giant" aria-hidden="true">GRAVATÁ</div>
+
+  <div class="wrap hero-in" id="heroIn">
+    <div class="hero-top">
+      <span class="eyebrow">Centro de Formação de Condutores · Navegantes/SC</span>
+      <h1 class="title" id="title">
+        <span class="l">Sua <span class="g">liberdade</span></span>
+        <span class="l">começa <span class="r">aqui.</span></span>
+      </h1>
+    </div>
+
+    <div class="stage" id="stage">
+      <div class="car-wrap" id="car">
+        <div class="car" id="carBody">
+          <svg class="suv" viewBox="0 0 1400 520" role="img" aria-label="SUV esportivo preto da Autoescola Gravatá, com adesivagem verde e vermelha">
+            <defs>
+              <!-- lataria preta: céu refletido no alto, horizonte quente, chão escuro embaixo -->
+              <linearGradient id="paint" gradientUnits="userSpaceOnUse" x1="0" y1="86" x2="0" y2="404">
+                <stop offset="0" stop-color="#6b7480"/>
+                <stop offset=".12" stop-color="#2a3038"/>
+                <stop offset=".3" stop-color="#0d1014"/>
+                <stop offset=".45" stop-color="#151a20"/>
+                <stop offset=".47" stop-color="#e2a46c"/>
+                <stop offset=".485" stop-color="#6b4a36"/>
+                <stop offset=".54" stop-color="#121418"/>
+                <stop offset=".78" stop-color="#07080a"/>
+                <stop offset="1" stop-color="#020203"/>
+              </linearGradient>
+              <linearGradient id="paintSide" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0" stop-color="#000" stop-opacity=".55"/>
+                <stop offset=".25" stop-color="#000" stop-opacity="0"/>
+                <stop offset=".8" stop-color="#000" stop-opacity="0"/>
+                <stop offset="1" stop-color="#000" stop-opacity=".45"/>
+              </linearGradient>
+              <linearGradient id="glass" gradientUnits="userSpaceOnUse" x1="0" y1="100" x2="0" y2="206">
+                <stop offset="0" stop-color="#3b4a5c"/>
+                <stop offset=".45" stop-color="#121a24"/>
+                <stop offset="1" stop-color="#05080b"/>
+              </linearGradient>
+              <linearGradient id="glassRefl" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0" stop-color="#ffd2a0" stop-opacity="0"/>
+                <stop offset=".5" stop-color="#ffd2a0" stop-opacity=".28"/>
+                <stop offset="1" stop-color="#ffd2a0" stop-opacity="0"/>
+              </linearGradient>
+              <linearGradient id="clad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#22262b"/>
+                <stop offset="1" stop-color="#0c0d0f"/>
+              </linearGradient>
+              <radialGradient id="tire" r=".5">
+                <stop offset=".72" stop-color="#16181b"/>
+                <stop offset=".86" stop-color="#0b0c0e"/>
+                <stop offset=".96" stop-color="#1b1d20"/>
+                <stop offset="1" stop-color="#070708"/>
+              </radialGradient>
+              <radialGradient id="rim" cx=".42" cy=".38" r=".7">
+                <stop offset="0" stop-color="#3b4048"/>
+                <stop offset=".6" stop-color="#16191d"/>
+                <stop offset="1" stop-color="#08090b"/>
+              </radialGradient>
+              <radialGradient id="disc" r=".5">
+                <stop offset="0" stop-color="#3a3d42"/>
+                <stop offset=".85" stop-color="#6d727a"/>
+                <stop offset="1" stop-color="#2a2d31"/>
+              </radialGradient>
+              <linearGradient id="sheenG" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0" stop-color="#fff" stop-opacity="0"/>
+                <stop offset=".5" stop-color="#fff" stop-opacity=".22"/>
+                <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+              </linearGradient>
+              <linearGradient id="beamG" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0" stop-color="#e8f7ff" stop-opacity=".55"/>
+                <stop offset="1" stop-color="#bfe6ff" stop-opacity="0"/>
+              </linearGradient>
+              <radialGradient id="glareG">
+                <stop offset="0" stop-color="#fff" stop-opacity="1"/>
+                <stop offset=".2" stop-color="#cdeeff" stop-opacity=".55"/>
+                <stop offset="1" stop-color="#8fd3ff" stop-opacity="0"/>
+              </radialGradient>
+              <radialGradient id="tailG">
+                <stop offset="0" stop-color="#ff5a4d" stop-opacity=".9"/>
+                <stop offset="1" stop-color="#e3231b" stop-opacity="0"/>
+              </radialGradient>
+              <filter id="blurL" x="-30%" y="-300%" width="160%" height="700%"><feGaussianBlur stdDeviation="12"/></filter>
+              <filter id="blurS" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="3"/></filter>
+              <filter id="glow" x="-60%" y="-200%" width="220%" height="500%"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+              <clipPath id="bodyClip"><path id="body" d="M222 400C208 398 200 386 200 368L202 300C203 270 208 248 222 232C232 214 244 196 262 176C300 132 360 106 440 98C560 88 680 86 760 92C810 96 846 112 880 140L950 196C1040 200 1130 210 1196 222C1222 228 1236 244 1240 266C1246 296 1246 336 1242 364C1240 388 1232 398 1218 400L1146 400L1146 380A106 106 0 0 0 934 380L934 404L466 404L466 380A106 106 0 0 0 254 380L254 400Z"/></clipPath>
+            </defs>
+          
+            <!-- fachos do farol no asfalto -->
+            <g class="beams">
+              <path d="M1232 248L1244 290L1860 470L1860 140Z" fill="url(#beamG)" filter="url(#blurL)"/>
+              <ellipse cx="1520" cy="478" rx="300" ry="26" fill="#dff3ff" opacity=".22" filter="url(#blurL)"/>
+            </g>
+          
+            <!-- sombra de contato -->
+            <ellipse cx="722" cy="478" rx="560" ry="22" fill="#000" opacity=".85" filter="url(#blurL)"/>
+            <ellipse cx="360" cy="474" rx="100" ry="7" fill="#000"/>
+            <ellipse cx="1040" cy="474" rx="100" ry="7" fill="#000"/>
+          
+            <!-- trilhos de teto -->
+            <path d="M452 92C560 80 680 78 758 84" stroke="#0a0b0d" stroke-width="7" stroke-linecap="round" fill="none"/>
+            <path d="M452 89C560 77 680 75 758 81" stroke="#8a929c" stroke-width="1.4" stroke-linecap="round" fill="none" opacity=".7"/>
+          
+            <!-- carroceria -->
+            <use href="#body" fill="url(#paint)"/>
+            <g clip-path="url(#bodyClip)">
+              <rect x="0" y="0" width="1400" height="520" fill="url(#paintSide)"/>
+          
+              <!-- adesivagem: faixas esportivas -->
+              <path d="M1250 348L1250 362L190 330L190 314Z" fill="#14a752"/>
+              <path d="M1250 366L1250 376L190 344L190 335Z" fill="#e3231b"/>
+              <path d="M1250 362.5L1250 365.5L190 334.5L190 331.5Z" fill="#050607"/>
+              <!-- cortes de velocidade na traseira -->
+              <g transform="skewX(-28)">
+                <rect x="420" y="226" width="24" height="50" fill="#e3231b"/>
+                <rect x="456" y="226" width="17" height="50" fill="#14a752"/>
+                <rect x="485" y="226" width="11" height="50" fill="#e3231b"/>
+                <rect x="508" y="226" width="7" height="50" fill="#14a752"/>
+              </g>
+              <!-- nome da autoescola -->
+              <text x="700" y="268" text-anchor="middle" font-family="Saira Condensed, Arial Narrow, sans-serif" font-weight="800" font-size="21" letter-spacing="9" fill="#f3f5f2">AUTOESCOLA</text>
+              <text x="700" y="322" text-anchor="middle" font-family="Saira Condensed, Arial Narrow, sans-serif" font-weight="900" font-size="66" letter-spacing="3" fill="#3fd27c" stroke="#050607" stroke-width="3" paint-order="stroke">GRAVAT<tspan fill="#ff4a3d">Á</tspan></text>
+              <rect x="600" y="254" width="4" height="16" fill="#e3231b"/>
+              <!-- selo CFC -->
+              <g transform="translate(884 280)">
+                <circle r="17" fill="#050607" stroke="#e3231b" stroke-width="3"/>
+                <path d="M-14.7 8.5A17 17 0 0 0 14.7 8.5" stroke="#14a752" stroke-width="3" fill="none"/>
+                <text y="4.5" text-anchor="middle" font-family="Saira Condensed, Arial Narrow, sans-serif" font-weight="900" font-size="12" fill="#f3f5f2">CFC</text>
+              </g>
+          
+              <!-- vincos e frisos -->
+              <path d="M228 238C440 228 760 226 1200 236" stroke="#fff" stroke-width="2.2" fill="none" opacity=".55"/>
+              <path d="M232 242C440 232 760 230 1196 240" stroke="#000" stroke-width="2" fill="none" opacity=".6"/>
+              <path d="M480 352C620 342 800 340 930 346" stroke="#9aa3ad" stroke-width="1.2" fill="none" opacity=".35"/>
+              <!-- portas -->
+              <path d="M930 200C936 260 942 330 946 396M668 206C666 280 668 340 672 404M470 206C455 250 452 300 458 360" stroke="#000" stroke-width="2.4" fill="none" opacity=".85"/>
+              <path d="M932 200C938 260 944 330 948 396M670 206C668 280 670 340 674 404" stroke="#7c8692" stroke-width=".8" fill="none" opacity=".45"/>
+              <!-- maçanetas embutidas -->
+              <rect x="590" y="248" width="40" height="5" rx="2.5" fill="#000"/><rect x="590" y="248" width="40" height="1.6" rx=".8" fill="#9aa3ad" opacity=".7"/>
+              <rect x="836" y="250" width="40" height="5" rx="2.5" fill="#000"/><rect x="836" y="250" width="40" height="1.6" rx=".8" fill="#9aa3ad" opacity=".7"/>
+          
+              <!-- capô: brilho -->
+              <path d="M956 202C1040 206 1130 214 1196 226" stroke="#f1c48f" stroke-width="3" fill="none" opacity=".75" filter="url(#blurS)"/>
+              <!-- saia lateral fosca -->
+              <path d="M466 386L934 386L934 404L466 404Z" fill="url(#clad)"/>
+              <path d="M474 388L926 388" stroke="#e3231b" stroke-width="2"/>
+              <!-- para-choques -->
+              <path d="M1150 354C1190 350 1220 350 1246 356L1246 404L1150 404Z" fill="url(#clad)"/>
+              <path d="M198 362L254 362L254 404L198 404Z" fill="url(#clad)"/>
+              <!-- reflexo animado -->
+              <rect class="sheen" x="-400" y="80" width="260" height="320" fill="url(#sheenG)" transform="skewX(-22)"/>
+            </g>
+            <!-- contorno de luz do teto -->
+            <path d="M262 176C300 132 360 106 440 98C560 88 680 86 760 92C810 96 846 112 880 140" stroke="#ffd8a8" stroke-width="2" fill="none" opacity=".8"/>
+          
+            <!-- cladding dos para-lamas -->
+            <path d="M1158 400L1158 380A118 118 0 0 0 922 380L922 404" stroke="url(#clad)" stroke-width="18" fill="none"/>
+            <path d="M478 404L478 380A118 118 0 0 0 242 380L242 400" stroke="url(#clad)" stroke-width="18" fill="none"/>
+            <path d="M1150 380A110 110 0 0 0 930 380" stroke="#3a4048" stroke-width="1.2" fill="none" opacity=".7"/>
+            <path d="M470 380A110 110 0 0 0 250 380" stroke="#3a4048" stroke-width="1.2" fill="none" opacity=".7"/>
+          
+            <path d="M268 172L238 178C250 168 266 160 290 154Z" fill="#050607"/>
+            <path d="M240 177L268 171" stroke="#e3231b" stroke-width="1.6"/>
+            <!-- vidros -->
+            <path d="M292 198C326 160 370 134 432 120C540 104 660 100 756 104C806 108 842 122 872 146L930 198C740 200 480 202 292 206Z" fill="url(#glass)"/>
+            <path d="M560 108L640 104L560 202L470 204Z" fill="url(#glassRefl)"/>
+            <path d="M780 108L830 118L720 200L680 200Z" fill="#fff" opacity=".06"/>
+            <path d="M632 102L650 102L648 202L630 202Z" fill="#020304"/>
+            <path d="M466 114L480 112L462 204L446 204Z" fill="#020304"/>
+            <path d="M292 198C326 160 370 134 432 120C540 104 660 100 756 104C806 108 842 122 872 146L930 198" stroke="#000" stroke-width="5" fill="none"/>
+            <!-- retrovisor -->
+            <path d="M904 182C912 166 944 164 952 178L948 194L910 196Z" fill="#0b0d10"/>
+            <path d="M908 178C918 170 940 169 948 176" stroke="#c9d1da" stroke-width="1.4" fill="none" opacity=".6"/>
+            <path d="M912 189L946 188" stroke="#e3231b" stroke-width="2.4"/>
+          
+            <!-- lanterna traseira (barra) -->
+            <path class="tail" d="M208 262C214 246 230 226 254 208" stroke="#ff2a1f" stroke-width="7" stroke-linecap="round" fill="none" filter="url(#glow)"/>
+            <ellipse cx="226" cy="238" rx="40" ry="34" fill="url(#tailG)" opacity=".5"/>
+            <!-- difusor -->
+            <path d="M206 384L262 384L258 398L210 398Z" fill="#050607"/>
+            <path d="M214 388L254 388" stroke="#3a4048" stroke-width="1.5"/>
+          
+            <!-- dianteira: tomada de ar e DRL -->
+            <path d="M1170 330C1198 326 1224 326 1242 332L1241 352C1218 348 1194 348 1174 350Z" fill="#050607"/>
+            <path d="M1178 340L1236 338" stroke="#e3231b" stroke-width="1.6" opacity=".9"/>
+            <path d="M1156 400L1246 396" stroke="#e3231b" stroke-width="2.4"/>
+            <path d="M1176 312C1204 308 1228 310 1243 316" stroke="#2a2f35" stroke-width="2" fill="none"/>
+            <g class="lights">
+              <path class="drl" pathLength="100" d="M1150 230C1186 234 1218 242 1236 256" stroke="#fff" stroke-width="5" stroke-linecap="round" fill="none" filter="url(#glow)"/>
+              <path class="drl" pathLength="100" d="M1214 296L1242 300" stroke="#e8f7ff" stroke-width="4" stroke-linecap="round" fill="none" filter="url(#glow)"/>
+              <g class="flare">
+                <circle cx="1232" cy="250" r="70" fill="url(#glareG)" opacity=".75"/>
+                <ellipse class="streak" cx="1232" cy="250" rx="140" ry="2" fill="#e8f7ff" opacity=".6"/>
+              </g>
+            </g>
+          
+            <!-- rodas -->
+            <g class="wheel" transform="translate(360 380)">
+              <circle r="94" fill="url(#tire)"/>
+              <circle r="90" fill="none" stroke="#24272b" stroke-width="1.5"/>
+              <circle r="70" fill="#08090b"/>
+              <circle r="54" fill="url(#disc)"/>
+              <rect x="-46" y="-20" width="20" height="44" rx="8" fill="#e3231b"/>
+              <g class="spin">
+                <circle r="68" fill="none" stroke="#2a2e34" stroke-width="5"/>
+                <circle r="70.5" fill="none" stroke="#8d96a1" stroke-width="1.2" opacity=".55"/>
+                <g fill="url(#rim)" stroke="#5c646e" stroke-width=".8">
+                  <path id="spokeA" d="M-4 -66L4 -66L9 -15L-9 -15Z"/>
+                  <use href="#spokeA" transform="rotate(36)"/><use href="#spokeA" transform="rotate(72)"/><use href="#spokeA" transform="rotate(108)"/><use href="#spokeA" transform="rotate(144)"/>
+                  <use href="#spokeA" transform="rotate(180)"/><use href="#spokeA" transform="rotate(216)"/><use href="#spokeA" transform="rotate(252)"/><use href="#spokeA" transform="rotate(288)"/><use href="#spokeA" transform="rotate(324)"/>
+                </g>
+                <circle r="17" fill="#121417" stroke="#4a525c" stroke-width="1.5"/>
+                <circle r="6" fill="#14a752"/>
+              </g>
+              <path d="M-64 -26A70 70 0 0 1 26 -65" stroke="#fff" stroke-width="2" fill="none" opacity=".25"/>
+            </g>
+            <g class="wheel" transform="translate(1040 380)">
+              <circle r="94" fill="url(#tire)"/>
+              <circle r="90" fill="none" stroke="#24272b" stroke-width="1.5"/>
+              <circle r="70" fill="#08090b"/>
+              <circle r="54" fill="url(#disc)"/>
+              <rect x="26" y="-20" width="20" height="44" rx="8" fill="#e3231b"/>
+              <g class="spin">
+                <circle r="68" fill="none" stroke="#2a2e34" stroke-width="5"/>
+                <circle r="70.5" fill="none" stroke="#8d96a1" stroke-width="1.2" opacity=".55"/>
+                <g fill="url(#rim)" stroke="#5c646e" stroke-width=".8">
+                  <use href="#spokeA"/><use href="#spokeA" transform="rotate(36)"/><use href="#spokeA" transform="rotate(72)"/><use href="#spokeA" transform="rotate(108)"/><use href="#spokeA" transform="rotate(144)"/>
+                  <use href="#spokeA" transform="rotate(180)"/><use href="#spokeA" transform="rotate(216)"/><use href="#spokeA" transform="rotate(252)"/><use href="#spokeA" transform="rotate(288)"/><use href="#spokeA" transform="rotate(324)"/>
+                </g>
+                <circle r="17" fill="#121417" stroke="#4a525c" stroke-width="1.5"/>
+                <circle r="6" fill="#14a752"/>
+              </g>
+              <path d="M-64 -26A70 70 0 0 1 26 -65" stroke="#fff" stroke-width="2" fill="none" opacity=".25"/>
+            </g>
+          </svg>
+        </div>
+      </div>
+      <div class="streaks"><i></i><i></i><i></i><i></i></div>
+    </div>
+
+    <div class="hero-foot">
+      <p class="hero-sub">Aprenda a dirigir com <b>confiança</b> em Navegantes.</p>
+      <div class="ctas">
+        <a class="btn btn-red js-wa" href="https://w.app/autoescolagravata" target="_blank" rel="noopener">Comece sua CNH
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn btn-ghost" href="#categorias">Ver categorias</a>
+      </div>
+    </div>
+
+    <div class="dash" role="list">
+      <div role="listitem"><svg class="gauge" viewBox="0 0 36 36"><path d="M6 26a13 13 0 1 1 24 0" fill="none" stroke="rgba(255,255,255,.15)" stroke-width="3" stroke-linecap="round"/><path d="M6 26a13 13 0 0 1 20-14" fill="none" stroke="#e3231b" stroke-width="3" stroke-linecap="round"/></svg><span class="n">01</span><div><div class="k">CNH A + B</div><div class="v">Moto e carro</div></div></div>
+      <div role="listitem"><svg class="gauge" viewBox="0 0 36 36"><path d="M6 26a13 13 0 1 1 24 0" fill="none" stroke="rgba(255,255,255,.15)" stroke-width="3" stroke-linecap="round"/><path d="M6 26a13 13 0 0 1 24 0" fill="none" stroke="#14a752" stroke-width="3" stroke-linecap="round"/></svg><span class="n">02</span><div><div class="k">Instrutores</div><div class="v">Especializados</div></div></div>
+      <div role="listitem"><svg class="gauge" viewBox="0 0 36 36"><path d="M6 26a13 13 0 1 1 24 0" fill="none" stroke="rgba(255,255,255,.15)" stroke-width="3" stroke-linecap="round"/><path d="M6 26a13 13 0 0 1 4-14" fill="none" stroke="#e3231b" stroke-width="3" stroke-linecap="round"/></svg><span class="n">03</span><div><div class="k">Aulas práticas</div><div class="v">Manual e automático</div></div></div>
+      <div role="listitem"><svg class="gauge" viewBox="0 0 36 36"><circle cx="18" cy="15" r="6" fill="none" stroke="#14a752" stroke-width="3"/><path d="M18 21v9" stroke="#14a752" stroke-width="3" stroke-linecap="round"/></svg><span class="n">04</span><div><div class="k">Navegantes · SC</div><div class="v">No centro da cidade</div></div></div>
+    </div>
+  </div>
+</section>
+
+<div class="avenue" id="avenue" aria-hidden="true"></div>
+
+<!-- ============ SOBRE / PILARES ============ -->
+<section class="sec" id="sobre">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <span class="eyebrow">Sobre a Gravatá</span>
+        <h2 class="h-sec">Mais do que aprender <em>a dirigir.</em></h2>
+      </div>
+      <p class="lead">Somos o CFC no centro de Navegantes. Preparamos você para a prova do Detran e para o trânsito de verdade, com aulas teóricas, práticas e instrutores que acompanham cada etapa.</p>
+    </div>
+
+    <div class="pillars">
+      <article class="pillar">
+        <div class="art" aria-hidden="true">
+          <svg viewBox="0 0 300 250" preserveAspectRatio="xMidYMid slice">
+            <rect width="300" height="250" fill="none"/>
+            <g transform="translate(150 132)">
+              <path d="M-60 -40L0 -84L60 -40L60 42L0 66L-60 42Z" fill="none" stroke="rgba(255,255,255,.08)" stroke-width="2"/>
+              <polygon points="0,-62 52,28 -52,28" fill="#0f1318" stroke="#e3231b" stroke-width="7" stroke-linejoin="round"/>
+              <rect x="-4" y="-28" width="8" height="30" rx="3" fill="#f3f5f2"/><circle cy="14" r="5" fill="#f3f5f2"/>
+            </g>
+            <g stroke="rgba(255,255,255,.12)" stroke-width="1"><path d="M20 210H280M20 222H220M20 234H250"/></g>
+          </svg>
+        </div>
+        <div class="body"><span class="tag">Etapa teórica</span><h3>Teoria</h3><p>Legislação, direção defensiva, primeiros socorros, meio ambiente e mecânica básica, explicados para você entender e passar na prova.</p></div>
+      </article>
+      <article class="pillar">
+        <div class="art" aria-hidden="true">
+          <svg viewBox="0 0 300 250" preserveAspectRatio="xMidYMid slice">
+            <path d="M110 250L146 70H154L190 250Z" fill="#1c2127"/>
+            <path d="M150 90V250" stroke="#f3f5f2" stroke-width="3" stroke-dasharray="14 14" opacity=".7"/>
+            <path d="M110 250L146 70" stroke="#e3231b" stroke-width="2"/><path d="M190 250L154 70" stroke="#14a752" stroke-width="2"/>
+            <circle cx="150" cy="70" r="40" fill="#f4b65c" opacity=".2"/>
+          </svg>
+        </div>
+        <div class="body"><span class="tag">Na rua</span><h3>Prática</h3><p>Aulas no trânsito real de Navegantes, com carro e moto da autoescola. Também temos aulas em carro automático.</p></div>
+      </article>
+      <article class="pillar">
+        <div class="art" aria-hidden="true">
+          <svg viewBox="0 0 300 250" preserveAspectRatio="xMidYMid slice">
+            <g transform="translate(150 128)">
+              <circle r="72" fill="none" stroke="#f3f5f2" stroke-width="12"/>
+              <circle r="72" fill="none" stroke="#e3231b" stroke-width="12" stroke-dasharray="60 400" transform="rotate(-150)"/>
+              <circle r="72" fill="none" stroke="#14a752" stroke-width="12" stroke-dasharray="60 400" transform="rotate(-30)"/>
+              <path d="M-66 -6H66M0 0V66" stroke="#f3f5f2" stroke-width="12" stroke-linecap="round"/>
+              <circle r="20" fill="#0f1318" stroke="#f3f5f2" stroke-width="6"/>
+            </g>
+          </svg>
+        </div>
+        <div class="body"><span class="tag">Quem ensina</span><h3>Instrutores</h3><p>Instrutores especializados que acompanham sua evolução aula a aula, com calma e paciência, até você se sentir seguro ao volante.</p></div>
+      </article>
+      <article class="pillar">
+        <div class="art" aria-hidden="true">
+          <svg viewBox="0 0 300 250" preserveAspectRatio="xMidYMid slice">
+            <g transform="translate(150 125)">
+              <path d="M0 -78L64 -54V4C64 44 36 70 0 84C-36 70 -64 44 -64 4V-54Z" fill="#0f1318" stroke="#14a752" stroke-width="6"/>
+              <path d="M-26 2L-6 22L30 -18" fill="none" stroke="#f3f5f2" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+            </g>
+            <circle cx="150" cy="125" r="110" fill="none" stroke="rgba(20,167,82,.18)" stroke-width="1"/>
+          </svg>
+        </div>
+        <div class="body"><span class="tag">Para a vida toda</span><h3>Segurança</h3><p>Direção defensiva desde a primeira aula. Você aprende a dirigir para o dia a dia, para a estrada e para muito além do exame.</p></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CNH / SERVIÇOS ============ -->
+<section class="sec cnh" id="cnh">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <span class="eyebrow">Serviços</span>
+        <h2 class="h-sec">Tudo para a sua <span class="g">CNH.</span></h2>
+      </div>
+      <p class="lead">Da primeira habilitação à renovação, cuidamos do processo e orientamos você em cada etapa junto ao Detran.</p>
+    </div>
+
+    <div class="svc-grid">
+      <div class="svc"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#ff4a3d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="12" r="2.5"/><path d="M14 10h4M14 14h3"/></svg></div><h3>1ª Habilitação</h3><p>Aulas teóricas, práticas e preparação para os exames. Categorias A, B ou A+B.</p></div>
+      <div class="svc c-green"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#3fd27c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 4v5h-5"/></svg></div><h3>Renovação</h3><p>Renove sua CNH com orientação sobre exames, documentos e prazos.</p></div>
+      <div class="svc"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#ff4a3d" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></div><h3>Adição de categoria</h3><p>Já dirige carro e quer pilotar moto, ou o contrário? Adicione a categoria na sua CNH.</p></div>
+      <div class="svc c-green"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#3fd27c" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18"/></svg></div><h3>PID</h3><p>Permissão Internacional para Dirigir, para quem vai dirigir fora do Brasil.</p></div>
+      <div class="svc"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#ff4a3d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h4L19 9l-4-4L4 16z"/><path d="M13 7l4 4"/></svg></div><h3>Alteração de dados</h3><p>Mudou de nome ou de endereço? Atualize os dados da sua habilitação.</p></div>
+      <div class="svc c-green"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#3fd27c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h11l-3-3M17 17H6l3 3"/></svg></div><h3>Troca de permissão</h3><p>Troque a Permissão para Dirigir (PPD) pela CNH definitiva.</p></div>
+    </div>
+
+    <div class="auto-band">
+      <div><strong>Aulas em carro automático</strong><span>Para quem quer começar com mais conforto ao volante.</span></div>
+      <div class="gearbox" aria-hidden="true"><b>P</b><b>R</b><b>N</b><b class="on">D</b></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CATEGORIAS ============ -->
+<section class="sec" id="categorias">
+  <div class="wrap">
+    <span class="eyebrow">Categorias</span>
+    <h2 class="h-sec">Duas rodas ou <em>quatro.</em></h2>
+
+    <div class="cats">
+      <article class="cat a">
+        <span class="letter" aria-hidden="true">A</span>
+        <div class="veh" aria-hidden="true">
+          <svg viewBox="0 0 400 200" preserveAspectRatio="xMidYMid meet">
+            <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="90" cy="140" r="46" stroke="#f3f5f2" stroke-width="8"/><circle cx="310" cy="140" r="46" stroke="#f3f5f2" stroke-width="8"/>
+              <path d="M90 140L160 92H232L270 64M232 92L310 140M160 92L196 140H250" stroke="#f3f5f2" stroke-width="8"/>
+              <path d="M150 84H214" stroke="#e3231b" stroke-width="16"/>
+              <path d="M262 58L292 54" stroke="#f3f5f2" stroke-width="8"/>
+            </g>
+          </svg>
+        </div>
+        <span class="lbl">Categoria A</span>
+        <h3>Moto</h3>
+        <p>Para conduzir motos, motonetas e ciclomotores. Aulas práticas com motos da autoescola e treino de percurso.</p>
+        <ul><li>Motos e motonetas</li><li>Aulas práticas</li><li>Adição de categoria</li></ul>
+      </article>
+      <article class="cat b">
+        <span class="letter" aria-hidden="true">B</span>
+        <div class="veh" aria-hidden="true">
+          <svg viewBox="0 0 400 200" preserveAspectRatio="xMidYMid meet">
+            <g fill="none" stroke="#f3f5f2" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M30 140V112C30 100 40 92 54 90L110 82L150 52C160 46 172 44 184 44H262C276 44 288 50 296 60L326 92L360 98C372 100 378 108 378 118V140"/>
+              <path d="M30 140H58M138 140H262M342 140H378"/>
+              <circle cx="98" cy="140" r="34"/><circle cx="302" cy="140" r="34"/>
+            </g>
+            <path d="M40 112H370" stroke="#14a752" stroke-width="10" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <span class="lbl">Categoria B</span>
+        <h3>Carro</h3>
+        <p>Para veículos de passeio e utilitários leves. Aulas práticas em carro manual ou automático.</p>
+        <ul><li>Carro manual</li><li>Carro automático</li><li>Baliza e percurso</li></ul>
+      </article>
+    </div>
+    <div class="combo">
+      <b>Categoria <span>A</span> + <i>B</i></b>
+      <span style="color:var(--muted)">Tire as duas de uma vez: moto e carro no mesmo processo.</span>
+      <a class="btn btn-ghost js-wa" href="https://w.app/autoescolagravata" target="_blank" rel="noopener">Quero a A + B</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ESTATÍSTICAS ============ -->
+<section class="sec stats" id="numeros">
+  <div class="wrap">
+    <span class="eyebrow">Em números</span>
+    <h2 class="h-sec">A confiança de <em>Navegantes.</em></h2>
+    <div class="stat-grid">
+      <div class="stat">
+        <div class="num"><span data-count="4.7" data-dec="1" id="statRating">4,7</span><small>/5</small></div>
+        <div class="stars" aria-label="Nota 4,7 de 5"></div>
+        <div class="k">Nota no Google</div><div class="src">Avaliações de alunos</div>
+      </div>
+      <div class="stat">
+        <div class="num"><span data-count="210" id="statCount">210</span><small>+</small></div>
+        <div class="bar"><i style="--w:84%"></i></div>
+        <div class="k">Avaliações</div><div class="src">Google Maps</div>
+      </div>
+      <div class="stat">
+        <div class="num"><span data-count="7390" data-sep="1">7.390</span></div>
+        <div class="bar"><i style="--w:92%"></i></div>
+        <div class="k">Seguidores</div><div class="src">Instagram @autoescolagravata</div>
+      </div>
+      <div class="stat">
+        <div class="num"><span data-count="6">6</span><small>serviços</small></div>
+        <div class="bar"><i style="--w:60%"></i></div>
+        <div class="k">Processos de CNH</div><div class="src">Da 1ª habilitação à PID</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ AVALIAÇÕES ============ -->
+<section class="sec" id="avaliacoes">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <span class="eyebrow">Avaliações</span>
+        <h2 class="h-sec">Quem passou <span class="g">por aqui.</span></h2>
+      </div>
+      <div class="rv-nav" id="rvNav" hidden>
+        <button type="button" id="rvPrev" aria-label="Avaliação anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M15 6l-6 6 6 6"/></svg></button>
+        <button type="button" id="rvNext" aria-label="Próxima avaliação"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M9 6l6 6-6 6"/></svg></button>
+      </div>
+    </div>
+
+    <div class="reviews-wrap">
+      <aside class="score">
+        <div class="g-logo">
+          <svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3l5.7-5.7C34 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.4-.4-3.5z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-7.9l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.4-.4-3.5z"/></svg>
+          Avaliações no Google
+        </div>
+        <div class="big" id="scoreBig">4,7</div>
+        <div class="stars" id="scoreStars" aria-label="Nota 4,7 de 5"></div>
+        <div class="cnt" id="scoreCnt">Com base em 210 avaliações</div>
+        <div class="btns">
+          <a class="btn btn-red" id="readAll" href="https://www.google.com/maps/search/?api=1&query=Autoescola%20Gravat%C3%A1%20Navegantes%20SC" target="_blank" rel="noopener">Ler no Google</a>
+          <a class="btn btn-ghost" id="writeRv" href="https://www.google.com/maps/search/?api=1&query=Autoescola%20Gravat%C3%A1%20Navegantes%20SC" target="_blank" rel="noopener">Avaliar a Gravatá</a>
+        </div>
+      </aside>
+
+      <div id="rvArea" style="min-width:0">
+        <div class="rv-empty" id="rvEmpty">
+          <span class="eyebrow">Nota 4,7 de 5</span>
+          <h3>Mais de 200 alunos já avaliaram a Gravatá no Google.</h3>
+          <p>Veja o que eles dizem sobre as aulas, os instrutores e o atendimento. Fez sua CNH com a gente? Conte como foi.</p>
+          <div class="quotes"><span>Aulas teóricas</span><span>Aulas práticas</span><span>Instrutores</span><span>Atendimento</span></div>
+        </div>
+        <div class="rv-track" id="rvTrack" hidden></div>
+        <div class="rv-attr" id="rvAttr" hidden>Avaliações fornecidas pelo Google · atualizadas automaticamente</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ESTRUTURA / MAPA ============ -->
+<section class="sec" id="estrutura" style="padding-top:0">
+  <div class="wrap">
+    <span class="eyebrow">Estrutura e localização</span>
+    <h2 class="h-sec">No centro de <em>Navegantes.</em></h2>
+
+    <div class="place">
+      <div class="info">
+        <div class="row"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#ff4a3d" stroke-width="2"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
+          <div><div class="lbl">Endereço</div><div class="val">Av. Pref. José Juvenal Mafra, 1978<br>Centro, Navegantes – SC<br>CEP 88370-168</div></div></div>
+        <div class="row"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#3fd27c" stroke-width="2" stroke-linecap="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></div>
+          <div><div class="lbl">Telefone</div><div class="val"><a href="tel:+554733194242">(47) 3319-4242</a><button class="copy" type="button" data-copy="(47) 3319-4242">copiar</button></div></div></div>
+        <div class="row"><div class="ic"><svg viewBox="0 0 24 24" fill="#3fd27c"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.3-.8-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8 0-1.4.7-2 1-2.3.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.8-1c.2-.3.4-.2.7-.1l1.9.9c.3.1.5.2.5.4.1.1.1.7-.1 1.3z"/></svg></div>
+          <div><div class="lbl">WhatsApp</div><div class="val"><a class="js-wa" href="https://w.app/autoescolagravata" target="_blank" rel="noopener">w.app/autoescolagravata</a></div></div></div>
+        <div class="row"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#ff4a3d" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="#ff4a3d"/></svg></div>
+          <div><div class="lbl">Instagram</div><div class="val"><a href="https://www.instagram.com/autoescolagravata/" target="_blank" rel="noopener">@autoescolagravata</a></div></div></div>
+        <div class="btns">
+          <a class="btn btn-red" id="routeBtn" href="https://www.google.com/maps/dir/?api=1&destination=Av.%20Pref.%20Jos%C3%A9%20Juvenal%20Mafra%2C%201978%20-%20Centro%2C%20Navegantes%20-%20SC%2C%2088370-168" target="_blank" rel="noopener">Como chegar
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </div>
+
+      <div class="map" id="map">
+        <svg class="static" id="staticMap" viewBox="0 0 800 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <rect width="800" height="500" fill="#0c1014"/>
+          <g stroke="#1a2027" stroke-width="14" fill="none">
+            <path d="M-20 90H820M-20 210H820M-20 330H820M-20 450H820M90 -20V520M230 -20V520M370 -20V520M510 -20V520M650 -20V520"/>
+          </g>
+          <g stroke="#141a20" stroke-width="5" fill="none"><path d="M-20 150H820M-20 270H820M-20 390H820M160 -20V520M300 -20V520M440 -20V520M580 -20V520M720 -20V520"/></g>
+          <path d="M-40 380C180 330 320 300 430 252S640 140 860 110" stroke="#2c333b" stroke-width="26" fill="none"/>
+          <path d="M-40 380C180 330 320 300 430 252S640 140 860 110" stroke="#e3231b" stroke-width="2" stroke-dasharray="10 12" fill="none" opacity=".6"/>
+          <text x="600" y="170" fill="#7c868f" font-family="IBM Plex Mono, monospace" font-size="13" transform="rotate(-17 600 170)">AV. PREF. JOSÉ JUVENAL MAFRA</text>
+          <g transform="translate(430 252)">
+            <circle r="60" fill="#14a752" opacity=".12"><animate attributeName="r" values="20;70;20" dur="3s" repeatCount="indefinite"/><animate attributeName="opacity" values=".35;0;.35" dur="3s" repeatCount="indefinite"/></circle>
+            <path d="M0 0C-4-12-20-22-20-38a20 20 0 1 1 40 0C20-22 4-12 0 0z" fill="#e3231b"/>
+            <circle cy="-38" r="7" fill="#fff"/>
+          </g>
+        </svg>
+        <div class="pin-card">
+          <div><b>Autoescola Gravatá</b><small>Av. Pref. José Juvenal Mafra, 1978 · Centro</small></div>
+          <a href="https://www.google.com/maps/dir/?api=1&destination=Av.%20Pref.%20Jos%C3%A9%20Juvenal%20Mafra%2C%201978%20-%20Centro%2C%20Navegantes%20-%20SC%2C%2088370-168" target="_blank" rel="noopener" aria-label="Abrir rota no Google Maps"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l18-8-8 18-2-8z"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA FINAL ============ -->
+<section class="final" id="contato">
+  <div class="wrap">
+    <span class="eyebrow">Matrículas abertas</span>
+    <h2>Bora tirar <span class="r">sua</span> <span class="g">CNH?</span></h2>
+    <p>Fale com a gente pelo WhatsApp e tire suas dúvidas sobre valores, documentos e horários de aula.</p>
+    <div class="ctas">
+      <a class="btn btn-red js-wa" href="https://w.app/autoescolagravata" target="_blank" rel="noopener">Chamar no WhatsApp
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="btn btn-ghost" href="tel:+554733194242">(47) 3319-4242</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="ftr">
+  <div class="wrap">
+    <div class="ftr-grid">
+      <div>
+        <a href="#inicio" class="brand">
+          <svg class="brand-mark" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="22" fill="#0b0d10"/><path d="M24 2a22 22 0 0 1 22 22h-5A17 17 0 0 0 24 7z" fill="#e3231b"/><path d="M2 24A22 22 0 0 1 24 2v5A17 17 0 0 0 7 24z" fill="#e3231b"/><path d="M46 24A22 22 0 0 1 2 24h5a17 17 0 0 0 34 0z" fill="#14a752"/><circle cx="24" cy="24" r="11" fill="none" stroke="#f3f5f2" stroke-width="3"/><path d="M13.5 22h21M24 24v10" stroke="#f3f5f2" stroke-width="3" stroke-linecap="round"/><circle cx="24" cy="24" r="3" fill="#f6c343"/></svg>
+          <span class="brand-txt">Autoescola <span>Gravatá</span><small>CFC · Navegantes/SC</small></span>
+        </a>
+        <p class="about">Centro de Formação de Condutores no centro de Navegantes. Primeira habilitação, renovação, adição de categoria e muito mais.</p>
+      </div>
+      <div><h4>Navegação</h4><ul><li><a href="#sobre">Sobre</a></li><li><a href="#cnh">CNH</a></li><li><a href="#categorias">Categorias</a></li><li><a href="#estrutura">Estrutura</a></li></ul></div>
+      <div><h4>Serviços</h4><ul><li><a href="#cnh">1ª Habilitação</a></li><li><a href="#cnh">Renovação</a></li><li><a href="#cnh">Adição de categoria</a></li><li><a href="#cnh">PID</a></li></ul></div>
+      <div><h4>Contato</h4><ul><li><a href="tel:+554733194242">(47) 3319-4242</a></li><li><a class="js-wa" href="https://w.app/autoescolagravata" target="_blank" rel="noopener">WhatsApp</a></li><li><a href="https://www.instagram.com/autoescolagravata/" target="_blank" rel="noopener">Instagram</a></li><li>Av. Pref. José Juvenal Mafra, 1978</li></ul></div>
+    </div>
+    <div class="ftr-bottom">
+      <span>© <span id="yr">2026</span> Autoescola Gravatá · CFC Gravatá · Navegantes/SC</span>
+      <a class="dev" id="devLink" href="#" target="_blank" rel="noopener">Desenvolvido por <b>ALAZO</b></a>
+    </div>
+  </div>
+</footer>
+
+<a class="wa-float js-wa" href="https://w.app/autoescolagravata" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.3-.8-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8 0-1.4.7-2 1-2.3.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.8-1c.2-.3.4-.2.7-.1l1.9.9c.3.1.5.2.5.4.1.1.1.7-.1 1.3z"/></svg>
+</a>
+
+<script src="assets/js/config.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

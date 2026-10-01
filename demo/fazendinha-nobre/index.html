@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fazendinha Nobre — Mini coelhos e Porquinhos da Índia | Gaspar - SC</title>
+  <meta name="description" content="Fazendinha Nobre: mini coelhos e porquinhos da Índia criados com cuidado e carinho em Gaspar - SC. Entregas a combinar. Fale pelo WhatsApp (47) 99624-1035.">
+  <meta name="theme-color" content="#123127">
+
+  <script>document.documentElement.classList.add('js');</script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&family=Caveat:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="css/style.css?v=5">
+</head>
+<body>
+
+  <div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
+
+  <!-- ==========================
+       HEADER
+  =========================== -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="#inicio" class="logo" aria-label="Fazendinha Nobre — início">
+        <!-- Coloque o logo oficial em assets/logo.png. Sem o arquivo, aparece o monograma. -->
+        <span class="logo__mark"><img src="assets/logo.png" alt="" data-fallback="logo"><i class="bi bi-flower2"></i></span>
+        <span class="logo__text">Fazendinha<strong>Nobre</strong></span>
+      </a>
+
+      <nav class="nav" id="nav" aria-label="Menu principal">
+        <ul class="nav__list">
+          <li><a href="#inicio" class="nav__link">Início</a></li>
+          <li><a href="#sobre" class="nav__link">Sobre</a></li>
+          <li><a href="#racas" class="nav__link">Raças</a></li>
+          <li><a href="#disponiveis" class="nav__link">Disponíveis</a></li>
+          <li><a href="#galeria" class="nav__link">Galeria</a></li>
+          <li><a href="#contato" class="nav__link">Contato</a></li>
+        </ul>
+        <a href="https://wa.me/5547996241035?text=Ol%C3%A1%21%20Vi%20o%20site%20da%20Fazendinha%20Nobre%20e%20gostaria%20de%20saber%20mais." target="_blank" rel="noopener" class="btn btn--accent btn--sm nav__cta">
+          <i class="bi bi-whatsapp"></i> (47) 99624-1035
+        </a>
+        <div class="nav__info">
+          <p><i class="bi bi-geo-alt"></i> Gaspar – SC</p>
+          <p><i class="bi bi-truck"></i> Entregas a combinar</p>
+        </div>
+      </nav>
+
+      <button class="menu-toggle" id="menuToggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+  <div class="nav-overlay" id="navOverlay"></div>
+
+  <main>
+
+    <!-- ==========================
+         HERO
+    =========================== -->
+    <section class="hero" id="inicio">
+      <div class="hero__media" id="heroMedia">
+        <img src="assets/hero.jpg" alt="Mini coelho malhado na grama" data-label="hero.jpg">
+      </div>
+
+      <!-- Ornamentos em linha (folhas) -->
+      <svg class="hero__ornament" viewBox="0 0 200 600" aria-hidden="true">
+        <path d="M150 20 C 60 90, 60 200, 150 260 C 190 180, 190 100, 150 20 Z" />
+        <path d="M150 20 L150 260" />
+        <path d="M120 330 C 40 380, 40 480, 120 540 C 160 470, 160 400, 120 330 Z" />
+        <path d="M120 330 L120 540" />
+      </svg>
+
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <p class="chip"><i class="bi bi-heart"></i> Mini coelhos <span>•</span> Porquinhos da Índia <span>•</span> Gaspar - SC</p>
+          <h1 class="hero__brand">Fazendinha<br>Nobre</h1>
+          <p class="hero__title">Coelhos criados <span>com cuidado e carinho.</span></p>
+          <p class="hero__text">Mini coelhos e porquinhos da Índia para companhia, criados com atenção em cada detalhe.</p>
+          <div class="hero__actions">
+            <a href="https://wa.me/5547996241035?text=Ol%C3%A1%21%20Vi%20o%20site%20da%20Fazendinha%20Nobre%20e%20gostaria%20de%20saber%20mais." target="_blank" rel="noopener" class="btn btn--accent">
+              <i class="bi bi-whatsapp"></i> Falar no WhatsApp <i class="bi bi-arrow-right btn__arrow"></i>
+            </a>
+            <a href="#disponiveis" class="btn btn--ghost"><i class="bi bi-grid"></i> Ver disponíveis</a>
+          </div>
+          <p class="hero__script">Pequena criação,<br>muito carinho.</p>
+        </div>
+      </div>
+
+      <a href="#info" class="hero__scroll" aria-label="Rolar para baixo"><span></span></a>
+    </section>
+
+    <!-- ==========================
+         INFORMAÇÕES RÁPIDAS
+    =========================== -->
+    <section class="info" id="info" aria-label="Informações de contato">
+      <div class="container">
+        <ul class="info__grid">
+          <li class="info__item reveal">
+            <span class="info__icon"><i class="bi bi-geo-alt"></i></span>
+            <div><small>Localização</small><strong>Gaspar – SC</strong></div>
+          </li>
+          <li class="info__item reveal">
+            <span class="info__icon"><i class="bi bi-truck"></i></span>
+            <div><small>Entregas</small><strong>A combinar</strong></div>
+          </li>
+          <li class="info__item reveal">
+            <a href="https://wa.me/5547996241035?text=Ol%C3%A1%21%20Vi%20o%20site%20da%20Fazendinha%20Nobre%20e%20gostaria%20de%20saber%20mais." target="_blank" rel="noopener" class="info__link">
+              <span class="info__icon"><i class="bi bi-whatsapp"></i></span>
+              <div><small>WhatsApp</small><strong>(47) 99624-1035</strong></div>
+              <i class="bi bi-arrow-up-right info__go"></i>
+            </a>
+          </li>
+          <li class="info__item reveal">
+            <a href="https://www.instagram.com/fazendinha_nobre/" target="_blank" rel="noopener" class="info__link">
+              <span class="info__icon"><i class="bi bi-instagram"></i></span>
+              <div><small>Instagram</small><strong>@fazendinha_nobre</strong></div>
+              <i class="bi bi-arrow-up-right info__go"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ==========================
+         SOBRE
+    =========================== -->
+    <section class="section sobre" id="sobre">
+      <div class="container sobre__grid">
+        <div class="sobre__media reveal">
+          <figure class="sobre__photo">
+            <img src="assets/sobre.jpg" alt="Coelho da Fazendinha Nobre" data-label="sobre.jpg">
+          </figure>
+          <div class="sobre__badge">
+            <i class="bi bi-geo-alt-fill"></i>
+            <div><strong>Gaspar – SC</strong><span>Entregas a combinar</span></div>
+          </div>
+        </div>
+        <div class="sobre__content reveal">
+          <p class="eyebrow">Sobre a Fazendinha</p>
+          <h2 class="title">Uma criação feita <em>com carinho</em></h2>
+          <p class="lead">
+            A Fazendinha Nobre é um pequeno criatório de mini coelhos e porquinhos da Índia em Gaspar, Santa Catarina.
+          </p>
+          <p class="sobre__text">
+            Cada animal é acompanhado de perto, e o contato é sempre direto: você conversa com quem cria, tira suas dúvidas e combina a entrega do jeito que for melhor.
+          </p>
+          <ul class="tags">
+            <li><i class="bi bi-heart"></i> Mini coelhos</li>
+            <li><i class="bi bi-flower1"></i> Porquinhos da Índia</li>
+            <li><i class="bi bi-geo-alt"></i> Gaspar – SC</li>
+            <li><i class="bi bi-truck"></i> Entregas a combinar</li>
+          </ul>
+          <a href="#disponiveis" class="link-arrow">Conheça os animais <i class="bi bi-arrow-right"></i></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================
+         NOSSO JEITO
+    =========================== -->
+    <section class="jeito">
+      <div class="container">
+        <header class="section__head section__head--center reveal">
+          <p class="eyebrow eyebrow--light">Nosso jeito de criar</p>
+          <h2 class="title title--light">O que guia a nossa criação</h2>
+        </header>
+        <div class="jeito__grid">
+          <article class="jeito__item spot reveal">
+            <span class="jeito__icon"><i class="bi bi-heart"></i></span>
+            <h3>Cuidado</h3>
+            <p>Atenção em cada etapa da criação.</p>
+          </article>
+          <article class="jeito__item spot reveal">
+            <span class="jeito__icon"><i class="bi bi-chat-heart"></i></span>
+            <h3>Proximidade</h3>
+            <p>Atendimento direto para tirar dúvidas e orientar a escolha.</p>
+          </article>
+          <article class="jeito__item spot reveal">
+            <span class="jeito__icon"><i class="bi bi-house-heart"></i></span>
+            <h3>Companheirismo</h3>
+            <p>Coelhos pensados para fazer parte da família.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================
+         RAÇAS / ANIMAIS
+    =========================== -->
+    <section class="section racas" id="racas">
+      <div class="container">
+        <header class="section__head reveal">
+          <p class="eyebrow">Os animais</p>
+          <h2 class="title">Nossos pequenos <em>companheiros</em></h2>
+        </header>
+
+        <article class="raca reveal">
+          <figure class="raca__media">
+            <img src="assets/mini-coelhos.jpg" alt="Mini coelho de orelhas caídas" data-label="mini-coelhos.jpg">
+            <span class="raca__num">01</span>
+          </figure>
+          <div class="raca__content">
+            <h3 class="raca__title">Mini Coelhos</h3>
+            <p>Pequenos, curiosos e ótimos companheiros para o dia a dia. Uma escolha para quem quer um animal de estimação próximo e tranquilo dentro de casa.</p>
+            <ul class="raca__list">
+              <li>Netherland Dwarf</li>
+              <li>Mini Lop</li>
+            </ul>
+            <a href="#disponiveis" class="link-arrow">Ver disponíveis <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </article>
+
+        <article class="raca raca--reverse reveal">
+          <figure class="raca__media">
+            <img src="assets/porquinho-india.jpg" alt="Porquinhos da Índia comendo folhas" data-label="porquinho-india.jpg">
+            <span class="raca__num">02</span>
+          </figure>
+          <div class="raca__content">
+            <h3 class="raca__title">Porquinhos da Índia</h3>
+            <p>Sociáveis e carinhosos, os porquinhos da Índia são companhia simples e cheia de personalidade para toda a família.</p>
+            <a href="#disponiveis" class="link-arrow">Ver disponíveis <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ==========================
+         DISPONÍVEIS (por raça)
+         Para editar: troque a foto, o título, a frase e o texto após "WA|" (mensagem do WhatsApp).
+    =========================== -->
+    <section class="section disponiveis" id="disponiveis">
+      <div class="container">
+        <header class="section__head section__head--split reveal">
+          <div>
+            <p class="eyebrow eyebrow--light">Disponíveis</p>
+            <h2 class="title title--light">Quem está esperando <em>por você?</em></h2>
+          </div>
+          <p class="section__sub section__sub--light">Escolha a raça e fale direto com a Fazendinha Nobre pelo WhatsApp para saber quem está disponível.</p>
+        </header>
+
+        <div class="tipos">
+          <article class="tipo spot reveal">
+            <figure class="tipo__media">
+              <img src="assets/netherland.jpg" alt="Coelho Netherland Dwarf" data-label="netherland.jpg">
+              <span class="tipo__tag">Mini coelho</span>
+            </figure>
+            <div class="tipo__body">
+              <h3 class="tipo__title">Coelhos Netherland Dwarf</h3>
+              <p class="tipo__text">Uma das menores raças de coelho, com orelhas curtinhas e carinha arredondada.</p>
+              <a href="https://wa.me/5547996241035?text=Ol%C3%A1%21%20Vi%20o%20site%20da%20Fazendinha%20Nobre%20e%20tenho%20interesse%20nos%20Coelhos%20Netherland%20Dwarf." target="_blank" rel="noopener" class="btn btn--accent btn--block">
+                <i class="bi bi-whatsapp"></i> Tenho interesse <i class="bi bi-arrow-right btn__arrow"></i>
+              </a>
+            </div>
+          </article>
+
+          <article class="tipo spot reveal">
+            <figure class="tipo__media">
+              <img src="assets/mini-lop.jpg" alt="Coelho Mini Lop" data-label="mini-lop.jpg">
+              <span class="tipo__tag">Mini coelho</span>
+            </figure>
+            <div class="tipo__body">
+              <h3 class="tipo__title">Coelhos Mini Lop</h3>
+              <p class="tipo__text">Orelhas caídas, corpo compacto e um jeitinho calmo que conquista qualquer um.</p>
+              <a href="https://wa.me/5547996241035?text=Ol%C3%A1%21%20Vi%20o%20site%20da%20Fazendinha%20Nobre%20e%20tenho%20interesse%20nos%20Coelhos%20Mini%20Lop." target="_blank" rel="noopener" class="btn btn--accent btn--block">
+                <i class="bi bi-whatsapp"></i> Tenho interesse <i class="bi bi-arrow-right btn__arrow"></i>
+              </a>
+            </div>
+          </article>
+
+          <article class="tipo spot reveal">
+            <figure class="tipo__media">
+              <img src="assets/porquinhos.jpg" alt="Porquinhos da Índia" data-label="porquinhos.jpg">
+              <span class="tipo__tag">Roedor</span>
+            </figure>
+            <div class="tipo__body">
+              <h3 class="tipo__title">Porquinhos da Índia</h3>
+              <p class="tipo__text">Sociáveis e comunicativos, adoram companhia e interagem com toda a família.</p>
+              <a href="https://wa.me/5547996241035?text=Ol%C3%A1%21%20Vi%20o%20site%20da%20Fazendinha%20Nobre%20e%20tenho%20interesse%20nos%20Porquinhos%20da%20%C3%8Dndia." target="_blank" rel="noopener" class="btn btn--accent btn--block">
+                <i class="bi bi-whatsapp"></i> Tenho interesse <i class="bi bi-arrow-right btn__arrow"></i>
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================
+         COMO FUNCIONA
+    =========================== -->
+    <section class="section passos">
+      <div class="container">
+        <header class="section__head section__head--center reveal">
+          <p class="eyebrow">Como funciona</p>
+          <h2 class="title">Do primeiro contato <em>à entrega</em></h2>
+        </header>
+        <ol class="passos__list">
+          <li class="passo reveal">
+            <span class="passo__num">01</span>
+            <span class="passo__icon"><i class="bi bi-search-heart"></i></span>
+            <h3>Escolha</h3><p>Veja os animais disponíveis.</p>
+          </li>
+          <li class="passo reveal">
+            <span class="passo__num">02</span>
+            <span class="passo__icon"><i class="bi bi-whatsapp"></i></span>
+            <h3>Converse</h3><p>Entre em contato pelo WhatsApp.</p>
+          </li>
+          <li class="passo reveal">
+            <span class="passo__num">03</span>
+            <span class="passo__icon"><i class="bi bi-chat-dots"></i></span>
+            <h3>Tire suas dúvidas</h3><p>Converse diretamente com a Fazendinha Nobre.</p>
+          </li>
+          <li class="passo reveal">
+            <span class="passo__num">04</span>
+            <span class="passo__icon"><i class="bi bi-truck"></i></span>
+            <h3>Combine a entrega</h3><p>Combine os detalhes diretamente com o criatório.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ==========================
+         GALERIA
+    =========================== -->
+    <section class="section galeria" id="galeria">
+      <div class="container">
+        <header class="section__head section__head--split reveal">
+          <div>
+            <p class="eyebrow">Galeria</p>
+            <h2 class="title">Um pouco da <em>nossa rotina</em></h2>
+          </div>
+          <a href="https://www.instagram.com/fazendinha_nobre/" target="_blank" rel="noopener" class="link-arrow">Mais fotos no Instagram <i class="bi bi-arrow-up-right"></i></a>
+        </header>
+        <div class="galeria__grid">
+          <button type="button" class="galeria__item g1 reveal" aria-label="Ampliar foto 1"><img src="assets/galeria-01.jpg" alt="Coelhos no quintal da Fazendinha" data-label="galeria-01.jpg"><span class="galeria__overlay" aria-hidden="true"><i class="bi bi-arrows-angle-expand"></i></span></button>
+          <button type="button" class="galeria__item g2 reveal" aria-label="Ampliar foto 2"><img src="assets/galeria-02.jpg" alt="Coelhinhos no feno" data-label="galeria-02.jpg"><span class="galeria__overlay" aria-hidden="true"><i class="bi bi-arrows-angle-expand"></i></span></button>
+          <button type="button" class="galeria__item g3 reveal" aria-label="Ampliar foto 3"><img src="assets/galeria-03.jpg" alt="Coelho na grama" data-label="galeria-03.jpg"><span class="galeria__overlay" aria-hidden="true"><i class="bi bi-arrows-angle-expand"></i></span></button>
+          <button type="button" class="galeria__item g4 reveal" aria-label="Ampliar foto 4"><img src="assets/galeria-04.jpg" alt="Coelho ao lado do muro de pedra" data-label="galeria-04.jpg"><span class="galeria__overlay" aria-hidden="true"><i class="bi bi-arrows-angle-expand"></i></span></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================
+         INSTAGRAM + DEPOIMENTOS
+    =========================== -->
+    <section class="section social">
+      <div class="container social__grid">
+
+        <div class="insta spot reveal">
+          <div class="insta__head">
+            <span class="insta__avatar"><i class="bi bi-instagram"></i></span>
+            <div>
+              <strong>@fazendinha_nobre</strong>
+              <span>Fazendinha Nobre · Gaspar – SC</span>
+            </div>
+          </div>
+          <h2 class="title title--sm title--light">Acompanhe a Fazendinha Nobre</h2>
+          <p>Veja nossos coelhinhos, novidades e acompanhe um pouco mais da nossa rotina.</p>
+          <a href="https://www.instagram.com/fazendinha_nobre/" target="_blank" rel="noopener" class="insta__strip" aria-label="Abrir o Instagram da Fazendinha Nobre">
+            <img src="assets/insta-01.jpg" alt="" data-label="insta-01.jpg">
+            <img src="assets/insta-02.jpg" alt="" data-label="insta-02.jpg">
+            <img src="assets/insta-03.jpg" alt="" data-label="insta-03.jpg">
+          </a>
+          <a href="https://www.instagram.com/fazendinha_nobre/" target="_blank" rel="noopener" class="btn btn--accent">
+            <i class="bi bi-instagram"></i> Conhecer o Instagram <i class="bi bi-arrow-right btn__arrow"></i>
+          </a>
+        </div>
+
+        <!-- DEPOIMENTOS — substitua pelos depoimentos reais dos clientes -->
+        <div class="depoimentos reveal">
+          <p class="eyebrow">Depoimentos</p>
+          <h2 class="title title--sm">Quem já conheceu <em>nosso trabalho</em></h2>
+          <div class="carousel" id="carousel" aria-roledescription="carrossel">
+            <i class="bi bi-quote carousel__quote" aria-hidden="true"></i>
+            <div class="carousel__track">
+              <blockquote class="depo is-active">
+                <p>[Depoimento do cliente 1]</p>
+                <footer><span class="depo__avatar">NC</span><div><strong>Nome do cliente</strong><span>Cidade</span></div></footer>
+              </blockquote>
+              <blockquote class="depo">
+                <p>[Depoimento do cliente 2]</p>
+                <footer><span class="depo__avatar">NC</span><div><strong>Nome do cliente</strong><span>Cidade</span></div></footer>
+              </blockquote>
+              <blockquote class="depo">
+                <p>[Depoimento do cliente 3]</p>
+                <footer><span class="depo__avatar">NC</span><div><strong>Nome do cliente</strong><span>Cidade</span></div></footer>
+              </blockquote>
+            </div>
+            <div class="carousel__nav">
+              <button type="button" class="carousel__btn" data-dir="-1" aria-label="Depoimento anterior"><i class="bi bi-arrow-left"></i></button>
+              <div class="carousel__dots"></div>
+              <button type="button" class="carousel__btn" data-dir="1" aria-label="Próximo depoimento"><i class="bi bi-arrow-right"></i></button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================
+         CTA FINAL
+    =========================== -->
+    <section class="cta" id="contato">
+      <svg class="cta__ornament" viewBox="0 0 200 300" aria-hidden="true">
+        <path d="M100 10 C 20 70, 20 190, 100 290 C 180 190, 180 70, 100 10 Z" />
+        <path d="M100 10 L100 290 M100 90 L60 60 M100 90 L140 60 M100 150 L50 115 M100 150 L150 115 M100 210 L60 180 M100 210 L140 180" />
+      </svg>
+      <div class="container cta__inner reveal">
+        <p class="eyebrow eyebrow--light">Contato</p>
+        <h2 class="cta__title">Procurando um <em>novo companheiro?</em></h2>
+        <p class="cta__text">Fale com a Fazendinha Nobre e conheça os animais disponíveis.</p>
+        <div class="cta__actions">
+          <a href="https://wa.me/5547996241035?text=Ol%C3%A1%21%20Vi%20o%20site%20da%20Fazendinha%20Nobre%20e%20gostaria%20de%20conhecer%20os%20animais%20dispon%C3%ADveis." target="_blank" rel="noopener" class="btn btn--accent btn--lg">
+            <i class="bi bi-whatsapp"></i> Falar pelo WhatsApp <i class="bi bi-arrow-right btn__arrow"></i>
+          </a>
+        </div>
+        <ul class="cta__facts">
+          <li><i class="bi bi-telephone"></i> (47) 99624-1035</li>
+          <li><i class="bi bi-geo-alt"></i> Gaspar – SC</li>
+          <li><i class="bi bi-truck"></i> Entregas a combinar</li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==========================
+       FOOTER
+  =========================== -->
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <a href="#inicio" class="logo logo--footer">
+          <span class="logo__mark"><i class="bi bi-flower2"></i></span>
+          <span class="logo__text">Fazendinha<strong>Nobre</strong></span>
+        </a>
+        <p>Mini coelhos e Porquinhos da Índia criados com cuidado e carinho.</p>
+        <div class="footer__social">
+          <a href="https://www.instagram.com/fazendinha_nobre/" target="_blank" rel="noopener" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+          <a href="https://wa.me/5547996241035?text=Ol%C3%A1%21%20Vi%20o%20site%20da%20Fazendinha%20Nobre%20e%20gostaria%20de%20saber%20mais." target="_blank" rel="noopener" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+        </div>
+      </div>
+
+      <div class="footer__col footer__col--nav">
+        <h4>Navegação</h4>
+        <a href="#inicio">Início</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#racas">Animais</a>
+        <a href="#disponiveis">Disponíveis</a>
+        <a href="#galeria">Galeria</a>
+      </div>
+
+      <div class="footer__col">
+        <h4>Contato</h4>
+        <a href="https://wa.me/5547996241035?text=Ol%C3%A1%21%20Vi%20o%20site%20da%20Fazendinha%20Nobre%20e%20gostaria%20de%20saber%20mais." target="_blank" rel="noopener"><i class="bi bi-whatsapp"></i> (47) 99624-1035</a>
+        <a href="https://www.instagram.com/fazendinha_nobre/" target="_blank" rel="noopener"><i class="bi bi-instagram"></i> @fazendinha_nobre</a>
+        <span><i class="bi bi-geo-alt"></i> Gaspar – SC</span>
+        <span><i class="bi bi-truck"></i> Entregas a combinar</span>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <div class="footer__legal">
+        <p class="footer__copy">© <span id="ano">2026</span> Fazendinha Nobre. Todos os direitos reservados.</p>
+        <!-- Troque o endereço abaixo pelo link do seu site -->
+        <p class="footer__dev">Desenvolvido por <a href="https://www.seusite.com.br" target="_blank" rel="noopener">ALAZO</a></p>
+      </div>
+      <a href="#inicio" class="footer__top" aria-label="Voltar ao topo"><i class="bi bi-arrow-up"></i></a>
+    </div>
+  </footer>
+
+  <!-- WhatsApp flutuante -->
+  <a href="https://wa.me/5547996241035?text=Ol%C3%A1%21%20Vi%20o%20site%20da%20Fazendinha%20Nobre%20e%20gostaria%20de%20saber%20mais." target="_blank" rel="noopener" class="wa-float" aria-label="Falar pelo WhatsApp">
+    <i class="bi bi-whatsapp"></i>
+    <span class="wa-float__label">Fale conosco</span>
+  </a>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Foto ampliada" hidden>
+    <button type="button" class="lightbox__close" aria-label="Fechar"><i class="bi bi-x-lg"></i></button>
+    <button type="button" class="lightbox__arrow lightbox__arrow--prev" aria-label="Foto anterior"><i class="bi bi-chevron-left"></i></button>
+    <img class="lightbox__img" src="" alt="">
+    <button type="button" class="lightbox__arrow lightbox__arrow--next" aria-label="Próxima foto"><i class="bi bi-chevron-right"></i></button>
+    <p class="lightbox__count" id="lightboxCount"></p>
+  </div>
+
+  <script src="js/script.js?v=5"></script>
+</body>
+</html>
