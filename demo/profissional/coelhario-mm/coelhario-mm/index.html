@@ -6,7 +6,7 @@
 
   <title>Coelhário MM | Coelhos para PET em São José do Rio Preto</title>
   <meta name="description" content="Coelhário MM: criação especializada de coelhos para PET em São José do Rio Preto – SP. Netherland Dwarf e Mini Lop. Conheça o criatório, veja os filhotes disponíveis e fale pelo WhatsApp.">
-  <meta name="theme-color" content="#FBF7EF">
+  <meta name="theme-color" content="#2B1C13">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
@@ -18,19 +18,19 @@
   <meta property="og:image" content="assets/hero.jpg">
   <meta name="twitter:card" content="summary_large_image">
 
-  <link rel="icon" href="assets/logo.png">
+  <link rel="icon" href="assets/coelho-silhueta.svg">
 
-  <!-- Fontes: Young Serif (títulos), Figtree (textos), Kaushan Script (detalhes manuscritos, uso moderado) -->
+  <!-- Fontes: Fraunces (títulos), Inter (textos), Caveat (detalhes manuscritos) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Kaushan+Script&family=Young+Serif&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Ícones -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
   <link rel="stylesheet" href="css/style.css">
 
-  <!-- Marca o documento como "com JS" (para as animações de entrada) e desfaz se o script não carregar -->
+  <!-- Marca o documento como "com JS" (animações de entrada) e desfaz se o script não carregar -->
   <script>
     document.documentElement.classList.add('js');
     window.addEventListener('load', function () {
@@ -45,16 +45,11 @@
 <body>
   <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
 
-  <!-- Ramo decorativo reutilizado em algumas seções -->
+  <!-- Folha decorativa (traço) reutilizada em algumas seções -->
   <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
-    <symbol id="ramo" viewBox="0 0 120 200">
-      <path d="M60 196 C58 140 62 90 60 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-      <path d="M60 150 C40 145 26 130 22 112 C42 114 56 128 60 150Z" fill="currentColor"/>
-      <path d="M60 128 C80 123 94 108 98 90 C78 92 64 106 60 128Z" fill="currentColor"/>
-      <path d="M60 100 C42 95 30 82 27 66 C45 68 57 80 60 100Z" fill="currentColor"/>
-      <path d="M60 76 C78 71 88 58 91 44 C74 46 63 58 60 76Z" fill="currentColor"/>
-      <path d="M60 50 C48 46 40 36 38 24 C50 26 58 36 60 50Z" fill="currentColor"/>
-      <path d="M60 30 C70 24 76 16 78 6 C68 8 62 16 60 30Z" fill="currentColor"/>
+    <symbol id="folha" viewBox="0 0 100 240">
+      <path d="M50 4 C92 52 96 150 50 236 C4 150 8 52 50 4Z" fill="none" stroke="currentColor" stroke-width="1.4"/>
+      <path d="M50 18 L50 236" fill="none" stroke="currentColor" stroke-width="1.2"/>
     </symbol>
   </svg>
 
@@ -63,10 +58,13 @@
   ========================= -->
   <header class="site-header">
     <div class="site-header__inner container">
-      <!-- LOGO: substitua o arquivo assets/logo.png pelo logo oficial. Sem o arquivo, aparece o nome em texto. -->
+      <!-- LOGO: substitua assets/logo.png pelo logo oficial. Sem o arquivo, aparece um ícone no lugar. -->
       <a class="brand" href="#inicio" aria-label="Coelhário MM, ir para o início">
-        <img class="brand__logo" src="assets/logo.png" alt="Coelhário MM" width="64" height="64">
-        <span class="brand__fallback" aria-hidden="true">Coelhário <b>MM</b></span>
+        <span class="brand__badge">
+          <img class="brand__logo" src="assets/coelho-silhueta.svg" alt="" width="48" height="48">
+          <i class="bi bi-flower1 brand__icon" aria-hidden="true"></i>
+        </span>
+        <span class="brand__name">Coelhário <b>MM</b></span>
       </a>
 
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu">
@@ -81,10 +79,10 @@
           <li><a class="nav__link" href="#sobre">Sobre</a></li>
           <li><a class="nav__link" href="#racas">Raças</a></li>
           <li><a class="nav__link" href="#disponiveis">Disponíveis</a></li>
-          <li><a class="nav__link" href="#depoimentos">Depoimentos</a></li>
+          <li><a class="nav__link" href="#galeria">Galeria</a></li>
           <li><a class="nav__link" href="#contato">Contato</a></li>
         </ul>
-        <a class="btn btn--primary btn--sm nav__cta" href="#disponiveis">Ver filhotes</a>
+        <a class="btn btn--gold btn--sm nav__cta" href="#contato" data-wa="generic"><i class="bi bi-whatsapp" aria-hidden="true"></i>(17) 99103-3690</a>
       </nav>
     </div>
   </header>
@@ -95,62 +93,95 @@
          HERO
     ========================= -->
     <section class="hero" id="inicio" aria-labelledby="hero-titulo">
+      <!-- FOTO: assets/hero.jpg (quadrada, ocupa a parte esquerda no desktop e o topo no celular). Ajuste o enquadramento com --pos. -->
+      <div class="hero__bg media" data-ph="assets/hero.jpg">
+        <img src="assets/hero.jpg" alt="" width="1700" height="1700" fetchpriority="high" decoding="async" style="--pos: 50% 44%">
+      </div>
+      <div class="hero__shade" aria-hidden="true"></div>
+
+      <svg class="folha hero__folha hero__folha--a" aria-hidden="true" focusable="false"><use href="#folha"/></svg>
+      <svg class="folha hero__folha hero__folha--b" aria-hidden="true" focusable="false"><use href="#folha"/></svg>
+
       <div class="hero__inner container">
         <div class="hero__copy">
-          <p class="hero__kicker">Coelhário MM</p>
-          <h1 class="title-xl" id="hero-titulo">Carinho, cuidado e qualidade em cada coelhinho.</h1>
+          <p class="tagline">
+            <i class="bi bi-heart" aria-hidden="true"></i>
+            <span>Netherland Dwarf</span><span class="tagline__dot" aria-hidden="true"></span>
+            <span>Mini Lop</span><span class="tagline__dot" aria-hidden="true"></span>
+            <span>São José do Rio Preto – SP</span>
+          </p>
+
+          <h1 class="hero__title" id="hero-titulo">Coelhário MM</h1>
+          <p class="hero__subtitle">Carinho, cuidado e qualidade <em>em cada coelhinho.</em></p>
           <p class="hero__lead">Coelhos criados para serem companheiros, com cuidado, atenção e dedicação em cada etapa.</p>
+
           <div class="hero__actions">
-            <a class="btn btn--primary" href="#sobre">Conheça nosso criatório</a>
-            <a class="btn btn--ghost" href="#disponiveis">Ver filhotes disponíveis</a>
+            <a class="btn btn--gold" href="#contato" data-wa="generic"><i class="bi bi-whatsapp" aria-hidden="true"></i>Falar no WhatsApp<i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+            <a class="btn btn--outline-light" href="#disponiveis"><i class="bi bi-grid" aria-hidden="true"></i>Ver filhotes disponíveis</a>
           </div>
+
+          <p class="hero__script">Criados para serem<br>companheiros.</p>
         </div>
-
-        <!-- FOTO: assets/hero.jpg (coelho em destaque). Ajuste o enquadramento com --pos (ex.: 50% 30%). -->
-        <figure class="arch hero__media">
-          <div class="arch__clip media" data-ph="assets/hero.jpg">
-            <img src="assets/hero.jpg" alt="Coelhinho criado no Coelhário MM" width="900" height="1150" fetchpriority="high" decoding="async" style="--pos: 50% 40%">
-          </div>
-          <svg class="ramo hero__ramo" viewBox="0 0 120 200" aria-hidden="true" focusable="false"><use href="#ramo"/></svg>
-        </figure>
       </div>
-
-      <a class="scroll-cue" href="#sobre" aria-label="Rolar para ver mais conteúdo">
-        <i class="bi bi-chevron-down" aria-hidden="true"></i>
-      </a>
     </section>
+
+    <!-- Faixa de informações (sobreposta ao fim do hero) -->
+    <div class="infobar-wrap">
+      <ul class="infobar container">
+        <li class="infobar__item">
+          <span class="infobar__icon"><i class="bi bi-geo-alt" aria-hidden="true"></i></span>
+          <span class="infobar__text"><small>Localização</small>São José do Rio Preto – SP</span>
+        </li>
+        <li class="infobar__item">
+          <span class="infobar__icon"><i class="bi bi-flower1" aria-hidden="true"></i></span>
+          <span class="infobar__text"><small>Raças</small>Netherland Dwarf e Mini Lop</span>
+        </li>
+        <li class="infobar__item">
+          <a class="infobar__link" href="#contato" data-wa="generic">
+            <span class="infobar__icon"><i class="bi bi-whatsapp" aria-hidden="true"></i></span>
+            <span class="infobar__text"><small>WhatsApp</small>(17) 99103-3690</span>
+            <i class="bi bi-arrow-up-right infobar__arrow" aria-hidden="true"></i>
+          </a>
+        </li>
+        <li class="infobar__item">
+          <a class="infobar__link" href="https://www.instagram.com/coelhariomm/" data-instagram>
+            <span class="infobar__icon"><i class="bi bi-instagram" aria-hidden="true"></i></span>
+            <span class="infobar__text"><small>Instagram</small>@coelhariomm</span>
+            <i class="bi bi-arrow-up-right infobar__arrow" aria-hidden="true"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
 
     <!-- =========================
          SOBRE
     ========================= -->
     <section class="section about" id="sobre" aria-labelledby="sobre-titulo">
       <div class="container about__grid">
-        <figure class="arch about__media reveal">
-          <div class="arch__clip media" data-ph="assets/sobre.jpg">
-            <img src="assets/sobre.jpg" alt="Coelhinho ou ambiente do Coelhário MM" width="800" height="930" loading="lazy" decoding="async" style="--pos: 50% 40%">
+        <div class="about__visual reveal">
+          <figure class="about__media media" data-ph="assets/sobre.jpg">
+            <img src="assets/sobre.jpg" alt="Criança abraçando um coelhinho do Coelhário MM" width="1100" height="1320" loading="lazy" decoding="async" style="--pos: 50% 40%">
+          </figure>
+          <div class="about__badge">
+            <span class="about__badge-icon"><i class="bi bi-heart-fill" aria-hidden="true"></i></span>
+            <span><strong>Criação especializada</strong>em coelhos para PET</span>
           </div>
-        </figure>
+        </div>
 
         <div class="about__copy reveal">
-          <h2 class="title-lg" id="sobre-titulo">Mais do que criar coelhos, cuidamos de cada história.</h2>
+          <p class="eyebrow">Sobre nós</p>
+          <h2 class="title-lg" id="sobre-titulo">Mais do que criar coelhos, <em>cuidamos de cada história.</em></h2>
           <p>O Coelhário MM é um criatório de coelhos para PET em São José do Rio Preto – SP. Trabalhamos com Netherland Dwarf e Mini Lop e queremos que escolher um coelhinho seja uma experiência segura e transparente.</p>
           <p>Cada coelhinho é pensado para ser um companheiro. Por isso, conversamos com calma, respondemos suas dúvidas e mostramos de perto como é o nosso trabalho.</p>
 
           <!-- DADOS EDITÁVEIS: só use informações confirmadas pelo criatório -->
-          <dl class="facts">
-            <div class="facts__item">
-              <dt>Onde estamos</dt>
-              <dd>São José do Rio Preto – SP</dd>
-            </div>
-            <div class="facts__item">
-              <dt>Nossa criação</dt>
-              <dd>Especializada em coelhos</dd>
-            </div>
-            <div class="facts__item">
-              <dt>Raças</dt>
-              <dd>Netherland Dwarf e Mini Lop</dd>
-            </div>
-          </dl>
+          <ul class="checks">
+            <li><i class="bi bi-check2" aria-hidden="true"></i>Atendimento direto com o criatório</li>
+            <li><i class="bi bi-check2" aria-hidden="true"></i>Duas raças: Netherland Dwarf e Mini Lop</li>
+            <li><i class="bi bi-check2" aria-hidden="true"></i>Acompanhamento antes e depois da escolha</li>
+          </ul>
+
+          <p class="about__sign">Coelhário MM</p>
         </div>
       </div>
     </section>
@@ -158,13 +189,12 @@
     <!-- =========================
          NOSSO TRABALHO
     ========================= -->
-    <section class="section section--sand work" aria-labelledby="trabalho-titulo">
+    <section class="section section--dark work on-dark" aria-labelledby="trabalho-titulo">
+      <svg class="folha work__folha" aria-hidden="true" focusable="false"><use href="#folha"/></svg>
       <div class="container">
-        <div class="section-head reveal">
-          <div class="section-head__text">
-            <h2 class="title-lg" id="trabalho-titulo">Nosso trabalho</h2>
-            <p class="lead">O que orienta a criação no Coelhário MM.</p>
-          </div>
+        <div class="section-head section-head--center reveal">
+          <p class="eyebrow eyebrow--light">Nosso trabalho</p>
+          <h2 class="title-lg" id="trabalho-titulo">O que orienta a <em>nossa criação</em></h2>
         </div>
 
         <ul class="values" data-stagger>
@@ -197,44 +227,45 @@
     ========================= -->
     <section class="section breeds" id="racas" aria-labelledby="racas-titulo">
       <div class="container">
-        <div class="section-head reveal">
-          <div class="section-head__text">
-            <h2 class="title-lg" id="racas-titulo">Nossas raças</h2>
-            <p class="lead">O Coelhário MM trabalha com duas raças: Netherland Dwarf e Mini Lop.</p>
-          </div>
+        <div class="section-head section-head--center reveal">
+          <p class="eyebrow">Nossas raças</p>
+          <h2 class="title-lg" id="racas-titulo">Duas raças, <em>muito carinho</em></h2>
+          <p class="lead">O Coelhário MM trabalha com Netherland Dwarf e Mini Lop.</p>
         </div>
 
-        <div class="breeds__list">
-          <!-- Descrições gerais da raça (não são dados do plantel). Revise se quiser ajustar o texto. -->
-          <article class="breed">
-            <figure class="breed__media media reveal" data-ph="assets/netherland.jpg">
-              <img src="assets/netherland.jpg" alt="Coelho da raça Netherland Dwarf" width="1000" height="800" loading="lazy" decoding="async" style="--pos: 50% 40%">
+        <!-- Descrições gerais da raça (não são dados do plantel). Revise se quiser ajustar o texto. -->
+        <div class="breeds__grid" data-stagger>
+          <article class="breed reveal">
+            <figure class="breed__media media" data-ph="assets/netherland.jpg">
+              <img src="assets/netherland.jpg" alt="Filhotes de Netherland Dwarf do Coelhário MM" width="1400" height="1050" loading="lazy" decoding="async" style="--pos: 50% 40%">
+              <span class="breed__tag">Orelhas curtas</span>
             </figure>
-            <div class="breed__copy reveal">
-              <h3 class="title-lg">Netherland Dwarf</h3>
+            <div class="breed__body">
+              <h3 class="title-md breed__name">Netherland Dwarf</h3>
               <p>Uma das menores raças de coelho. Tem o corpo compacto e arredondado, a cabeça pequena com o rosto curto e as orelhas curtas e eretas. Costuma ser ativo e curioso, e pede um manejo calmo e paciente.</p>
-              <dl class="facts facts--compact">
-                <div class="facts__item"><dt>Porte</dt><dd>Muito pequeno</dd></div>
-                <div class="facts__item"><dt>Orelhas</dt><dd>Curtas e eretas</dd></div>
-                <div class="facts__item"><dt>Corpo</dt><dd>Compacto e arredondado</dd></div>
-              </dl>
-              <a class="text-link" href="#disponiveis" data-filter-link="netherland-dwarf">Ver Netherland Dwarf disponíveis</a>
+              <ul class="traits">
+                <li><small>Porte</small>Muito pequeno</li>
+                <li><small>Orelhas</small>Curtas e eretas</li>
+                <li><small>Corpo</small>Compacto e arredondado</li>
+              </ul>
+              <a class="arrow-link" href="#disponiveis">Ver filhotes de Netherland Dwarf<i class="bi bi-arrow-right" aria-hidden="true"></i></a>
             </div>
           </article>
 
-          <article class="breed">
-            <figure class="breed__media media reveal" data-ph="assets/mini-lop.jpg">
-              <img src="assets/mini-lop.jpg" alt="Coelho da raça Mini Lop" width="1000" height="800" loading="lazy" decoding="async" style="--pos: 50% 40%">
+          <article class="breed reveal">
+            <figure class="breed__media media" data-ph="assets/mini-lop.jpg">
+              <img src="assets/mini-lop.jpg" alt="Coelho Mini Lop branco do Coelhário MM" width="1400" height="1050" loading="lazy" decoding="async" style="--pos: 50% 40%">
+              <span class="breed__tag">Orelhas caídas</span>
             </figure>
-            <div class="breed__copy reveal">
-              <h3 class="title-lg">Mini Lop</h3>
+            <div class="breed__body">
+              <h3 class="title-md breed__name">Mini Lop</h3>
               <p>Raça de porte pequeno, com corpo compacto e robusto e as orelhas caídas que dão a ela a aparência inconfundível. Costuma ter temperamento tranquilo e sociável, mas cada coelhinho é único e o jeito varia de animal para animal.</p>
-              <dl class="facts facts--compact">
-                <div class="facts__item"><dt>Porte</dt><dd>Pequeno</dd></div>
-                <div class="facts__item"><dt>Orelhas</dt><dd>Caídas</dd></div>
-                <div class="facts__item"><dt>Corpo</dt><dd>Compacto e robusto</dd></div>
-              </dl>
-              <a class="text-link" href="#disponiveis" data-filter-link="mini-lop">Ver Mini Lop disponíveis</a>
+              <ul class="traits">
+                <li><small>Porte</small>Pequeno</li>
+                <li><small>Orelhas</small>Caídas</li>
+                <li><small>Corpo</small>Compacto e robusto</li>
+              </ul>
+              <a class="arrow-link" href="#disponiveis">Ver filhotes de Mini Lop<i class="bi bi-arrow-right" aria-hidden="true"></i></a>
             </div>
           </article>
         </div>
@@ -243,119 +274,49 @@
 
     <!-- =========================
          FILHOTES DISPONÍVEIS
+         Cards fixos por raça: não precisa editar quando entram ou saem filhotes.
+         O botão abre o WhatsApp com uma mensagem já falando da raça (data-breed-name).
     ========================= -->
-    <section class="section section--sand-light available" id="disponiveis" aria-labelledby="disponiveis-titulo">
+    <section class="section section--dark available on-dark" id="disponiveis" aria-labelledby="disponiveis-titulo">
+      <svg class="folha available__folha" aria-hidden="true" focusable="false"><use href="#folha"/></svg>
       <div class="container">
-        <div class="section-head reveal">
-          <div class="section-head__text">
-            <h2 class="title-lg" id="disponiveis-titulo">Encontre seu novo companheiro</h2>
-            <p class="lead">Confira alguns dos nossos coelhinhos disponíveis para reserva.</p>
+        <div class="section-head section-head--split reveal">
+          <div>
+            <p class="eyebrow eyebrow--light">Filhotes disponíveis</p>
+            <h2 class="title-lg" id="disponiveis-titulo">Quem está esperando <em>por você?</em></h2>
           </div>
-
-          <div class="filters" role="group" aria-label="Filtrar por raça">
-            <button class="chip" type="button" data-filter="todos" aria-pressed="true">Todos</button>
-            <button class="chip" type="button" data-filter="netherland-dwarf" aria-pressed="false">Netherland Dwarf</button>
-            <button class="chip" type="button" data-filter="mini-lop" aria-pressed="false">Mini Lop</button>
-          </div>
+          <p class="available__intro">Escolha a raça e fale direto com o Coelhário MM pelo WhatsApp para saber quais filhotes estão disponíveis.</p>
         </div>
 
-        <p class="sr-only" id="filter-status" aria-live="polite"></p>
-
-        <!--
-          ============================================================
-          PLACEHOLDER: os 4 coelhinhos abaixo são EXEMPLOS.
-          Para cada coelhinho real:
-            1. troque a foto (assets/coelho-01.jpg ...), o nome, a raça (data-breed), o sexo e a pelagem;
-            2. apague o atributo data-example e o <span class="rabbit__flag"> do cartão;
-            3. se não souber a pelagem, apague a linha "Pelagem".
-          Para adicionar outro, copie um <article> inteiro.
-          data-breed aceita: netherland-dwarf | mini-lop
-          Para marcar como reservado, troque a classe status--available por status--reserved e o texto.
-          ============================================================
-        -->
-        <div class="rabbits" data-stagger>
-          <article class="rabbit reveal" data-rabbit data-breed="mini-lop" data-example>
-            <span class="rabbit__flag">Exemplo</span>
-            <figure class="rabbit__media media" data-ph="assets/coelho-01.jpg">
-              <img src="assets/coelho-01.jpg" alt="Coelhinho 01, Mini Lop (foto de exemplo)" width="800" height="1000" loading="lazy" decoding="async" style="--pos: 50% 40%">
+        <div class="litters" data-stagger>
+          <article class="litter reveal">
+            <figure class="litter__media media" data-ph="assets/filhotes-netherland.jpg">
+              <img src="assets/filhotes-netherland.jpg" alt="Filhote de Netherland Dwarf do Coelhário MM" width="1000" height="800" loading="lazy" decoding="async" style="--pos: 50% 50%">
+              <span class="litter__tag">Orelhas curtas</span>
             </figure>
-            <div class="rabbit__body">
-              <div class="rabbit__head">
-                <h3 class="rabbit__name">Coelhinho 01</h3>
-                <span class="status status--available">Disponível</span>
-              </div>
-              <dl class="rabbit__meta">
-                <div><dt>Raça</dt><dd>Mini Lop</dd></div>
-                <div><dt>Sexo</dt><dd>Fêmea</dd></div>
-                <div><dt>Pelagem</dt><dd>A informar</dd></div>
-              </dl>
-              <a class="btn btn--wa btn--block" href="#contato" data-wa="rabbit"><i class="bi bi-whatsapp" aria-hidden="true"></i>Tenho interesse</a>
+            <div class="litter__body">
+              <h3 class="litter__title">Filhotes de Netherland Dwarf</h3>
+              <p>Uma das menores raças de coelho, com corpo compacto, rostinho arredondado e orelhas curtas e eretas.</p>
+              <a class="btn btn--gold btn--block" href="#contato" data-wa="breed" data-breed-name="Netherland Dwarf"><i class="bi bi-whatsapp" aria-hidden="true"></i>Tenho interesse<i class="bi bi-arrow-right" aria-hidden="true"></i></a>
             </div>
           </article>
 
-          <article class="rabbit reveal" data-rabbit data-breed="netherland-dwarf" data-example>
-            <span class="rabbit__flag">Exemplo</span>
-            <figure class="rabbit__media media" data-ph="assets/coelho-02.jpg">
-              <img src="assets/coelho-02.jpg" alt="Coelhinho 02, Netherland Dwarf (foto de exemplo)" width="800" height="1000" loading="lazy" decoding="async" style="--pos: 50% 40%">
+          <article class="litter reveal">
+            <figure class="litter__media media" data-ph="assets/filhotes-mini-lop.jpg">
+              <img src="assets/filhotes-mini-lop.jpg" alt="Filhote de Mini Lop do Coelhário MM" width="1000" height="800" loading="lazy" decoding="async" style="--pos: 50% 50%">
+              <span class="litter__tag">Orelhas caídas</span>
             </figure>
-            <div class="rabbit__body">
-              <div class="rabbit__head">
-                <h3 class="rabbit__name">Coelhinho 02</h3>
-                <span class="status status--available">Disponível</span>
-              </div>
-              <dl class="rabbit__meta">
-                <div><dt>Raça</dt><dd>Netherland Dwarf</dd></div>
-                <div><dt>Sexo</dt><dd>Macho</dd></div>
-                <div><dt>Pelagem</dt><dd>A informar</dd></div>
-              </dl>
-              <a class="btn btn--wa btn--block" href="#contato" data-wa="rabbit"><i class="bi bi-whatsapp" aria-hidden="true"></i>Tenho interesse</a>
-            </div>
-          </article>
-
-          <article class="rabbit reveal" data-rabbit data-breed="netherland-dwarf" data-example>
-            <span class="rabbit__flag">Exemplo</span>
-            <figure class="rabbit__media media" data-ph="assets/coelho-03.jpg">
-              <img src="assets/coelho-03.jpg" alt="Coelhinho 03, Netherland Dwarf (foto de exemplo)" width="800" height="1000" loading="lazy" decoding="async" style="--pos: 50% 40%">
-            </figure>
-            <div class="rabbit__body">
-              <div class="rabbit__head">
-                <h3 class="rabbit__name">Coelhinho 03</h3>
-                <span class="status status--available">Disponível</span>
-              </div>
-              <dl class="rabbit__meta">
-                <div><dt>Raça</dt><dd>Netherland Dwarf</dd></div>
-                <div><dt>Sexo</dt><dd>Fêmea</dd></div>
-                <div><dt>Pelagem</dt><dd>A informar</dd></div>
-              </dl>
-              <a class="btn btn--wa btn--block" href="#contato" data-wa="rabbit"><i class="bi bi-whatsapp" aria-hidden="true"></i>Tenho interesse</a>
-            </div>
-          </article>
-
-          <article class="rabbit reveal" data-rabbit data-breed="mini-lop" data-example>
-            <span class="rabbit__flag">Exemplo</span>
-            <figure class="rabbit__media media" data-ph="assets/coelho-04.jpg">
-              <img src="assets/coelho-04.jpg" alt="Coelhinho 04, Mini Lop (foto de exemplo)" width="800" height="1000" loading="lazy" decoding="async" style="--pos: 50% 40%">
-            </figure>
-            <div class="rabbit__body">
-              <div class="rabbit__head">
-                <h3 class="rabbit__name">Coelhinho 04</h3>
-                <span class="status status--available">Disponível</span>
-              </div>
-              <dl class="rabbit__meta">
-                <div><dt>Raça</dt><dd>Mini Lop</dd></div>
-                <div><dt>Sexo</dt><dd>Macho</dd></div>
-                <div><dt>Pelagem</dt><dd>A informar</dd></div>
-              </dl>
-              <a class="btn btn--wa btn--block" href="#contato" data-wa="rabbit"><i class="bi bi-whatsapp" aria-hidden="true"></i>Tenho interesse</a>
+            <div class="litter__body">
+              <h3 class="litter__title">Filhotes de Mini Lop</h3>
+              <p>Orelhas caídas, corpo compacto e robusto e um jeitinho tranquilo que conquista a família toda.</p>
+              <a class="btn btn--gold btn--block" href="#contato" data-wa="breed" data-breed-name="Mini Lop"><i class="bi bi-whatsapp" aria-hidden="true"></i>Tenho interesse<i class="bi bi-arrow-right" aria-hidden="true"></i></a>
             </div>
           </article>
         </div>
 
-        <p class="rabbits__empty" id="rabbits-empty" hidden>Nenhum coelhinho desta raça está listado agora. Fale com a gente pelo WhatsApp para saber mais.</p>
-
-        <p class="available__more">
-          Não encontrou o que procura? <a class="text-link" href="#contato" data-wa="generic">Fale com a gente pelo WhatsApp</a>
-          ou veja mais fotos no <a class="text-link" href="https://www.instagram.com/coelhariomm/" data-instagram>Instagram</a>.
+        <p class="available__note reveal">
+          <i class="bi bi-instagram" aria-hidden="true"></i>
+          As novidades e as ninhadas novas aparecem primeiro no nosso <a href="https://www.instagram.com/coelhariomm/" data-instagram>Instagram</a>.
         </p>
       </div>
     </section>
@@ -365,36 +326,31 @@
     ========================= -->
     <section class="section how" id="como-funciona" aria-labelledby="como-titulo">
       <div class="container">
-        <div class="section-head reveal">
-          <div class="section-head__text">
-            <h2 class="title-lg" id="como-titulo">Como funciona</h2>
-            <p class="lead">Do primeiro contato à reserva, tudo é combinado diretamente com o criatório.</p>
-          </div>
+        <div class="section-head section-head--center reveal">
+          <p class="eyebrow">Como funciona</p>
+          <h2 class="title-lg" id="como-titulo">Do primeiro contato <em>à reserva</em></h2>
+          <p class="lead">Tudo é combinado diretamente com o criatório.</p>
         </div>
 
         <ol class="steps" data-stagger>
           <li class="step reveal">
-            <span class="step__num" aria-hidden="true">01</span>
-            <i class="bi bi-eye step__icon" aria-hidden="true"></i>
-            <h3 class="title-md">Conheça os disponíveis</h3>
+            <span class="step__icon"><i class="bi bi-eye" aria-hidden="true"></i><span class="step__num" aria-hidden="true">1</span></span>
+            <h3 class="title-sm">Conheça os disponíveis</h3>
             <p>Veja os coelhinhos que estão disponíveis para reserva.</p>
           </li>
           <li class="step reveal">
-            <span class="step__num" aria-hidden="true">02</span>
-            <i class="bi bi-whatsapp step__icon" aria-hidden="true"></i>
-            <h3 class="title-md">Entre em contato</h3>
+            <span class="step__icon"><i class="bi bi-whatsapp" aria-hidden="true"></i><span class="step__num" aria-hidden="true">2</span></span>
+            <h3 class="title-sm">Entre em contato</h3>
             <p>Converse diretamente pelo WhatsApp.</p>
           </li>
           <li class="step reveal">
-            <span class="step__num" aria-hidden="true">03</span>
-            <i class="bi bi-question-circle step__icon" aria-hidden="true"></i>
-            <h3 class="title-md">Tire suas dúvidas</h3>
+            <span class="step__icon"><i class="bi bi-question-circle" aria-hidden="true"></i><span class="step__num" aria-hidden="true">3</span></span>
+            <h3 class="title-sm">Tire suas dúvidas</h3>
             <p>Receba as informações necessárias antes de escolher.</p>
           </li>
           <li class="step reveal">
-            <span class="step__num" aria-hidden="true">04</span>
-            <i class="bi bi-bookmark-heart step__icon" aria-hidden="true"></i>
-            <h3 class="title-md">Reserve seu coelhinho</h3>
+            <span class="step__icon"><i class="bi bi-bookmark-heart" aria-hidden="true"></i><span class="step__num" aria-hidden="true">4</span></span>
+            <h3 class="title-sm">Reserve seu coelhinho</h3>
             <p>Combine os próximos passos diretamente com o criatório.</p>
           </li>
         </ol>
@@ -406,16 +362,14 @@
     ========================= -->
     <section class="section section--white testimonials" id="depoimentos" aria-labelledby="depoimentos-titulo">
       <div class="container">
-        <div class="section-head reveal">
-          <div class="section-head__text">
-            <h2 class="title-lg" id="depoimentos-titulo">Quem já escolheu o Coelhário MM</h2>
-            <!-- REMOVA esta linha quando colocar depoimentos reais -->
-            <p class="note-provisional">Conteúdo provisório: espaço reservado para depoimentos reais de clientes.</p>
-          </div>
+        <div class="section-head section-head--split reveal">
+          <div>
+            <p class="eyebrow">Depoimentos</p>
+            <h2 class="title-lg" id="depoimentos-titulo">Quem já escolheu <em>o Coelhário MM</em></h2>
           <div class="carousel-controls">
-            <button class="icon-btn" type="button" data-quotes-prev aria-label="Depoimento anterior"><i class="bi bi-chevron-left" aria-hidden="true"></i></button>
+            <button class="icon-btn" type="button" data-quotes-prev aria-label="Depoimento anterior"><i class="bi bi-arrow-left" aria-hidden="true"></i></button>
             <div class="dots" data-quotes-dots></div>
-            <button class="icon-btn" type="button" data-quotes-next aria-label="Próximo depoimento"><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
+            <button class="icon-btn" type="button" data-quotes-next aria-label="Próximo depoimento"><i class="bi bi-arrow-right" aria-hidden="true"></i></button>
           </div>
         </div>
 
@@ -427,22 +381,22 @@
           <figure class="quote">
             <i class="bi bi-quote quote__mark" aria-hidden="true"></i>
             <blockquote class="quote__text">Depoimento de cliente aqui.</blockquote>
-            <figcaption class="quote__who"><strong>Nome do cliente</strong><span>Cidade</span></figcaption>
+            <figcaption class="quote__who"><span class="quote__avatar" aria-hidden="true">N</span><span><strong>Nome do cliente</strong>Cidade</span></figcaption>
           </figure>
           <figure class="quote">
             <i class="bi bi-quote quote__mark" aria-hidden="true"></i>
             <blockquote class="quote__text">Depoimento de cliente aqui.</blockquote>
-            <figcaption class="quote__who"><strong>Nome do cliente</strong><span>Cidade</span></figcaption>
+            <figcaption class="quote__who"><span class="quote__avatar" aria-hidden="true">N</span><span><strong>Nome do cliente</strong>Cidade</span></figcaption>
           </figure>
           <figure class="quote">
             <i class="bi bi-quote quote__mark" aria-hidden="true"></i>
             <blockquote class="quote__text">Depoimento de cliente aqui.</blockquote>
-            <figcaption class="quote__who"><strong>Nome do cliente</strong><span>Cidade</span></figcaption>
+            <figcaption class="quote__who"><span class="quote__avatar" aria-hidden="true">N</span><span><strong>Nome do cliente</strong>Cidade</span></figcaption>
           </figure>
           <figure class="quote">
             <i class="bi bi-quote quote__mark" aria-hidden="true"></i>
             <blockquote class="quote__text">Depoimento de cliente aqui.</blockquote>
-            <figcaption class="quote__who"><strong>Nome do cliente</strong><span>Cidade</span></figcaption>
+            <figcaption class="quote__who"><span class="quote__avatar" aria-hidden="true">N</span><span><strong>Nome do cliente</strong>Cidade</span></figcaption>
           </figure>
         </div>
       </div>
@@ -453,43 +407,48 @@
     ========================= -->
     <section class="section gallery-section" id="galeria" aria-labelledby="galeria-titulo">
       <div class="container">
-        <div class="section-head reveal">
-          <div class="section-head__text">
-            <h2 class="title-lg" id="galeria-titulo">Momentos do nosso criatório</h2>
-            <p class="lead">Um pouco do dia a dia com os coelhinhos.</p>
-          </div>
+        <div class="section-head section-head--center reveal">
+          <p class="eyebrow">Galeria</p>
+          <h2 class="title-lg" id="galeria-titulo">Momentos do <em>nosso criatório</em></h2>
+          <p class="lead">Um pouco do dia a dia com os coelhinhos.</p>
         </div>
 
         <!-- FOTOS: assets/galeria-01.jpg até assets/galeria-06.jpg. Toque/clique para ampliar. -->
         <ul class="gallery reveal">
           <li class="gallery__item g1">
-            <button class="gallery__btn" type="button" data-full="assets/galeria-01.jpg" data-caption="Momento do criatório 1 (foto de exemplo)">
-              <span class="media" data-ph="assets/galeria-01.jpg"><img src="assets/galeria-01.jpg" alt="Momento do criatório 1 (foto de exemplo)" width="900" height="1100" loading="lazy" decoding="async" style="--pos: 50% 40%"></span>
+            <button class="gallery__btn" type="button" data-full="assets/galeria-01.jpg" data-caption="Coelha Netherland Dwarf com seu filhote">
+              <span class="media" data-ph="assets/galeria-01.jpg"><img src="assets/galeria-01.jpg" alt="Coelha Netherland Dwarf com seu filhote" width="1100" height="1342" loading="lazy" decoding="async" style="--pos: 50% 40%"></span>
+              <span class="gallery__zoom" aria-hidden="true"><i class="bi bi-arrows-angle-expand"></i></span>
             </button>
           </li>
           <li class="gallery__item g2">
-            <button class="gallery__btn" type="button" data-full="assets/galeria-02.jpg" data-caption="Momento do criatório 2 (foto de exemplo)">
-              <span class="media" data-ph="assets/galeria-02.jpg"><img src="assets/galeria-02.jpg" alt="Momento do criatório 2 (foto de exemplo)" width="700" height="800" loading="lazy" decoding="async" style="--pos: 50% 40%"></span>
+            <button class="gallery__btn" type="button" data-full="assets/galeria-02.jpg" data-caption="Dois filhotes num cestinho">
+              <span class="media" data-ph="assets/galeria-02.jpg"><img src="assets/galeria-02.jpg" alt="Dois filhotes num cestinho" width="900" height="1029" loading="lazy" decoding="async" style="--pos: 50% 40%"></span>
+              <span class="gallery__zoom" aria-hidden="true"><i class="bi bi-arrows-angle-expand"></i></span>
             </button>
           </li>
           <li class="gallery__item g3">
-            <button class="gallery__btn" type="button" data-full="assets/galeria-03.jpg" data-caption="Momento do criatório 3 (foto de exemplo)">
-              <span class="media" data-ph="assets/galeria-03.jpg"><img src="assets/galeria-03.jpg" alt="Momento do criatório 3 (foto de exemplo)" width="800" height="600" loading="lazy" decoding="async" style="--pos: 50% 40%"></span>
+            <button class="gallery__btn" type="button" data-full="assets/galeria-03.jpg" data-caption="Mamãe coelha com os filhotes">
+              <span class="media" data-ph="assets/galeria-03.jpg"><img src="assets/galeria-03.jpg" alt="Mamãe coelha com os filhotes" width="1000" height="750" loading="lazy" decoding="async" style="--pos: 50% 40%"></span>
+              <span class="gallery__zoom" aria-hidden="true"><i class="bi bi-arrows-angle-expand"></i></span>
             </button>
           </li>
           <li class="gallery__item g4">
-            <button class="gallery__btn" type="button" data-full="assets/galeria-04.jpg" data-caption="Momento do criatório 4 (foto de exemplo)">
-              <span class="media" data-ph="assets/galeria-04.jpg"><img src="assets/galeria-04.jpg" alt="Momento do criatório 4 (foto de exemplo)" width="800" height="900" loading="lazy" decoding="async" style="--pos: 50% 40%"></span>
+            <button class="gallery__btn" type="button" data-full="assets/galeria-04.jpg" data-caption="Ninhada de filhotes do Coelhário MM">
+              <span class="media" data-ph="assets/galeria-04.jpg"><img src="assets/galeria-04.jpg" alt="Ninhada de filhotes do Coelhário MM" width="1000" height="1061" loading="lazy" decoding="async" style="--pos: 50% 40%"></span>
+              <span class="gallery__zoom" aria-hidden="true"><i class="bi bi-arrows-angle-expand"></i></span>
             </button>
           </li>
           <li class="gallery__item g5">
-            <button class="gallery__btn" type="button" data-full="assets/galeria-05.jpg" data-caption="Momento do criatório 5 (foto de exemplo)">
-              <span class="media" data-ph="assets/galeria-05.jpg"><img src="assets/galeria-05.jpg" alt="Momento do criatório 5 (foto de exemplo)" width="700" height="800" loading="lazy" decoding="async" style="--pos: 50% 40%"></span>
+            <button class="gallery__btn" type="button" data-full="assets/galeria-05.jpg" data-caption="Coelhinho comendo folhinhas">
+              <span class="media" data-ph="assets/galeria-05.jpg"><img src="assets/galeria-05.jpg" alt="Coelhinho comendo folhinhas" width="900" height="1028" loading="lazy" decoding="async" style="--pos: 50% 40%"></span>
+              <span class="gallery__zoom" aria-hidden="true"><i class="bi bi-arrows-angle-expand"></i></span>
             </button>
           </li>
           <li class="gallery__item g6">
-            <button class="gallery__btn" type="button" data-full="assets/galeria-06.jpg" data-caption="Momento do criatório 6 (foto de exemplo)">
-              <span class="media" data-ph="assets/galeria-06.jpg"><img src="assets/galeria-06.jpg" alt="Momento do criatório 6 (foto de exemplo)" width="900" height="500" loading="lazy" decoding="async" style="--pos: 50% 40%"></span>
+            <button class="gallery__btn" type="button" data-full="assets/galeria-06.jpg" data-caption="Filhotes reunidos no tronco">
+              <span class="media" data-ph="assets/galeria-06.jpg"><img src="assets/galeria-06.jpg" alt="Filhotes reunidos no tronco" width="1600" height="889" loading="lazy" decoding="async" style="--pos: 50% 40%"></span>
+              <span class="gallery__zoom" aria-hidden="true"><i class="bi bi-arrows-angle-expand"></i></span>
             </button>
           </li>
         </ul>
@@ -499,13 +458,20 @@
     <!-- =========================
          INSTAGRAM
     ========================= -->
-    <section class="section section--white insta" id="instagram" aria-labelledby="insta-titulo">
-      <div class="container insta__inner reveal">
-        <svg class="ramo insta__ramo" viewBox="0 0 120 200" aria-hidden="true" focusable="false"><use href="#ramo"/></svg>
-        <h2 class="title-lg" id="insta-titulo">Acompanhe nosso dia a dia</h2>
-        <p class="insta__text">Veja nossos coelhinhos, novidades e acompanhe de perto o trabalho do Coelhário MM.</p>
-        <a class="btn btn--primary" href="https://www.instagram.com/coelhariomm/" data-instagram><i class="bi bi-instagram" aria-hidden="true"></i>Conhecer nosso Instagram</a>
-        <p class="insta__handle" aria-hidden="true">@coelhariomm</p>
+    <section class="section section--sand insta" id="instagram" aria-labelledby="insta-titulo">
+      <div class="container">
+        <div class="insta__card reveal">
+          <div class="insta__copy">
+            <p class="eyebrow">Instagram</p>
+            <h2 class="title-lg" id="insta-titulo">Acompanhe nosso <em>dia a dia</em></h2>
+            <p class="insta__text">Veja nossos coelhinhos, novidades e acompanhe de perto o trabalho do Coelhário MM.</p>
+            <a class="btn btn--primary" href="https://www.instagram.com/coelhariomm/" data-instagram><i class="bi bi-instagram" aria-hidden="true"></i>Seguir @coelhariomm</a>
+          </div>
+          <div class="insta__side" aria-hidden="true">
+            <span class="insta__ring"><i class="bi bi-instagram"></i></span>
+            <p class="insta__handle">@coelhariomm</p>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -513,14 +479,18 @@
          CTA FINAL / CONTATO
     ========================= -->
     <section class="section cta on-dark" id="contato" aria-labelledby="cta-titulo">
-      <svg class="ramo cta__ramo cta__ramo--left" viewBox="0 0 120 200" aria-hidden="true" focusable="false"><use href="#ramo"/></svg>
-      <svg class="ramo cta__ramo cta__ramo--right" viewBox="0 0 120 200" aria-hidden="true" focusable="false"><use href="#ramo"/></svg>
+      <svg class="folha cta__folha cta__folha--left" aria-hidden="true" focusable="false"><use href="#folha"/></svg>
+      <svg class="folha cta__folha cta__folha--right" aria-hidden="true" focusable="false"><use href="#folha"/></svg>
 
       <div class="container cta__inner reveal">
-        <h2 class="title-xl cta__title" id="cta-titulo">Talvez seu próximo companheiro esteja aqui.</h2>
+        <p class="cta__script">Vamos conversar?</p>
+        <h2 class="title-xl cta__title" id="cta-titulo">Talvez seu próximo companheiro <em>esteja aqui.</em></h2>
         <p class="cta__text">Fale com o Coelhário MM e descubra os coelhinhos disponíveis.</p>
-        <a class="btn btn--gold btn--lg" href="#contato" data-wa="generic"><i class="bi bi-whatsapp" aria-hidden="true"></i>Falar pelo WhatsApp</a>
-        <p class="cta__meta">São José do Rio Preto – SP. Também estamos no <a href="https://www.instagram.com/coelhariomm/" data-instagram>Instagram</a>.</p>
+        <div class="cta__actions">
+          <a class="btn btn--gold btn--lg" href="#contato" data-wa="generic"><i class="bi bi-whatsapp" aria-hidden="true"></i>Falar pelo WhatsApp<i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+          <a class="btn btn--outline-light btn--lg" href="https://www.instagram.com/coelhariomm/" data-instagram><i class="bi bi-instagram" aria-hidden="true"></i>Instagram</a>
+        </div>
+        <p class="cta__meta"><i class="bi bi-geo-alt" aria-hidden="true"></i>São José do Rio Preto – SP</p>
       </div>
     </section>
   </main>
@@ -528,15 +498,18 @@
   <!-- =========================
        FOOTER
   ========================= -->
-  <footer class="site-footer">
+  <footer class="site-footer on-dark">
     <div class="container">
       <div class="footer__grid">
         <div class="footer__brand">
-          <a class="brand brand--footer" href="#inicio" aria-label="Coelhário MM, voltar ao início">
-            <img class="brand__logo" src="assets/logo.png" alt="Coelhário MM" width="84" height="84" loading="lazy">
-            <span class="brand__fallback" aria-hidden="true">Coelhário <b>MM</b></span>
+          <a class="brand" href="#inicio" aria-label="Coelhário MM, voltar ao início">
+            <span class="brand__badge">
+              <img class="brand__logo" src="assets/logo.png" alt="" width="48" height="48" loading="lazy">
+              <i class="bi bi-flower1 brand__icon" aria-hidden="true"></i>
+            </span>
+            <span class="brand__name">Coelhário <b>MM</b></span>
           </a>
-          <p class="footer__place">São José do Rio Preto – SP</p>
+          <p class="footer__about">Coelhos para PET criados com carinho, cuidado e qualidade em São José do Rio Preto – SP.</p>
         </div>
 
         <nav class="footer__nav" aria-label="Rodapé">
@@ -546,21 +519,25 @@
             <li><a href="#sobre">Sobre</a></li>
             <li><a href="#racas">Raças</a></li>
             <li><a href="#disponiveis">Disponíveis</a></li>
-            <li><a href="https://www.instagram.com/coelhariomm/" data-instagram>Instagram</a></li>
-            <li><a href="#contato" data-wa="generic">WhatsApp</a></li>
+            <li><a href="#galeria">Galeria</a></li>
+            <li><a href="#contato">Contato</a></li>
           </ul>
         </nav>
 
-        <div class="footer__social">
-          <h2 class="footer__title">Redes</h2>
-          <div class="social">
-            <a href="https://www.instagram.com/coelhariomm/" data-instagram aria-label="Instagram do Coelhário MM"><i class="bi bi-instagram" aria-hidden="true"></i></a>
-            <a href="#contato" data-wa="generic" aria-label="WhatsApp do Coelhário MM"><i class="bi bi-whatsapp" aria-hidden="true"></i></a>
-          </div>
+        <div class="footer__contact">
+          <h2 class="footer__title">Contato</h2>
+          <ul class="footer__contact-list">
+            <li><a href="#contato" data-wa="generic"><i class="bi bi-whatsapp" aria-hidden="true"></i>(17) 99103-3690</a></li>
+            <li><a href="https://www.instagram.com/coelhariomm/" data-instagram><i class="bi bi-instagram" aria-hidden="true"></i>@coelhariomm</a></li>
+            <li><span><i class="bi bi-geo-alt" aria-hidden="true"></i>São José do Rio Preto – SP</span></li>
+          </ul>
         </div>
       </div>
 
-      <p class="footer__bottom">© 2026 Coelhário MM. Todos os direitos reservados.</p>
+      <div class="footer__bottom">
+        <p>© 2026 Coelhário MM. Todos os direitos reservados.</p>
+        <p class="footer__credit">Desenvolvido por <a href="https://alazodesenvolvimento.vercel.app/" target="_blank" rel="noopener">ALAZO</a></p>
+      </div>
     </div>
   </footer>
 

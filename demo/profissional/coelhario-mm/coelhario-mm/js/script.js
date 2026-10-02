@@ -9,11 +9,8 @@ window.__coelhario = true; // avisa o HTML que o script carregou
    CONFIGURAÇÃO (edite aqui)
 ========================= */
 
-// PLACEHOLDER: troque pelo número real do WhatsApp, só dígitos, no formato
-// internacional: 55 + DDD + número (ex.: "5517999999999").
-// Enquanto for o número de exemplo, os botões NÃO abrem o WhatsApp:
-// mostram um aviso de teste com a mensagem que seria enviada.
-const whatsappNumber = "5511999999999";
+// Número do WhatsApp, só dígitos: 55 + DDD + número.
+const whatsappNumber = "5517991033690"; // (17) 99103-3690, número que aparece no logo do criatório
 
 // Instagram do criatório
 const instagramUrl = "https://www.instagram.com/coelhariomm/";
@@ -21,8 +18,8 @@ const instagramUrl = "https://www.instagram.com/coelhariomm/";
 // Mensagens automáticas do WhatsApp
 const whatsappGenericMessage =
   "Olá! Vi o site do Coelhário MM e gostaria de saber mais sobre os coelhinhos disponíveis.";
-const whatsappRabbitMessage = (nome) =>
-  `Olá! Vi o site do Coelhário MM e gostaria de saber mais sobre o coelhinho ${nome}.`;
+const whatsappBreedMessage = (raca) =>
+  `Olá! Vi o site do Coelhário MM e gostaria de saber quais filhotes de ${raca} estão disponíveis.`;
 
 // Número de exemplo usado acima (não altere: serve para detectar que ainda não foi trocado)
 const WHATSAPP_PLACEHOLDER = "5511999999999";
@@ -227,16 +224,12 @@ function buildWhatsAppUrl(message) {
   return `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
 }
 
-function getRabbitName(link) {
-  const card = link.closest("[data-rabbit]");
-  const name = card && card.querySelector(".rabbit__name");
-  return name ? name.textContent.trim() : "disponível";
-}
-
 function initWhatsApp() {
   $$("[data-wa]").forEach((link) => {
     const message =
-      link.dataset.wa === "rabbit" ? whatsappRabbitMessage(getRabbitName(link)) : whatsappGenericMessage;
+      link.dataset.wa === "breed" && link.dataset.breedName
+        ? whatsappBreedMessage(link.dataset.breedName)
+        : whatsappGenericMessage;
     link.href = buildWhatsAppUrl(message);
     link.target = "_blank";
     link.rel = "noopener noreferrer";
@@ -264,36 +257,6 @@ function initInstagram() {
     link.target = "_blank";
     link.rel = "noopener noreferrer";
   });
-}
-
-/* =========================
-   FILTRO DOS COELHINHOS
-========================= */
-function initFilters() {
-  const chips = $$(".chip[data-filter]");
-  const cards = $$(".rabbit");
-  const status = $("#filter-status");
-  const empty = $("#rabbits-empty");
-  if (!chips.length || !cards.length) return;
-
-  const apply = (filter) => {
-    let visible = 0;
-    cards.forEach((card) => {
-      const show = filter === "todos" || card.dataset.breed === filter;
-      card.hidden = !show;
-      if (show) visible += 1;
-    });
-    chips.forEach((chip) => chip.setAttribute("aria-pressed", String(chip.dataset.filter === filter)));
-    if (status) status.textContent = visible === 1 ? "Mostrando 1 coelhinho" : `Mostrando ${visible} coelhinhos`;
-    if (empty) empty.hidden = visible !== 0;
-  };
-
-  chips.forEach((chip) => chip.addEventListener("click", () => apply(chip.dataset.filter)));
-
-  // Links da seção de raças ("Ver Mini Lop disponíveis")
-  $$("[data-filter-link]").forEach((link) =>
-    link.addEventListener("click", () => apply(link.dataset.filterLink))
-  );
 }
 
 /* =========================
@@ -456,7 +419,6 @@ initActiveNav();
 initReveal();
 initWhatsApp();
 initInstagram();
-initFilters();
 initTestimonials();
 initLightbox();
 initFab();
